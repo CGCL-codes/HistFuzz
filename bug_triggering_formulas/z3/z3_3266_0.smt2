@@ -1,0 +1,5 @@
+(declare-fun x () Int)
+(declare-fun y () Int)
+(assert (> y 0))
+(assert (not (= (/ (* x y) y) x)))
+(check-sat)

@@ -1,0 +1,7 @@
+(declare-const r0 Real)
+(declare-const r2 Real)
+(declare-const arr-182053642516774971_182053642516774971-0 (Array Real Real))
+(assert (= true true true (> 6177.0 0.0798099 r0) true true true))
+(assert (xor true true true true false (> 7167491834.0 1000.0 (select arr-182053642516774971_182053642516774971-0 0.0798099) 0.136 r0)))
+(assert (xor true false true (> (select arr-182053642516774971_182053642516774971-0 r2) 922563.0 r2 r0) true true true true))
+(check-sat)

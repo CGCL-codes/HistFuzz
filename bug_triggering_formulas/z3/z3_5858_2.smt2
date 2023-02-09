@@ -1,0 +1,8 @@
+(declare-fun P (Int Int Int) Bool)
+(assert (forall ((x Int) (y Int) (z Int)) (=> (and (P 0 z y) (= x (+ 1 z)) (<= z y)) (P 0 x y))))
+(assert (forall ((x Int) (y Int)) (=> (= x 1) (P 0 x y))))
+(check-sat)
+(declare-fun P (Int Int Int) Bool)
+(assert (forall ((x Int) (y Int) (z Int) (a Int)) (=> (and (P 0 z y) (= x (+ 1 z)) (<= z y) (= a 0)) (P a x y))))
+(assert (forall ((x Int) (y Int) (a Int)) (=> (= x 1) (P a x y))))
+(check-sat)

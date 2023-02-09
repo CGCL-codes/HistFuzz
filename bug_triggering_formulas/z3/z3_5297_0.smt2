@@ -1,0 +1,5 @@
+(declare-fun b () a)
+(declare-fun c () a)
+(declare-fun d () a)
+(assert (distinct b c d))
+(check-sat)

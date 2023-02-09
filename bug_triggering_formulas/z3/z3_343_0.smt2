@@ -1,0 +1,7 @@
+(declare-fun |main::i@3| () Int)
+(declare-fun |main::i@4| () Int)
+(declare-fun |main::source@2| () Int)
+(declare-fun |main::nodecount@3| () Int)
+(declare-fun |main::edgecount@3| () Int)
+(assert (and (and (= |main::i@4| (+ 1 |main::i@3|))) (<= |main::nodecount@3| 4) (<= (+ (* (- 1) |main::i@3|) |main::edgecount@3|) 19) (<= (* (- 1) |main::nodecount@3|) 0) (<= |main::edgecount@3| 19) (<= (* (- 1) |main::edgecount@3|) 0) (<= (+ |main::i@3| (* (- 1) |main::nodecount@3|)) 0) (<= (+ (* (- 1) |main::i@3|) |main::nodecount@3|) 4) (<= (+ (* (- 1) |main::i@3|) |main::source@2|) 0) (<= (* (- 1) |main::i@3|) 0) (<= (+ |main::i@3| (* (- 1) |main::source@2|)) 1) (<= |main::source@2| 0) (<= (* (- 1) |main::source@2|) 0) (<= |main::source@2| 0)))
+(check-sat)

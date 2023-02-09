@@ -1,0 +1,7 @@
+(declare-fun s0 () String)
+(assert (forall ((s1 Int)) (let ((s2 (str.len s0))) (let ((s4 (= s2 3))) s4))))
+(check-sat)
+(assert s6)
+(check-sat)
+(assert s8)
+(check-sat)

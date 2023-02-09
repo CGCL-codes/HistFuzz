@@ -1,0 +1,6 @@
+(declare-fun a () String)
+(declare-fun b () Int)
+(assert (str.contains a "AAAAAAAAABBBBBBBC"))
+(assert (= (str.len a) (- b (abs (str.len a)))))
+(assert (not (= (str.indexof a "BBBBBBB" (- b 30)) (- 1))))
+(check-sat)

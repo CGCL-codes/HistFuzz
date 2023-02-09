@@ -1,0 +1,5 @@
+(declare-const i3 Int)
+(declare-const Str10 String)
+(declare-const Str12 String)
+(assert (or (str.contains Str12 Str10) (>= i3 0)))
+(check-sat)

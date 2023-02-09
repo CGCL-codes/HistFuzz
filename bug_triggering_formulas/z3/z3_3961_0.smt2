@@ -1,0 +1,8 @@
+(declare-fun minus (Nat Nat) Nat)
+(declare-fun nat-to-int (Nat) Int)
+(declare-fun drop (Nat Lst) Lst)
+(declare-fun take (Nat Lst) Lst)
+(assert (forall ((x Nat) (y Nat)) (=> (= 0 (nat-to-int y)) (= x y))))
+(assert (forall ((x Nat) (y Nat)) (= (nat-to-int (minus x y)) (ite (< 0 0) 0 (- 0 (nat-to-int y))))))
+(assert (not (forall ((n Nat) (m Nat) (xs Lst)) (= (drop n (take m xs)) (take (minus m n) (drop n xs))))))
+(check-sat)

@@ -1,0 +1,6 @@
+(declare-const r5 Real)
+(declare-const r17 Real)
+(check-sat)
+(declare-const r19 Real)
+(assert (xor true false true true true false false (distinct 0.0 r17 r5) false))
+(check-sat)

@@ -1,0 +1,6 @@
+(declare-fun _substvar_34_ () Real)
+(declare-fun _substvar_53_ () Bool)
+(declare-const r11 Real)
+(declare-const r14 Real)
+(assert (< 15.744 (* r14 r11 _substvar_34_) r11))
+(check-sat)

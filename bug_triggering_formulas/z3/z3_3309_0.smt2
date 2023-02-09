@@ -1,0 +1,8 @@
+(declare-const v0 Bool)
+(declare-const v7 Bool)
+(declare-const v12 Bool)
+(declare-const r0 Real)
+(assert (xor false (is_int r0) v0 true true true v7 v12))
+(check-sat)
+(assert (= true true true true true v0))
+(check-sat)

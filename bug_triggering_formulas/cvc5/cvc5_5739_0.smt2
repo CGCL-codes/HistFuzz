@@ -1,0 +1,5 @@
+(declare-fun a () Float32)
+(declare-fun b () (_ BitVec 32))
+(assert (forall ((c (_ BitVec 32))) (not (xor (= a (fp ((_ extract 31 31) c) ((_ extract 30 23) c) ((_ extract 22 0) c))) (= (_ bv0 32) (bvxnor (_ bv134217728 32) ((_ extract 31 0) (bvor (_ bv8388608 64) (bvand (_ bv8388607 64) ((_ sign_extend 32) c)))))) (bvsge ((_ zero_extend 32) (bvand (_ bv2147483647 32) c)) (_ bv2139095040 64)) (not (= (_ bv0 32) (bvand (_ bv2147483647 32) c))) (not (= (bvsmod (_ bv1 32) (bvadd (bvashr c (_ bv23 32)) (_ bv4294967169 32))) (_ bv0 32)))))))
+(assert (= (_ bv0 32) (bvmul (_ bv64 32) b)))
+(check-sat)

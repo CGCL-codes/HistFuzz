@@ -1,0 +1,6 @@
+(declare-fun a () String)
+(declare-fun b () String)
+(declare-fun c () String)
+(assert (distinct (str.++ a b) (str.++ b a) c))
+(assert (distinct a c))
+(check-sat)

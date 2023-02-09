@@ -1,0 +1,8 @@
+(declare-const i0 Int)
+(declare-const Str0 String)
+(declare-const Str6 String)
+(assert (>= 0 (mod i0 (* (div i0 (- i0)) (div i0 (- i0)) (- i0) i0))))
+(push)
+(assert (>= 0 (- (mod (- i0) (* (div i0 (- i0)) (div i0 (- i0)) (- i0) i0)))))
+(assert (distinct Str0 Str6 ""))
+(check-sat)

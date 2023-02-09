@@ -1,0 +1,5 @@
+(declare-fun i () Int)
+(declare-fun s () String)
+(declare-fun i1 () Int)
+(assert (str.contains (str.from_int i) (str.++ s "F" (str.from_int i1) "J" s)))
+(check-sat)

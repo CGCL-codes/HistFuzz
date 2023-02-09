@@ -1,0 +1,6 @@
+(declare-const v7 Bool)
+(assert (not (exists ((q0 (_ BitVec 2)) (q1 (_ BitVec 2)) (q2 (_ BitVec 10)) (q3 (_ BitVec 10)) (q4 (_ BitVec 2)) (q5 Bool)) (xor q5 q5 q5 v7 q5 true true true))))
+(push)
+(check-sat)
+(pop)
+(check-sat)

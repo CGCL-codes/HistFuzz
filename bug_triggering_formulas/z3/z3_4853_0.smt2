@@ -1,0 +1,8 @@
+(declare-fun r0 () Real)
+(declare-fun r2 () Real)
+(declare-fun r7 () Real)
+(declare-fun r8 () Real)
+(declare-fun r9 () Real)
+(declare-fun r12 () Real)
+(assert (and (>= r8 0.0) (>= 0.0 r2) (>= (+ r7 r2 r8) r9) (> 0.0 (/ 1.0 r9))))
+(check-sat)

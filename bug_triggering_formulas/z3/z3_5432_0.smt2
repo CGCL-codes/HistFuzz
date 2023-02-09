@@ -1,0 +1,5 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(assert (or (= a (* b b)) (= b 1)))
+(assert (not (distinct (* a a) (* b b b b))))
+(check-sat)

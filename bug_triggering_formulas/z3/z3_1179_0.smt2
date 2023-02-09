@@ -1,0 +1,5 @@
+(check-sat)
+(declare-fun int0 () Int)
+(declare-fun strInt0 () String)
+(assert (= strInt0 (Int0oString int0)))
+(check-sat)

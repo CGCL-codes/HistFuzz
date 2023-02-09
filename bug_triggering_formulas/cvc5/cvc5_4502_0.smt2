@@ -1,0 +1,5 @@
+(declare-const a Int)
+(declare-const b Real)
+(declare-fun g () (c Int Real))
+(assert (= (= g (i a b)) true))
+(check-sat)

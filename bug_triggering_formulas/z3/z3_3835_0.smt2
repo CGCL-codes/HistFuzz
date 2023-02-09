@@ -1,0 +1,7 @@
+(assert (forall ((q19 Int) (q20 Int) (q21 Int) (q22 Bool)) false))
+(assert (forall ((q23 Int) (q24 Int) (q25 Bool)) false))
+(assert (forall ((q32 Int) (q33 Int) (q34 Int) (q35 Bool)) false))
+(assert (forall ((q43 Int) (q44 Int) (q45 Int) (q46 Bool)) false))
+(assert (forall ((q112 Int) (q113 Bool)) false))
+(assert (forall ((q120 Int) (q121 Bool)) (> (mod q120 (- 0 505 0)) q120)))
+(check-sat)

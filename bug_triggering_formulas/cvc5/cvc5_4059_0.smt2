@@ -1,0 +1,6 @@
+(declare-const _14-2 (_ BitVec 14))
+(assert (forall ((q0 Bool) (q1 (_ BitVec 14)) (q2 (_ BitVec 14))) (=> (bvult q2 q2) false)))
+(assert (or (= (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14)))) (= (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14)))) (= (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))))))
+(assert (or (= (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14)))) (= (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14)))) (= (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))))))
+(assert (or (= (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14)))) (= (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))) (concat _14-2 (bvsrem (_ bv0 14) (_ bv0 14))))))
+(check-sat)

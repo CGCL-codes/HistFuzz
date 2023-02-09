@@ -1,0 +1,5 @@
+(declare-const _21-0 (_ BitVec 21))
+(declare-const arr0 (Array (_ BitVec 21) (_ BitVec 11)))
+(declare-const arr1 (Array Real (Array (_ BitVec 21) (_ BitVec 11))))
+(assert (not (exists ((q12 (_ BitVec 11)) (q13 (Array Real (Array (_ BitVec 21) (_ BitVec 11)))) (q14 (Array (_ BitVec 21) (_ BitVec 11)))) (=> (= q13 arr1 q13) (distinct q14 arr0 (store arr0 _21-0 (bvnot #b01011101001)) arr0 q14)))))
+(check-sat)

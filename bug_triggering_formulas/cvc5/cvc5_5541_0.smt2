@@ -1,0 +1,7 @@
+(push)
+(assert (wand false true))
+(check-sat)
+(pop)
+(declare-fun v49 () Bool)
+(assert (pto 0 true))
+(check-sat)

@@ -1,0 +1,6 @@
+(declare-fun x () (Seq Int))
+(declare-fun y () (Seq Int))
+(declare-fun f ((Seq Int)) (Seq Bool))
+(assert (distinct x y))
+(assert (= (f x) (f y)))
+(check-sat)

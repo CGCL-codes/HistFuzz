@@ -1,0 +1,6 @@
+(declare-const x Int)
+(declare-const a1 (Array Int Int))
+(assert (= (select a1 x) x))
+(assert (= (select a1 5) 0))
+(assert (forall ((y Int)) (= (select a1 y) y)))
+(check-sat)

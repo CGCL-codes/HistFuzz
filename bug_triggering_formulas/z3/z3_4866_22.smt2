@@ -1,0 +1,5 @@
+(declare-fun i3 () Int)
+(declare-fun i4 () Int)
+(declare-fun str6 () String)
+(assert (= str6 (str.++ (str.substr str6 0 (- 0 i4 i4 i3 (- i4 1) 1)) (str.from_int 0) (str.substr str6 i4 (- 0 i4 i4 i3 (- i4 1))))))
+(check-sat)

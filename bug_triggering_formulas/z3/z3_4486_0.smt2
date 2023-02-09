@@ -1,0 +1,5 @@
+(declare-fun a () String)
+(declare-fun b () String)
+(declare-fun c () Int)
+(assert (= (str.replace "" (str.at "" c) "") (str.replace a b "")))
+(check-sat)

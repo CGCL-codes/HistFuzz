@@ -1,0 +1,5 @@
+(declare-fun P (Int) Bool)
+(declare-fun Q (Int Int) Bool)
+(assert (forall ((x Int) (y Int) (z Int)) (=> (and (Q z y) (not (= y 91)) (<= z 99)) (P x))))
+(assert (forall ((x Int) (y Int)) (=> (and (= (+ y) x) (>= x 101)) (Q x y))))
+(check-sat)

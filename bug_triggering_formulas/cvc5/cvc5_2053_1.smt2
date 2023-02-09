@@ -1,0 +1,5 @@
+(declare-const _14-0 (_ BitVec 14))
+(declare-const _5-0 (_ BitVec 5))
+(assert (or (= _14-0 _14-0 _14-0) true true true true true true true true true true))
+(assert (or true true true true true (= _5-0 _5-0 _5-0) true true true true true))
+(check-sat)

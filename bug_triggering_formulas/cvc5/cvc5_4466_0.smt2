@@ -1,0 +1,7 @@
+(declare-fun _substvar_266_ () Bool)
+(declare-const i3 Int)
+(declare-const i16 Int)
+(declare-const v71 Bool)
+(assert (> i3 0))
+(assert (or _substvar_266_ v71 (= i16 (div (* i16 i3) 16))))
+(check-sat)

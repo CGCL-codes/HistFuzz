@@ -1,0 +1,6 @@
+(declare-sort S0 0)
+
+(declare-const arr--2349511016978192737_-2349511016978192737-0 (Array Int Int))
+(declare-const arr--4849086706151507340_6946178733938266000-0 (Array (Array Int Int) S0))
+(assert (forall ((q17 (Array Int Int)) (q18 (Array (Array Int (Array Int Int)) (Array (Array Int Int) Int))) (q19 S0)) (= q19 (select arr--4849086706151507340_6946178733938266000-0 arr--2349511016978192737_-2349511016978192737-0) (select arr--4849086706151507340_6946178733938266000-0 arr--2349511016978192737_-2349511016978192737-0) q19)))
+(check-sat)

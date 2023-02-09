@@ -1,0 +1,6 @@
+(declare-fun st6 () (Set Int))
+(declare-fun st12 () (Set Int))
+(declare-const i12 Int)
+(assert (> (card st6) 231))
+(assert (xor true true (member (- i12 0 83) st12) true false))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-fun a () Int)
+(assert (> a 0))
+(declare-fun a () Int)
+(assert (> a 0))
+(check-sat)

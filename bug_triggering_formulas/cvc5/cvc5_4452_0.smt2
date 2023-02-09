@@ -1,0 +1,7 @@
+(declare-const v1 Bool)
+(declare-const v5 Bool)
+(declare-const v7 Bool)
+(assert (not (exists ((q0 Bool)) (xor v5 true true true q0 v7 v1))))
+(push)
+(assert (exists ((q11 Bool) (q12 Bool)) v1))
+(check-sat)

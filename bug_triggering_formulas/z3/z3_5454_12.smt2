@@ -1,0 +1,7 @@
+(declare-fun r3 () Real)
+(declare-fun arr0 () (Array Real Bool))
+(declare-fun arr1 () (Array (Array Real Bool) Real))
+(assert (= arr0 (store arr0 r3 true)))
+(assert (< 57932588.0 (* (select arr1 arr0) (select arr1 arr0))))
+(assert (= (store arr0 57932588.0 true) (store arr0 1.0 false)))
+(check-sat)

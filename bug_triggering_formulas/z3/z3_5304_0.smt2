@@ -1,0 +1,10 @@
+(declare-sort S0)
+
+(declare-fun arr0 () (Array Bool (Array (Array Bool Int) Int)))
+(declare-fun arr1 () (Array (Array Bool (Array (Array Bool Int) Int)) Int))
+(declare-fun arr2 () (Array (Array (Array Bool Int) (Array (Array Bool Int) Int)) (Array Bool (Array (Array Bool Int) Int))))
+(declare-fun arr3 () (Array (Array (Array (Array Bool Int) (Array (Array Bool Int) Int)) (Array Bool (Array (Array Bool Int) Int))) (Array (Array Bool (Array (Array Bool Int) Int)) Int)))
+(declare-fun arr4 () (Array (Array Bool Int) (Array (Array (Array Bool Int) Int) (Array S0 (Array (Array (Array Bool Int) (Array (Array Bool Int) Int)) S0)))))
+(declare-fun arr5 () (Array (Array (Array (Array (Array Bool Int) (Array (Array Bool Int) Int)) (Array Bool (Array (Array Bool Int) Int))) (Array (Array Bool (Array (Array Bool Int) Int)) Int)) (Array (Array Bool Int) (Array (Array (Array Bool Int) Int) (Array S0 (Array (Array (Array Bool Int) (Array (Array Bool Int) Int)) S0))))))
+(assert (= arr5 (store arr5 (store arr3 arr2 (store arr1 arr0 1)) arr4)))
+(check-sat)

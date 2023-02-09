@@ -1,0 +1,5 @@
+(declare-const a (_ BitVec 1))
+(declare-const b (_ BitVec 2))
+(assert (or true (= a a a)))
+(assert (or true (= b b b)))
+(check-sat)

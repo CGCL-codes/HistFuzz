@@ -1,0 +1,5 @@
+(declare-fun skoZ () Real)
+(declare-fun skoY () Real)
+(declare-fun skoX () Real)
+(assert (> (+ (- (- (+ skoX skoZ skoZ) (- (* skoZ (+ (- 6) skoZ)) skoY) (+ skoX skoZ skoZ))) skoY (- (- (+ skoX skoZ skoZ) (- (* skoZ (+ (- 6) skoZ)) skoY) (+ skoX skoZ skoZ)))) (- (* skoY skoY) (* (* (* skoZ (mod (abs (to_int (- skoZ))) (abs (to_int (- skoZ))))) (- skoY (- (* skoZ (+ (- 6) skoZ)) skoY))) (* (* skoZ (mod (abs (to_int (- skoZ))) (abs (to_int (- skoZ))))) (- skoY (- (* skoZ (+ (- 6) skoZ)) skoY)))))))
+(check-sat)

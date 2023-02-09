@@ -1,0 +1,5 @@
+(declare-fun a () (_ BitVec 1))
+(declare-fun b () (_ BitVec 1))
+(declare-fun c () (_ BitVec 1))
+(assert (= (bvand (_ bv0 1)) (bvxnor (ite (= a (ite (= b c) (_ bv1 1) (_ bv0 1))) (_ bv1 1) (_ bv0 1)) (_ bv1 1) (_ bv0 1))))
+(check-sat)

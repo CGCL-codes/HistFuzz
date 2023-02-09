@@ -1,0 +1,15 @@
+(declare-sort m)
+
+(declare-sort n)
+
+(declare-fun o () m)
+(declare-fun x () n)
+(declare-fun d () a)
+(declare-fun u () (Array n a))
+(declare-fun h () (Array n c2))
+(declare-fun v () (Array n c2))
+(declare-fun w () n)
+(assert (forall ((e n)) (= (= d f) (= (select u e) (ite (= e w) f j)))))
+(assert (forall ((e n)) (= (= (k (select v e)) p) (= (k (select h e)) q))))
+(assert (= (ite (= d f) (ite (= (= d j) (= (= o (c3 (select v x))) (forall ((e n)) (= (k (select h e)) t)))) f j) (ite (forall ((e n)) (= (= (k (select h e)) t) (= d f))) f j)) f))
+(check-sat)

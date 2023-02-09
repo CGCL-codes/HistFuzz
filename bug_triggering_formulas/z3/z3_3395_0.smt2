@@ -1,0 +1,5 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(assert (not (exists ((d Real)) (xor (<= 0 d a) (= (mod (to_int d) (to_int c)) 1) (= c (div 1 (to_int b)))))))
+(check-sat)

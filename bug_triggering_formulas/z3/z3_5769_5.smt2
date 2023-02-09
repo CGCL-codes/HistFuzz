@@ -1,0 +1,8 @@
+(declare-fun a () Float64)
+(declare-fun b () Float64)
+(declare-fun c () RoundingMode)
+(check-sat)
+(assert (= a b))
+(check-sat)
+(assert (= b ((_ to_fp 11 53) c 0.00000000001)))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-fun a () String)
+(declare-fun b () String)
+(declare-fun aa () String)
+(assert (distinct (str.substr b (str.len a) (str.len aa)) ""))
+(check-sat)

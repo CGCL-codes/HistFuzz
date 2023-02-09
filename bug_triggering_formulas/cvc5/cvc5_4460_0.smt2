@@ -1,0 +1,5 @@
+(declare-fun a () (Set (Tuple Int Int)))
+(declare-fun b () (Set (Tuple Int Int)))
+(assert (= a (insert (mkTuple 0 1) (singleton (mkTuple 0 0)))))
+(assert (distinct b (tclosure a)))
+(check-sat)

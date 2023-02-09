@@ -1,0 +1,7 @@
+(declare-fun a () String)
+(declare-fun b () String)
+(declare-fun c () String)
+(declare-fun d () String)
+(assert (not (= (str.suffixof (str.replace "B" (str.replace a b (str.at a (str.len a))) c) d) (str.suffixof "B" (str.replace (str.replace a b (str.at a (str.len a))) (str.replace a b (str.at a (str.len a))) d)))))
+(assert (= a (str.++ b c)))
+(check-sat)

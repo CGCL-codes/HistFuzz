@@ -1,0 +1,7 @@
+(declare-fun divisor8 () (_ BitVec 8))
+(declare-fun divisor16 () (_ BitVec 16))
+(declare-fun res () (_ BitVec 8))
+(assert (= divisor16 ((_ sign_extend 8) divisor8)))
+(assert (= res ((_ extract 7 0) (bvsdiv #x05dc divisor16))))
+(assert (not (distinct res #x01)))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-fun a () String)
+(assert (str.in_re (str.++ "AB" a) (re.inter (re.comp (str.to_re "AB")) (re.* (re.diff (str.to_re "AB") (str.to_re ""))))))
+(check-sat)
+(assert (str.in_re (str.++ "AB" a) (re.inter (re.comp (str.to_re "AB")) (re.* (re.diff (str.to_re "AB") (str.to_re ""))))))
+(check-sat)

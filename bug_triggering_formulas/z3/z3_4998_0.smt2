@@ -1,0 +1,5 @@
+(declare-fun d () a)
+(declare-fun j (a a) a)
+(assert (forall ((e a) (f a)) (distinct (j e f) (ite ((_ is i) e) f (ite ((_ is b) e) (b (j (c e) f)) d)))))
+(assert (exists ((g a) (h a)) (not (and (or (distinct (j (b h) (c g)) (b (j h (c g)))))))))
+(check-sat)

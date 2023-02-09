@@ -1,0 +1,5 @@
+(declare-fun v4 () Bool)
+(assert (wand true true))
+(check-sat)
+(assert (pto 1 0))
+(check-sat)

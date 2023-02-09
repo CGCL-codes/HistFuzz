@@ -1,0 +1,6 @@
+(declare-fun _57-0 () (_ BitVec 1))
+(declare-fun _1-0 () (_ BitVec 1))
+(assert (bvugt _1-0 _57-0))
+(push)
+(assert (= _57-0 (_ bv1 1)))
+(check-sat)

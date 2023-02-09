@@ -1,0 +1,6 @@
+(declare-fun i17 () Int)
+(declare-fun arr0 () (Array Int Bool))
+(check-sat)
+(declare-fun arr1 () (Array Int Bool))
+(assert (= (store arr0 467 true) (store (store (store arr0 467 false) i17 true) 0 (exists ((q12 (Array Bool Int)) (q13 Int) (q14 (Array Int Bool)) (q15 Bool) (q16 (Array Bool Int)) (q17 Bool) (q18 (Array Bool Int))) q17)) arr1 (store arr0 467 true) arr0))
+(check-sat)

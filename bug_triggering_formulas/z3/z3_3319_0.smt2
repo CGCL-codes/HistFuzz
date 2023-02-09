@@ -1,0 +1,6 @@
+(declare-const r0 Real)
+(declare-const r2 Real)
+(declare-const r4 Real)
+(declare-const r5 Real)
+(assert (< 0.0 r0 (/ r2 (* (/ r4 (/ 0.9 r5)) r0 7.0 r0))))
+(check-sat)

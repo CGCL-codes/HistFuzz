@@ -1,0 +1,6 @@
+(declare-fun a (Int Int) Int)
+(declare-fun b ((Array Int (Array Int Int))) (Array Int (Array Int Int)))
+(declare-fun c (Int Int Int) (Array Int (Array Int Int)))
+(assert (forall ((d Int) (e Int)) (= (<= d e) (= (select (select (c 0 (a e e) e) d) e) e))))
+(assert (forall ((f Int) (g Int) (h (Array Int (Array Int Int))) (i Int)) (let ((j (b h))) (= (or (<= f i) (<= g i)) (= 0 (select (j g) f))))))
+(check-sat)

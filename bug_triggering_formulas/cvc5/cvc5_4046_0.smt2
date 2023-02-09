@@ -1,0 +1,8 @@
+(declare-fun b () String)
+(assert (= (str.len (str.replaceall b "B" "CC")) 1))
+(assert (> (str.len b) 1))
+(check-sat)
+(declare-fun b () String)
+(assert (= (str.len (str.replaceall b "B" "CC")) 1))
+(assert (> (str.len b) 1))
+(check-sat)

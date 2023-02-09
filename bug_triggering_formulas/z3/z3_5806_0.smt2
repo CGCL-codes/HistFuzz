@@ -1,0 +1,6 @@
+(declare-const x Int)
+(declare-fun v () String)
+(declare-fun e () String)
+(assert (or (= 1 x) (str.in_re (str.++ v "B") (re.* (str.to_re (str.substr v 0 x))))))
+(assert (exists ((E String)) (= 1 (str.len (str.substr e (+ 1 1) 1)))))
+(check-sat)

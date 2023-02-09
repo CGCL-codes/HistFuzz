@@ -1,0 +1,8 @@
+(declare-fun a () Real)
+(push)
+(assert (= a 1.0))
+(assert (distinct (sqrt 1.0) 0))
+(check-sat)
+(pop)
+(assert (distinct (sqrt 1.0) (sqrt a)))
+(check-sat)

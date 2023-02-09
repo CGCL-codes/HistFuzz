@@ -1,0 +1,6 @@
+(declare-fun i7 () Int)
+(declare-fun str1 () String)
+(declare-fun str2 () String)
+(declare-fun str5 () String)
+(assert (= str2 (str.++ str5 (str.substr str5 (abs i7) (str.to_int (str.++ str1 (str.substr str2 i7 1)))))))
+(check-sat)

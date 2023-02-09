@@ -1,0 +1,7 @@
+(declare-fun a () Real)
+(declare-fun b () (Array Int Real))
+(declare-fun c () (Array Int (Array Int Real)))
+(declare-fun k () (Array Int Real))
+(declare-fun d () (Array Int Real))
+(assert (xor (and (forall ((e Int) (f Int)) (= 0 a)) (forall ((l Int)) (= (select b l) a)) (forall ((g Int)) (= (select k g) a)) (forall ((h Int)) (= (= h 0) (= (select d h) a)))) (forall ((i Int) (j Int)) (= (select (select c i) j) a))))
+(check-sat)

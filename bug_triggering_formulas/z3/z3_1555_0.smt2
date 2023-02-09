@@ -1,0 +1,5 @@
+(declare-fun s0 () String)
+(declare-fun s1 () String)
+(declare-fun s2 () Int)
+(assert (not s15))
+(check-sat)

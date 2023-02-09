@@ -1,0 +1,5 @@
+(declare-const r2 Real)
+(declare-const r3 Real)
+(declare-const v4 Bool)
+(assert (or v4 (> r3 8970947220.0 r3)))
+(check-sat)

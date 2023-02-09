@@ -1,0 +1,6 @@
+(declare-fun st4 () (Set Int))
+(declare-fun st12 () (Set Int))
+(declare-fun st14 () (Set Int))
+(assert (< (card st4) 52))
+(assert (> (card (intersection (complement st12) st14)) 942))
+(check-sat)

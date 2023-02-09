@@ -1,0 +1,8 @@
+(declare-const a Int)
+(declare-const d Int)
+(declare-const b Int)
+(assert (<= a 0))
+(assert (>= a -1))
+(assert (>= (+ (* 120 a) (* (- 120) a d)) 0))
+(assert (not (<= (* b (+ (* 120 a) (* (- 120) a d))) 1)))
+(check-sat)

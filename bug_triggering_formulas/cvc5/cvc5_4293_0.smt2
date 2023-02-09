@@ -1,0 +1,8 @@
+(declare-fun b () Int)
+(declare-fun c (Int) Bool)
+(declare-fun d (Int) Bool)
+(declare-fun e (Int Int) Bool)
+(assert (forall ((f Int)) (= (c f) (= (distinct f b) (d f)))))
+(assert (d b))
+(assert (or (exists ((i Int)) (and (c i) (= i b))) (exists ((j Int) (f Int)) (distinct (distinct j f) (= (e j f) (distinct (distinct f b) (e f j)))))))
+(check-sat)

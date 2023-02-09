@@ -1,0 +1,3 @@
+(declare-fun v6 () (_ BitVec 32))
+(assert (forall ((v7 (_ BitVec 32))) (exists ((a1 (Array (_ BitVec 32) (_ BitVec 8)))) (not (= (_ bv0 1) (bvor (bvcomp (_ bv0 2) ((_ extract 1 0) v7)) (bvashr (bvnot (ite (= (store (store (store (store a1 v7 ((_ extract 15 8) v7)) (_ bv1 32) ((_ extract 7 0) v6)) (bvadd v6 (_ bv1 32)) ((_ extract 15 8) v6)) v6 ((_ extract 31 24) v6)) (store (store (store (store a1 (_ bv1 32) ((_ extract 7 0) v6)) (bvadd v6 (_ bv1 32)) ((_ extract 15 8) v6)) v6 ((_ extract 31 24) v6)) v7 ((_ extract 31 24) v7))) (_ bv1 1) (_ bv0 1))) (bvcomp (_ bv0 2) ((_ extract 1 0) v6)))))))))
+(check-sat)

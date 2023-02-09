@@ -1,0 +1,6 @@
+(declare-fun x () Int)
+(declare-fun p (Int) Int)
+(declare-fun x0 () Int)
+(assert (> (p x0) 1))
+(assert (and (forall ((i Int)) (=> (> i 0) (= (p i) (* 2 (p (- i 1))))))))
+(check-sat)

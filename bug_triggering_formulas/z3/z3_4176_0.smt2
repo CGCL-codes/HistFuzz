@@ -1,0 +1,5 @@
+(declare-const v1 Bool)
+(declare-const i4 Int)
+(assert (xor true true true true v1 false true v1 (= (mod i4 989) 0) true))
+(assert (> 0 i4))
+(check-sat)

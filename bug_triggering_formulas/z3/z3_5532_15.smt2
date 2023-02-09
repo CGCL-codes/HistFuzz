@@ -1,0 +1,6 @@
+(declare-fun a () (_ BitVec 32))
+(declare-fun b () (_ BitVec 32))
+(declare-fun c () (_ BitVec 32))
+(declare-fun g () (_ BitVec 32))
+(assert (not (=> (ite d (ite (ite d (not (=> true d)) (=> true (=> (=> true d) (not (=> true d))))) (ite d (not (=> true d)) (=> true (=> (=> true d) (not (=> true d))))) (ite d (not (=> true d)) (=> true (=> (=> true d) (not (=> true d)))))) (ite (ite d (not (=> true d)) (=> true (=> (=> true d) (not (=> true d))))) (ite d (not (=> true d)) (=> true (=> (=> true d) (not (=> true d))))) (ite d (not (=> true d)) (=> true (=> (=> true d) (not (=> true d))))))) d)))
+(check-sat)

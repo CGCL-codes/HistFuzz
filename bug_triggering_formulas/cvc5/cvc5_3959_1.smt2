@@ -1,0 +1,6 @@
+(declare-const v10 Bool)
+(declare-const i12 Int)
+(declare-const i16 Int)
+(push)
+(assert (=> (<= (mod i12 38) i16) v10))
+(check-sat)

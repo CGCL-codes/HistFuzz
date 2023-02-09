@@ -1,0 +1,5 @@
+(declare-fun _substvar_87_ () Bool)
+(declare-const r10 Real)
+(assert (exists ((q1 Bool) (q2 Real) (q3 Bool)) (> r10 6.0)))
+(assert _substvar_87_)
+(check-sat)

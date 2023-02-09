@@ -1,0 +1,7 @@
+(declare-const i1 Int)
+(declare-const i2 Int)
+(declare-const i3 Int)
+(declare-const i4 Int)
+(declare-const i6 Int)
+(assert (= (+ 0 0 i1 i6) 429))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-fun a () String)
+(declare-fun b () String)
+(assert (str.in_re (str.substr a 0 (str.len b)) (re.opt (str.to_re "t"))))
+(assert (distinct b ""))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-fun inv-real3 (Real Real Real Real) Bool)
+(assert (forall ((q52 Real) (q53 Real) (q54 Real) (q55 Real) (q56 Real) (q57 Real) (q58 Real) (q59 Real) (q60 Real) (q61 Real) (q62 Real) (q63 Real) (q64 Real) (q65 Real) (q66 Real) (q67 Bool)) (inv-real3 55536653727.0 4051.0 0.0 0.0)))
+(assert (forall ((q226 Real) (q227 Real) (q228 Real) (q229 Real) (q230 Real) (q231 Bool)) true))
+(assert (forall ((q455 Real) (q456 Real) (q457 Real) (q458 Real) (q459 Real) (q460 Real) (q461 Real) (q462 Real) (q463 Real) (q464 Real) (q465 Real) (q466 Real) (q467 Real) (q468 Bool)) (=> (inv-real3 0.0 0.0 0.0 0.0) q468)))
+(check-sat)

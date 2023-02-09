@@ -1,0 +1,5 @@
+(assert (distinct 0 (mod 0 0)))
+(check-sat)
+(check-sat)
+(check-sat)
+(check-sat)

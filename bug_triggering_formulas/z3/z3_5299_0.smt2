@@ -1,0 +1,7 @@
+(declare-fun f0 (Real Real) Real)
+(declare-fun v1 () Real)
+(declare-fun v2 () Real)
+(declare-fun l7 () Bool)
+(assert (ite l7 true (= 1.0 (ite (= 0 (f0 0.0 1.0)) 1.0 (f0 0.0 (* v2 (- v1)))))))
+(assert (= 1.0 (f0 0.0 (* v1 v2 (- 1.0)))))
+(check-sat)

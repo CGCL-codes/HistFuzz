@@ -1,0 +1,8 @@
+(declare-fun a () Int)
+(declare-fun b () Int)
+(declare-fun c () Int)
+(assert (distinct a b))
+(assert (distinct a c))
+(assert (<= 0 a 8))
+(assert (<= 0 b 8))
+(check-sat)

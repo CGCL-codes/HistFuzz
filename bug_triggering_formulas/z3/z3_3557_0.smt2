@@ -1,0 +1,10 @@
+(define-sort FPN () (_ FloatingPoint 11 53))
+
+(declare-fun b () FPN)
+(declare-fun c () FPN)
+(declare-fun d () FPN)
+(assert (= b (fp #b1 #b00001100001 #b0100111001011111011101101111000001100101111001101110)))
+(assert (distinct c (fp #b1 #b01101101100 #b0111010000010010101100101111011100111100010001000110)))
+(assert (= d (fp #b0 #b01101101100 #b0111010000010010101100101111011100111100010001000110)))
+(assert (not (distinct (fp.sub roundNearestTiesToEven b c) d)))
+(check-sat)

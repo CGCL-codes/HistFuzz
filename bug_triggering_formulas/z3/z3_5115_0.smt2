@@ -1,0 +1,6 @@
+(declare-fun v6 () Bool)
+(declare-fun i0 () Int)
+(declare-fun arr0 () (Array Int Bool))
+(push)
+(assert (not (= (store arr0 1 false) (store (store (store arr0 1 v6) i0 false) 0 false))))
+(check-sat)

@@ -1,0 +1,7 @@
+(declare-const a String)
+(assert (str.in_re (str.replace_all (str.++ a (ite (= a "") a "") "ab") (str.++ a (ite (= a "") a "") "ab") "1") (re.* (str.to_re (str.from_int (- (+ (str.len a) 1)))))))
+(assert (= a ""))
+(check-sat)
+(assert (str.in_re (str.replace_all (str.++ a (ite (= a "") a "") "ab") (str.++ a (ite (= a "") a "") "ab") "1") (re.* (str.to_re (str.from_int (- (+ (str.len a) 1)))))))
+(assert (= a ""))
+(check-sat)

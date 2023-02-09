@@ -1,0 +1,5 @@
+(declare-fun q1 () Real)
+(declare-fun q2 () Real)
+(declare-fun q3 () Real)
+(assert (< q1 (/ 145 q2) q3))
+(check-sat)

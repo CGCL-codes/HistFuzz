@@ -1,0 +1,6 @@
+(declare-fun a () Int)
+(declare-fun b () Int)
+(declare-fun c () (Set Int))
+(assert (= (card c) (- a b)))
+(assert (>= a b))
+(check-sat)

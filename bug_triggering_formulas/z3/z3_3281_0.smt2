@@ -1,0 +1,8 @@
+(declare-const v0 Bool)
+(declare-const v1 Bool)
+(declare-const v2 Bool)
+(declare-const v4 Bool)
+(declare-const v7 Bool)
+(declare-const v10 Bool)
+(assert (or (bvslt #b1000111111 (bvadd #b1000111111 #b1000111111)) (xor (distinct (bvadd #b1000111111 #b1000111111) #b1000111111) v7 (not v2) (= v4 v2) v8 (bvslt #b1000111111 (bvadd #b1000111111 #b1000111111)) (not v5) (= v4 v2) v10) v1))
+(check-sat)

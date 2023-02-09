@@ -1,0 +1,5 @@
+(declare-const a (_ BitVec 8))
+(declare-const b (_ BitVec 8))
+(declare-const c (_ BitVec 8))
+(assert (and (= a #x04) (= b #x05) (= c #x74)))
+(check-sat)

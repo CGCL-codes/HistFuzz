@@ -1,0 +1,6 @@
+(declare-fun _substvar_46_ () (Array Int Int))
+(declare-fun _substvar_48_ () (Array Int Int))
+(declare-fun _substvar_44_ () Int)
+(declare-const i0 Int)
+(assert (or (= (store _substvar_48_ 20 68) _substvar_46_) (xor true true true true (>= 0 (mod _substvar_44_ 433)) true true (= i0 68) false true)))
+(check-sat)

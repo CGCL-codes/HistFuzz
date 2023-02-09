@@ -1,0 +1,6 @@
+(declare-const Str0 String)
+(declare-const Str2 String)
+(declare-const Str4 String)
+(declare-const Str12 String)
+(assert (not (= Str4 Str12 Str2 Str0 Str2)))
+(check-sat)

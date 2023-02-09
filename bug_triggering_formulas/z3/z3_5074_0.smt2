@@ -1,0 +1,5 @@
+(declare-fun x () String)
+(declare-fun y () String)
+(declare-fun z () Int)
+(assert (not (= (str.substr "B" z (str.indexof x "" (str.len x))) (str.substr "B" z (str.len x)))))
+(check-sat)

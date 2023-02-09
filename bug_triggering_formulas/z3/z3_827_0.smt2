@@ -1,0 +1,6 @@
+(declare-const x Float32)
+(assert (= x ((_ to_fp 8 24) #x807140a7)))
+(declare-const result Float32)
+(assert (= result (fp.roundToIntegral roundNearestTiesToAway x)))
+(assert (= result ((_ to_fp 8 24) #xbf800000)))
+(check-sat)

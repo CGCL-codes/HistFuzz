@@ -1,0 +1,5 @@
+(declare-fun v () (Array Real Real))
+(declare-fun a () Int)
+(push)
+(assert (distinct v (store (store (store v 0.0 (^ 0.0 0.0)) (^ 0.0 0.0) (to_real a)) 2 (^ 0.0 0.0))))
+(check-sat)

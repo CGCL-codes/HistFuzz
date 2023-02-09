@@ -1,0 +1,7 @@
+(declare-const i4 Int)
+(declare-const i8 Int)
+(declare-const i15 Int)
+(assert (= (<= i8 i15) true true true true true (= (- i8) 36) true))
+(check-sat)
+(assert (xor (not (< (div i4 i8) 79)) (> (- 888) i15) true true true true true))
+(check-sat)

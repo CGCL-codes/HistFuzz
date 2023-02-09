@@ -1,0 +1,8 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(declare-fun d () Real)
+(declare-fun f () Real)
+(assert (exists ((e Real)) (and (< 0 (div a (- b d))) (< (/ 0 0) 0))))
+(assert (= (mod c f) b (+ d f)))
+(check-sat)

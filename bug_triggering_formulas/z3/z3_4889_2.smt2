@@ -1,0 +1,6 @@
+(declare-fun a () RoundingMode)
+(declare-fun b () Float64)
+(declare-fun c () Float64)
+(declare-fun d () Float64)
+(assert (= (= d c) (= ((_ to_fp 11 53) a (* 88722839111672996637.0 125000000000000000.0)) b)))
+(check-sat)

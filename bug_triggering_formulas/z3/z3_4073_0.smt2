@@ -1,0 +1,6 @@
+(declare-const a String)
+(declare-const b String)
+(assert (distinct b (str.substr a 0 1)))
+(assert (str.contains "bcd" a))
+(assert (>= (str.len a) 3))
+(check-sat)

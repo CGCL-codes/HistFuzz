@@ -1,0 +1,6 @@
+(assert (not (=> (and (= (- b e) g) (< 0 (- b e)) (< (+ g (/ 0 (* 2.0 (- a d)))) 0)) (< 0.0 (- a d)) (<= 0 h))))
+(assert (= c (mod f i)))
+(check-sat)
+(assert (not (=> (and (= (- b e) g) (< 0 (- b e)) (< (+ g (/ 0 (* 2.0 (- a d)))) 0)) (< 0.0 (- a d)) (<= 0 h))))
+(assert (= c (mod f i)))
+(check-sat)

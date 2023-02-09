@@ -1,0 +1,6 @@
+(declare-fun str1 () String)
+(declare-fun str2 () String)
+(declare-fun str4 () String)
+(assert (= false false false false (distinct (str.to_int (str.++ str4 str1)) 0) false))
+(assert (str.prefixof "Qs" (str.++ (str.++ str4 str1) str2)))
+(check-sat)

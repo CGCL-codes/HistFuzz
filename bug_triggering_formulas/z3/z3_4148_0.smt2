@@ -1,0 +1,6 @@
+(declare-const v0 Bool)
+(declare-const v10 Bool)
+(declare-const v18 Bool)
+(declare-const arr (Array Bool Bool))
+(assert (distinct (store (store arr v10 false) v18 v0) arr (store arr v10 false)))
+(check-sat)

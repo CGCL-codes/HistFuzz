@@ -1,0 +1,6 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(declare-fun f () Real)
+(assert (not (exists ((d Real)) (let ((e a)) (=> (=> (<= d c) (>= (+ b (* d d) (* d f)) 0)) (>= c 0 a 0) (<= f (mod (to_int (* (- 10) a)) 5)) (or (> (+ c a) 0) (= b (* f (+ c a)))))))))
+(check-sat)

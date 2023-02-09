@@ -1,0 +1,7 @@
+(declare-const v2 Bool)
+(declare-const v8 Bool)
+(declare-const r7 Real)
+(declare-const arr-4939808153522215984_7409353480434399274-0 (Array Bool Real))
+(assert (= 62720118125.0 (/ 6622.0 (/ r7 6622.0)) (/ 0.0 0.0)))
+(assert (distinct 2.59 6622.0 224830760.0 (select (store arr-4939808153522215984_7409353480434399274-0 v8 r7) v2)))
+(check-sat)

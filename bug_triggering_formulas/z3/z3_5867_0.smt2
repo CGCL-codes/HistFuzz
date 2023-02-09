@@ -1,0 +1,6 @@
+(declare-const x Bool)
+(declare-const x4 Bool)
+(declare-const x40 Bool)
+(declare-fun t () (_ BitVec 1))
+(assert (xor (= t (_ bv0 1)) x40 x40 x x4 (not x)))
+(check-sat)

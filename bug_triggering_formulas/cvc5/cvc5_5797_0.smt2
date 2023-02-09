@@ -1,0 +1,6 @@
+(push)
+(declare-const id1 String)
+(assert (str.in.re id1 (re.+ (re.union (re.range "\x20" "\x7e") (str.to.re "\x0A") (str.to.re "\x0D")))))
+(assert (not (str.contains id1 "fonts")))
+(check-sat)
+(pop)

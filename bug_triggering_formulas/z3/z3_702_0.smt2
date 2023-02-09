@@ -1,0 +1,3 @@
+(declare-fun R.request.body () Test)
+(assert (let ((a!1 (forall ((i Int)) (let ((a!1 (and (< 0 i) (< i (length (array_integer R.request.body)))))(a!2 (< (select (items (array_integer R.request.body)) (- i 1)) (select (items (array_integer R.request.body)) i)))) (and (=> a!1 a!2) (>= (length (array_integer R.request.body)) 0)))))(a!2 (forall ((__i_1__ Int)) (let ((a!1 (and (<= 0 __i_1__) (< __i_1__ (length (array_integer R.request.body)))))(a!2 (> (select (items (array_integer R.request.body)) __i_1__) 0))(a!3 (< (select (items (array_integer R.request.body)) __i_1__) 40))(a!4 (mod (select (items (array_integer R.request.body)) __i_1__) 8))) (=> a!1 (and a!2 a!3 (= a!4 0))))))) (and (>= (length (array_integer R.request.body)) 4) a!1 a!2)))
+(check-sat)

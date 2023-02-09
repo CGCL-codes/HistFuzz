@@ -1,0 +1,6 @@
+(declare-fun x () (_ FloatingPoint 8 24))
+(declare-fun y () (_ FloatingPoint 8 24))
+(declare-fun z () (_ FloatingPoint 8 24))
+(declare-fun t () (_ FloatingPoint 8 24))
+(assert (and (and (fp.isNormal x) (fp.isNormal y) (fp.isNormal z) (fp.isNormal t)) (and (fp.leq zero t) (fp.leq t one)) (and (fp.leq one x) (fp.leq x y) (fp.leq y four)) (fp.eq z w) (fp.lt z x)))
+(check-sat)

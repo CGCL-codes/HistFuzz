@@ -1,0 +1,5 @@
+(declare-const i0 Int)
+(declare-const i2 Int)
+(declare-const v13 Bool)
+(assert (or (>= i0 (* 355 85 361 i2 63)) v13))
+(check-sat)

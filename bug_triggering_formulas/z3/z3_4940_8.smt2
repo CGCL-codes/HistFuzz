@@ -1,0 +1,8 @@
+(declare-fun a () String)
+(assert (ite (str.prefixof "-" (str.substr a 5 2)) (and (ite (= 1 (str.to_int (str.substr (str.substr a 5 35) 1 (+ (str.len (str.substr a 5 2)) 1)))) false true) (< (str.len (str.substr a 5 35)) 1)) (ite (= (- 1) (str.to_int (str.substr a 5 (- 7 5)))) false true)))
+(assert (distinct (str.at a 4) "-"))
+(assert (<= (ite (str.suffixof "-" (str.substr a 0 4)) 1 (str.to_int (str.substr a 0 4))) 0))
+(assert (ite (str.prefixof "-" (str.substr a 0 4)) (and (ite (= (- 1) (str.to_int (str.substr (str.substr a 0 4) 1 (- (str.len (str.substr a 0 4)) 1)))) false true) (>= (str.len (str.substr a 0 4)) 1)) (ite (= 1 (str.to_int (str.substr a 0 (- 4 0)))) false true)))
+(assert (= (str.len a) 10))
+(assert (<= (ite (str.prefixof "-" (str.substr a 5 2)) (- (str.to_code (str.substr (str.substr a 5 2) 1 (- (str.len (str.substr a 5 2)) 1)))) (str.to_int (str.substr a 5 12))) 0))
+(check-sat)

@@ -1,0 +1,7 @@
+(declare-fun a () Bool)
+(push)
+(assert a)
+(check-sat)
+(assert false)
+(push)
+(check-sat)

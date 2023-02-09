@@ -1,0 +1,5 @@
+(declare-fun a () String)
+(declare-fun b () String)
+(assert (distinct a b))
+(assert (or (distinct (str.len b) 2) (str.in.re a (re.inter (re.+ (str.to.re "a")) (re.comp (re.range "a" "a"))))))
+(check-sat)

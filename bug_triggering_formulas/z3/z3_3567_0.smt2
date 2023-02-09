@@ -1,0 +1,8 @@
+(declare-const v0 Bool)
+(declare-const v3 Bool)
+(declare-const v4 Bool)
+(declare-const v7 Bool)
+(declare-const _15-0 (_ BitVec 15))
+(declare-const _1-0 (_ BitVec 1))
+(assert (or v4 (and v3 (and v7 (=> v3 v7) v4 v0))))
+(check-sat)

@@ -1,0 +1,6 @@
+(declare-fun a () String)
+(declare-fun x () Int)
+(assert (str.contains a "Hello and goodbye!"))
+(assert (= (str.len a) x))
+(assert (not (= (str.indexof a "goodbye" (- (+ x x) 30)) (- 1))))
+(check-sat)

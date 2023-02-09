@@ -1,0 +1,8 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(declare-fun d () Real)
+(declare-fun e () Real)
+(declare-fun f () Real)
+(assert (not (exists ((g Real)) (=> (xor (and (= (div a (- g)) 2.0))) (and (=> (<= 0.0 g b) (<= (div (* c g) d) e)) (= f 2.0))))))
+(check-sat)

@@ -1,0 +1,6 @@
+(declare-fun len (Lst) Nat)
+(declare-fun append (Lst Lst) Lst)
+(assert (forall ((x Lst)) (= (append nil x) x)))
+(assert (forall ((x Nat) (d Lst) (z Lst)) (= (append (cons x d) z) (cons x (append d z)))))
+(assert (not (forall ((x Lst) (d Lst)) (= (len (append x d)) (len (append d x))))))
+(check-sat)

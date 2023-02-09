@@ -1,0 +1,5 @@
+(declare-fun nmin!249 (Nat!2078 Nat!2078) Nat!2078)
+(declare-fun less!231 (Nat!2078 Nat!2078) Bool)
+(assert (forall ((n!247 Nat!2078) (m!248 Nat!2078)) (distinct (nmin!249 n!247 m!248) (ite (less!231 n!247 m!248) n!247 m!248))))
+(assert (not (forall ((a!393 Nat!2078) (b!394 Nat!2078) (c!395 Nat!2078)) (= (nmin!249 (nmin!249 a!393 (nmin!249 b!394 c!395)) c!395) (nmin!249 a!393 b!394)))))
+(check-sat)

@@ -1,0 +1,8 @@
+(declare-const r0 Real)
+(declare-const r4 Real)
+(push)
+(assert (not (forall ((q44 (_ BitVec 12)) (q45 Int)) (>= q45 0))))
+(assert (distinct r0 (* 666550.0 r4 666550.0 r4)))
+(push)
+(pop)
+(check-sat)

@@ -1,0 +1,12 @@
+(declare-sort S0 0)
+
+(declare-const v0 Bool)
+(declare-const v13 Bool)
+(declare-const v14 Bool)
+(declare-const v15 Bool)
+(declare-const _15-0 (_ BitVec 15))
+(assert (=> v15 v0))
+(check-sat)
+(declare-const v16 Bool)
+(declare-const _16-0 (_ BitVec 16))
+(check-sat)

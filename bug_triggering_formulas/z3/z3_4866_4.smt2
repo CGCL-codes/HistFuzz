@@ -1,0 +1,7 @@
+(declare-fun i () Int)
+(declare-fun i3 () Int)
+(declare-fun st () String)
+(declare-fun s () String)
+(assert (< (+ i3 (* i3 2 i 2 i)) 0))
+(assert (distinct st (str.substr st i (* i3 2 i 2 i)) s (str.from_int 1)))
+(check-sat)

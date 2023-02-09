@@ -1,0 +1,7 @@
+(declare-fun uf4_2 (Bool Bool Bool Bool) Bool)
+(declare-fun v1 () Bool)
+(declare-fun v4 () Bool)
+(declare-fun v8 () Bool)
+(declare-fun v10 () Bool)
+(assert (uf4_2 true (and true true true v10) true true))
+(check-sat)

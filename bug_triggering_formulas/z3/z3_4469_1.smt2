@@ -1,0 +1,8 @@
+(declare-const a Unicode)
+(declare-const c Int)
+(declare-fun e () String)
+(assert (= (str.at e c) (seq.unit a)))
+(assert (= 16 (str.len e)))
+(assert (= (str.at e 5) (seq.unit (_ bvChar 0))))
+(assert (= (= (str.indexof (str.substr e 0 (- 16 0)) (seq.unit (_ bvChar 0))) (- 1)) false))
+(check-sat)

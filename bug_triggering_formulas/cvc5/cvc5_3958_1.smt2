@@ -1,0 +1,6 @@
+(declare-const v4 Bool)
+(declare-const v8 Bool)
+(declare-const _21-0 (_ BitVec 21))
+(assert (or (= _21-0 _21-0 _21-0 (_ bv0 21) _21-0) v4))
+(assert (or (= (_ bv0 21) (bvudiv _21-0 _21-0) (_ bv0 21) (_ bv0 21)) v8))
+(check-sat)

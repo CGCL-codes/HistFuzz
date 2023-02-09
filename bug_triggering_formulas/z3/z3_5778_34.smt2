@@ -1,0 +1,7 @@
+(declare-const _e (_ BitVec 16))
+(declare-fun ex () (_ BitVec 32))
+(declare-fun t () (_ BitVec 32))
+(declare-fun e () Bool)
+(assert (or (forall ((x Bool)) (exists ((e Bool)) (forall ((E Bool)) (or (forall ((e Bool)) e) (exists ((E Bool)) (or e (exists ((ex (_ BitVec 32))) (not (bvsle ((_ zero_extend 16) _e) ex))))))))) (forall ((E (_ BitVec 32))) (exists ((x (_ BitVec 32))) (and (exists ((V (_ BitVec 16))) (= ex (_ bv0 32))) (exists ((E Bool)) (or (bvsle x (_ bv0 32)) (exists ((E (_ BitVec 32))) (and (bvsle (bvadd t (bvmul ex (_ bv40 32))) (_ bv4820 32)) e)))))))))
+(assert (forall ((x (_ BitVec 32)) (E (_ BitVec 32))) (bvsle (_ bv0 32) x)))
+(check-sat)

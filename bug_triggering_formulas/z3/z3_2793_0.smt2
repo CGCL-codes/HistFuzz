@@ -1,0 +1,5 @@
+(declare-fun a () Int)
+(declare-fun b () Int)
+(declare-fun c () Bool)
+(assert (let ((d (+ a a))(f (+ b 1))) (let ((e (< (- (* d (ite (>= f 0) f 0))) 0))) (let ((h (- (+ (ite e 1 0) 1)))) (let ((g (- (ite e 2 5) (ite (>= h 0) h (+ h 2))))) (distinct 0 (+ (ite (ite (= g 0) c false) 2 0) 0)))))))
+(check-sat)

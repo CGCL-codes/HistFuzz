@@ -1,0 +1,6 @@
+(declare-fun _substvar_119_ () (Array Int Bool))
+(assert (exists ((q0 Int) (q1 Int) (q2 Int)) (< q0 0)))
+(declare-const arr--5711807376932659217_-3773791259801190506-0 (Array Int Bool))
+(declare-const arr--6996603507760277126_-5711807376932659217-0 (Array (Array Int Bool) Int))
+(assert (>= 51 (select (store arr--6996603507760277126_-5711807376932659217-0 arr--5711807376932659217_-3773791259801190506-0 0) _substvar_119_)))
+(check-sat)

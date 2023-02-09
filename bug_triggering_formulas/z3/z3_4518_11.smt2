@@ -1,0 +1,5 @@
+(declare-fun a () String)
+(assert (= (str.len (str.substr a 0 (str.indexof a "a"))) 0))
+(assert (str.contains a "a"))
+(assert (not (str.contains a "b")))
+(check-sat)

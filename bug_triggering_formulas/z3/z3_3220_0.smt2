@@ -1,0 +1,8 @@
+(declare-fun a () Bool)
+(declare-fun b () Bool)
+(assert (and (xor a b) a b))
+(check-sat)
+(declare-fun a () Bool)
+(declare-fun b () Bool)
+(assert (and (xor a b) a b))
+(check-sat)

@@ -1,0 +1,7 @@
+(declare-fun N () Bool)
+(assert (not (= (_ bv1 1) (bvnot (ite N (_ bv1 1) (_ bv0 1))))))
+(push)
+(assert (not N))
+(check-sat)
+(pop)
+(check-sat)

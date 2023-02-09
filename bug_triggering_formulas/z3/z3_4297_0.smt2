@@ -1,0 +1,5 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(assert (xor (<= (* c (- a)) a b) (<= 0 (* (* a a) (div (to_int b) 0)))))
+(check-sat)

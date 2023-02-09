@@ -1,0 +1,7 @@
+(declare-fun _29-0 () (_ BitVec 1))
+(assert (or (bvuge _29-0 (bvsub (bvxnor _29-0) (_ bv1 1)))))
+(push)
+(pop)
+(assert (bvuge (bvsub _29-0 (bvxnor _29-0 _29-0)) (_ bv1 1)))
+(push)
+(check-sat)

@@ -1,0 +1,6 @@
+(declare-fun a () (_ BitVec 8))
+(declare-fun b () (_ BitVec 8))
+(declare-fun c () (_ BitVec 8))
+(declare-fun d () (_ BitVec 8))
+(assert (let ((e ((_ zero_extend 24) a))(f ((_ zero_extend 24) (_ bv1 8)))(g ((_ zero_extend 24) b))) (let ((h (bvsub g (_ bv48 32)))(i ((_ zero_extend 24) c))) (let ((j (bvsub (bvadd i (bvshl (bvadd h) f)) (_ bv48 32)))) (let ((k (bvadd e (bvshl (bvadd j) f)))) (let ((l (bvsub k (_ bv48 32)))(m ((_ zero_extend 24) d))) (and (= (bvsub k (_ bv37 32)) (_ bv1 32)) (bvule (bvsub m (_ bv40 32)) (_ bv85 32)) (not (= (bvsub k (_ bv45 32)) (_ bv1 32))) (bvsle (_ bv0 32) l))))))))
+(check-sat)

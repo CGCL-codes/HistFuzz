@@ -1,0 +1,5 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(assert (forall ((d Real)) (and (distinct b (mod 0 (div c a))) (= d a 7))))
+(check-sat)

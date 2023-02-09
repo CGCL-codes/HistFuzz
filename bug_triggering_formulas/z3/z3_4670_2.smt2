@@ -1,0 +1,5 @@
+(declare-const i2 Int)
+(declare-const i4 Int)
+(assert (<= (+ (div 214 214) i2) (* i4 61 61)))
+(assert (<= (* i4 61 61) (- 76 i2 483 (- 76 214 483) 483) 483))
+(check-sat)

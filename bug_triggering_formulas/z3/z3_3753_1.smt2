@@ -1,0 +1,5 @@
+(declare-const v5 Bool)
+(declare-fun st10 () (Set Int))
+(assert (> (card (complement (setminus st10 st10))) 0))
+(assert v5)
+(check-sat)

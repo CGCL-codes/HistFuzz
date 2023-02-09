@@ -1,0 +1,5 @@
+(declare-fun a () Float16)
+(declare-fun b () Float16)
+(assert (= a (fp.min (fp #b1 #b00000 #b1110111111) b) (fp.min (fp #b1 #b00000 #b1110111111) (fp #b0 #b00000 #b0000001110))))
+(assert (= a (fp.min (fp #b1 #b00000 #b1110111111) b) (fp.min (fp #b1 #b00000 #b1110111111) (fp #b0 #b00000 #b0000001110))))
+(check-sat)

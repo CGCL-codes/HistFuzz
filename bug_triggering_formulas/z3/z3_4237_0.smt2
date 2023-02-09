@@ -1,0 +1,5 @@
+(declare-const v9 Bool)
+(declare-const r4 Real)
+(declare-const v21 Bool)
+(assert (or v9 v21 v21))
+(check-sat)

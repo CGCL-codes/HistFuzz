@@ -1,0 +1,5 @@
+(declare-fun i2 () Int)
+(declare-fun i7 () Int)
+(assert (= 1 i2))
+(assert (> 1 (- i2 i7)))
+(check-sat)

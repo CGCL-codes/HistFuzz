@@ -1,0 +1,7 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(declare-fun d () Real)
+(declare-fun e () Real)
+(assert (not (exists ((f Real)) (let ((?h (+ (* (- b) f) c))(?i (* (- 11) b))(?j (+ (* (- b) e) c))(?k 0)) (=> (= (<= 3 f e) (>= ?h 10 ?h d)) (>= c a (/ c ?i)) (> b 0.0) (or (< a 0) (> a (/ (* ?j ?j) ?i))))))))
+(check-sat)

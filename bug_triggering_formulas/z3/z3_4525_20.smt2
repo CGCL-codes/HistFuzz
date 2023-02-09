@@ -1,0 +1,8 @@
+(declare-const i1 Int)
+(declare-const i0 Int)
+(declare-const i4 Int)
+(declare-const i7 Int)
+(assert (< 0 4 i0 i7 i4))
+(push)
+(assert (distinct i1 4))
+(check-sat)

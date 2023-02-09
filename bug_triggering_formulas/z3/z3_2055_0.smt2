@@ -1,0 +1,6 @@
+(declare-const s_0 String)
+(assert (> (str.len s_0) 3))
+(check-sat)
+(declare-const s_0 String)
+(assert (> (str.len s_0) 3))
+(check-sat)

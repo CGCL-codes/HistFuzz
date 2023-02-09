@@ -1,0 +1,5 @@
+(declare-fun a_146 () (Array Int Int))
+(declare-fun a_98 () (Array Int Int))
+(declare-fun a_144 () (Array Int Int))
+(assert (and (= a_98 (store a_98 1 0)) (= a_146 (store a_98 0 0)) (not (= a_146 (store a_144 0 0)))))
+(check-sat)

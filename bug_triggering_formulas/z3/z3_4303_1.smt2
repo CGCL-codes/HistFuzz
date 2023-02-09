@@ -1,0 +1,7 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(declare-fun d () Real)
+(assert (distinct b (+ d (div c a))))
+(assert (= a (/ c (- b d)) b))
+(check-sat)

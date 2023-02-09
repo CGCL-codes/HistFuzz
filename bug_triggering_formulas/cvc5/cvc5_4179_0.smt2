@@ -1,0 +1,6 @@
+(declare-fun a () String)
+(assert (= (str.code a) 128))
+(check-sat)
+(declare-fun a () String)
+(assert (= (str.code a) 128))
+(check-sat)

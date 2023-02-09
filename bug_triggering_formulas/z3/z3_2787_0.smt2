@@ -1,0 +1,7 @@
+(declare-fun x () Real)
+(declare-fun y () Real)
+(declare-fun f (Real) Real)
+(declare-fun g (Real) Real)
+(assert (= x (f x) y))
+(assert (distinct (g x) (g y)))
+(check-sat)

@@ -1,0 +1,6 @@
+(declare-fun a () Int)
+(assert (and (distinct a 0) (= ((_ extract 0 0) (bvashr ((_ int2bv 3) a) ((_ int2bv 3) 1))) (_ bv0 1)) (= 0 (bv2nat ((_ int2bv 3) (bv2nat (bvor ((_ int2bv 3) (bv2nat (bvashr ((_ int2bv 3) a) ((_ int2bv 3) 7))))))))) (= a (bv2nat ((_ int2bv 3) a))) (= ((_ extract 0 0) (bvor ((_ int2bv 3) a))) (_ bv0 1))))
+(check-sat)
+(declare-fun a () Int)
+(assert (and (distinct a 0) (= ((_ extract 0 0) (bvashr ((_ int2bv 3) a) ((_ int2bv 3) 1))) (_ bv0 1)) (= 0 (bv2nat ((_ int2bv 3) (bv2nat (bvor ((_ int2bv 3) (bv2nat (bvashr ((_ int2bv 3) a) ((_ int2bv 3) 7))))))))) (= a (bv2nat ((_ int2bv 3) a))) (= ((_ extract 0 0) (bvor ((_ int2bv 3) a))) (_ bv0 1))))
+(check-sat)

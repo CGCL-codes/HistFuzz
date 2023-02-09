@@ -1,0 +1,6 @@
+(assert (forall ((q6 Int) (q7 Int) (q8 Bool)) (> q6 0)))
+(assert (forall ((q12 Int) (q13 Bool)) (=> (<= 0 (div (mod q12 q12) q12)) false)))
+(assert (forall ((q18 Int) (q19 Bool)) (<= (mod 0 0) 0)))
+(assert (forall ((q24 Int) (q25 Int) (q26 Bool)) (= (mod 0 0) 0)))
+(assert (forall ((q31 Int) (q32 Int) (q33 Int) (q34 Bool)) (=> (< 0 q31) false)))
+(check-sat)

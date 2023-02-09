@@ -1,0 +1,5 @@
+(declare-const a Int)
+(declare-const b Real)
+(declare-const c (_ FloatingPoint 11 53))
+(assert (= c ((_ to_fp 11 53) roundTowardZero b a)))
+(check-sat)

@@ -1,0 +1,8 @@
+(declare-fun m () Int)
+(declare-fun y () Int)
+(declare-fun x () Int)
+(assert (= (- (- x y) m) 0))
+(assert (distinct (mod x m) (mod y m)))
+(assert (> y 0))
+(assert (<= m 0))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-const _@@cons_String_entrypoint String)
+(assert (<= (str.len _@@cons_String_entrypoint) 255))
+(define-const _@@cons_StringOf_ForecastDetail__entrypoint Bool (str.in.re _@@cons_String_entrypoint (re.++ (re.union (str.to.re "Showers") (str.to.re "Thunderstorms") (str.to.re "Snow") (str.to.re "Fog")) (re.opt (re.++ (str.to.re " And ") (re.union (str.to.re "Showers") (str.to.re "Thunderstorms") (str.to.re "Snow") (str.to.re "Fog")))))))
+(assert _@@cons_StringOf_ForecastDetail__entrypoint)
+(check-sat)

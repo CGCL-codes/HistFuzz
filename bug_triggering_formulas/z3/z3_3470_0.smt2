@@ -1,0 +1,8 @@
+(declare-const v1 Bool)
+(declare-const v3 Bool)
+(declare-const r0 Real)
+(declare-const r1 Real)
+(assert (or v3 v1))
+(check-sat)
+(assert (= true true true (distinct 0.0 558186.674 r0 (* r0 25269393063.0 r1 558186.674 558186.674)) true true v1 true true true))
+(check-sat)

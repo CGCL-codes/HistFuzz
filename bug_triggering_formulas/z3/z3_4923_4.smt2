@@ -1,0 +1,7 @@
+(declare-fun v8 () Bool)
+(declare-fun i0 () Int)
+(declare-fun i8 () Int)
+(assert (or v8 (= i0 i8)))
+(assert (= i8 0))
+(assert (< i8 i0))
+(check-sat)

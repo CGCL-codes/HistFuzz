@@ -1,0 +1,5 @@
+(declare-fun x () String)
+(declare-fun y () String)
+(assert (distinct (str.++ x y) (str.++ y x)))
+(assert (= (str.len x) 17))
+(check-sat)

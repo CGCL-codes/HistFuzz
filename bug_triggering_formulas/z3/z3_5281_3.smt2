@@ -1,0 +1,5 @@
+(declare-fun a () Int)
+(declare-fun b () String)
+(assert (not (= a (- (abs a)))))
+(assert (not (= b "")))
+(check-sat)

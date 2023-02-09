@@ -1,0 +1,6 @@
+(declare-fun fpv0 () Float32)
+(push)
+(assert (fp.leq ((_ to_fp 8 24) RNE 0) (fp.sub RNE fpv0 ((_ to_fp 8 24) RTN 1.0))))
+(push)
+(pop)
+(check-sat)

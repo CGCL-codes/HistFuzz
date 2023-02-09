@@ -1,0 +1,7 @@
+(declare-fun x6 () Bool)
+(declare-fun x8 () Bool)
+(declare-fun x1 () (_ BitVec 16))
+(declare-fun x2 () (_ BitVec 16))
+(declare-fun x3 () Bool)
+(assert (forall ((x4 Bool)) (exists ((x7 Bool)) (forall ((x10 (_ BitVec 16))) (and x3 x4 x8 x6 (bvslt (_ bv1 16) (bvadd x10 (bvsub x2 x1))) (bvslt (_ bv0 16) (bvadd (bvsub (_ bv0 16) (bvsub x2 x1)) x10)))))))
+(check-sat)

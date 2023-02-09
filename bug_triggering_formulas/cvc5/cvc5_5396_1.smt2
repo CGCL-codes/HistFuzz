@@ -1,0 +1,5 @@
+(declare-fun i2 () Int)
+(declare-fun i3 () Int)
+(declare-fun _14-0 () (_ BitVec 14))
+(assert (or (or false false false false (< i3 21)) (= ((_ int2bv 14) i2) _14-0 (bvurem _14-0 ((_ int2bv 14) i2)) (_ bv0 14) (_ bv0 14))))
+(check-sat)

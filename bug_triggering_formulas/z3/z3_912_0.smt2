@@ -1,0 +1,5 @@
+(declare-const s String)
+(declare-const t String)
+(assert (= t (str.replace s "A" "b")))
+(assert (str.in.re t (re.++ (re.* (re.range "B" "Z")) (str.to.re "A"))))
+(check-sat)

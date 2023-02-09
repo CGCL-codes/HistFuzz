@@ -1,0 +1,5 @@
+(declare-fun error_value!2140 () Lst!2131)
+(declare-fun take!260 (Nat!2136 Lst!2131) Lst!2131)
+(assert (forall ((n!258 Nat!2136) (l!259 Lst!2131)) (= l!259 (ite (and ((_ is cons!2132) l!259) (and ((_ is succ!2137) n!258) ((_ is succ!2137) n!258))) (take!260 n!258 l!259) error_value!2140))))
+(assert (exists ((xs!416 Lst!2131)) (= nil!2135 (take!260 zero!2139 xs!416))))
+(check-sat)

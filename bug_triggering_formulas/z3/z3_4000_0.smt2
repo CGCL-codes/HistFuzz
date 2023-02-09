@@ -1,0 +1,5 @@
+(declare-const Str8 String)
+(declare-const Str13 String)
+(assert (>= (str.len (str.++ Str13 (str.++ Str8 ""))) 13))
+(assert true)
+(check-sat)

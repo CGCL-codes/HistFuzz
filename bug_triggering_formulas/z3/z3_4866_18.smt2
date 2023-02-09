@@ -1,0 +1,8 @@
+(declare-fun a () String)
+(declare-fun b () String)
+(declare-fun c () String)
+(declare-fun d () String)
+(declare-fun e () String)
+(assert (= (str.++ "A" (str.substr (ite (>= (str.len a) 0) d a) 0 (- (str.len d) 1))) (ite (str.contains b c) e b)))
+(assert (= (str.substr (str.substr a 0 (- (str.len d) 2)) 0 (str.len a)) "A"))
+(check-sat)

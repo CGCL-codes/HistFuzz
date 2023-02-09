@@ -1,0 +1,6 @@
+(declare-fun r4 () Real)
+(declare-fun r11 () Real)
+(declare-fun ufrb5 (Real Real Real Real Real) Bool)
+(assert (ufrb5 r4 780029.0 3751.0 r4 362010.0))
+(assert (ufrb5 (+ r4 r11) 0.583722 780029.0 0.583722 0.0))
+(check-sat)

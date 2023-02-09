@@ -1,0 +1,7 @@
+(declare-const v0 Bool)
+(declare-const v5 Bool)
+(declare-const v8 Bool)
+(assert v8)
+(assert (=> v8 (and v0 v0 v5)))
+(assert (or (or v8 (and v0 v0 v5)) (and v0 v0 v5)))
+(check-sat)

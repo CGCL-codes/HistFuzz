@@ -1,0 +1,7 @@
+(declare-fun a () Bool)
+(declare-fun b () Bool)
+(declare-fun c () Bool)
+(declare-fun d () Bool)
+(declare-fun e () Bool)
+(assert (or (and d (or e c)) (and b (or c d) (or c a))))
+(check-sat)

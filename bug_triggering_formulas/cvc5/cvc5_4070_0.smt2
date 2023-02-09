@@ -1,0 +1,5 @@
+(declare-fun a () String)
+(declare-fun b () String)
+(declare-fun c () String)
+(assert (= true (str.in.re a (re.++ (re.++ (re.++ (re.++ (re.* re.allchar) (re.++ (str.to.re "") (re.++ (re.+ (str.to.re "")) (re.++ (re.union (str.to.re "") (str.to.re "")) (re.++ (re.union (str.to.re "") (str.to.re "")) (re.++ (re.+ (str.to.re "")) (str.to.re ""))))))) (str.to.re b)) (re.++ (re.++ (str.to.re "") (re.++ (re.* re.allchar) (re.++ (str.to.re "") (re.++ (re.* re.allchar) (str.to.re ""))))) (str.to.re c))) (re.++ (str.to.re "") (re.++ (re.* (str.to.re "")) (re.union (re.++ (str.to.re "") (str.to.re "")) (str.to.re ""))))))))
+(check-sat)

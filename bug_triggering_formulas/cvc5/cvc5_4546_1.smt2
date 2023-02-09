@@ -1,0 +1,8 @@
+(declare-const _58-0 (_ BitVec 58))
+(check-sat)
+(declare-const arr1 (Array (_ BitVec 58) Bool))
+(check-sat)
+(assert (xor false true false true true true true true true (select arr1 _58-0)))
+(check-sat)
+(assert (select arr1 (bvxor _58-0 _58-0 _58-0 (bvlshr _58-0 _58-0))))
+(check-sat)

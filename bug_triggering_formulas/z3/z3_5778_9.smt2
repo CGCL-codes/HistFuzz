@@ -1,0 +1,7 @@
+(declare-fun a1 () (Array Int Int))
+(declare-fun a2 () (Array Int Int))
+(declare-fun s ((Array Int Int) (Array Int Int)) Int)
+(assert (distinct a2 a1))
+(assert (= 1 (select a2 0)))
+(assert (distinct 0 (s a2 (store a1 0 0))))
+(check-sat)

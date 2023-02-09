@@ -1,0 +1,6 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(declare-fun d () Real)
+(assert (<= 0.0 d (- b 1.0) (mod (to_int (* (- b c) a)) (to_int c))))
+(check-sat)

@@ -1,0 +1,6 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(declare-fun d () Real)
+(assert (not (exists ((e Real)) (xor (xor (and (xor (and (or (and (<= e a)) (> a 4)) (= b 9)) (>= c 4)) (< c 10) (>= c (- 241 (* 233 d)))) (<= c (- d))) (> (* (div (- 2) a) c) 2)))))
+(check-sat)

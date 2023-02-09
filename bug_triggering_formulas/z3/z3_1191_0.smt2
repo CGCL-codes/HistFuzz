@@ -1,0 +1,8 @@
+(declare-const x Float32)
+(assert (fp.leq x ((_ to_fp 8 24) RNE (- 1.0))))
+(declare-const y Float32)
+(assert (fp.leq y ((_ to_fp 8 24) RNE (- 1.0))))
+(define-const _x_8 (_ BitVec 8) ((_ fp.to_ubv 8) RNE x))
+(define-const _y_8 (_ BitVec 8) ((_ fp.to_ubv 8) RNE y))
+(assert (distinct _x_8 _y_8))
+(check-sat)

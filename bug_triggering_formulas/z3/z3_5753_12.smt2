@@ -1,0 +1,5 @@
+(declare-fun a (Int) Int)
+(declare-fun b (Int) Int)
+(declare-fun d ((Array Int Int) (Array Int Int)) Int)
+(assert (distinct 0 (b 0) (d a b)))
+(check-sat)

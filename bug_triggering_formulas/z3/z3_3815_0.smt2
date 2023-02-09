@@ -1,0 +1,5 @@
+(declare-const a Bool)
+(declare-const b Bool)
+(assert b)
+(assert (or a b))
+(check-sat)

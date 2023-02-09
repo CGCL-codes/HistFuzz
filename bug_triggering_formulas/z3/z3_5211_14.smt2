@@ -1,0 +1,5 @@
+(declare-fun uf7 (Bool Bool Bool Bool Bool Bool Bool) Bool)
+(declare-fun v7 () Bool)
+(declare-fun v9 () Bool)
+(assert (= true true true true (uf7 true true v9 true v9 (xor v9 true true v7) true)))
+(check-sat)

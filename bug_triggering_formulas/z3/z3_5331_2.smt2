@@ -1,0 +1,5 @@
+(declare-fun A (Int) Bool)
+(assert (not (A 0)))
+(push)
+(assert (and (forall ((x Int)) (A x))))
+(check-sat)

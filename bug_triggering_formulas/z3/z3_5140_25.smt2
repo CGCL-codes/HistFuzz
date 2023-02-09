@@ -1,0 +1,5 @@
+(declare-fun a () String)
+(assert (str.in_re "AA" (re.range a "A")))
+(assert (not (str.in_re a (re.* (str.to_re "A")))))
+(assert (str.in_re a (re.range "A" "B")))
+(check-sat)

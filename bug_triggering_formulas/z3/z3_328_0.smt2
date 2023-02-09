@@ -1,0 +1,7 @@
+(declare-fun INV (Int) Bool)
+(assert (forall ((D Bool)) (not D)))
+(assert (forall ((A Int)) (not (INV A))))
+(check-sat)
+(declare-fun INV (Int) Bool)
+(assert (forall ((D Bool) (A Int)) (and (not D) (not (INV A)))))
+(check-sat)

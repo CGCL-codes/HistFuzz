@@ -1,0 +1,5 @@
+(declare-fun t () (_ BitVec 4))
+(declare-fun s () (_ BitVec 4))
+(assert (bvult #b0010 t))
+(assert (forall ((x (_ BitVec 4))) (bvuge (bvsmod (_ bv8 4) (bvxnor x s)) (_ bv8 4))))
+(check-sat)

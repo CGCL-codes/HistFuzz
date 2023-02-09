@@ -1,0 +1,5 @@
+(declare-fun skoY () Real)
+(declare-fun skoX () Real)
+(declare-fun pi () Real)
+(assert (= true (= (- (+ skoY (+ (+ 900000000000000000000000 (* skoX (- 900000000))) (- (* skoY (* skoY (* skoY (* skoY (* skoY (- skoY (+ skoY (* skoY (* skoY (* skoX (* skoX (/ (- 15625) 4158)))))))))))))))) (+ 1800060000000000000000000 (* skoX (* skoX 1800060000)))) (and (<= 100 skoX) (and (not (<= 0 pi)) (not (<= pi 0))))))
+(check-sat)

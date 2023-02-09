@@ -1,0 +1,7 @@
+(declare-fun a () String)
+(declare-fun var_9 () String)
+(assert (str.in_re (str.++ "z" var_9) (re.* (str.to_re "z"))))
+(assert (str.in_re (str.++ "a" var_9) (re.+ (re.range "a" "u"))))
+(assert (str.in_re (str.++ "a" a) (re.opt (re.range "a" "u"))))
+(assert (not (str.in_re (str.++ "a" a "za" var_9) (re.opt (re.++ (str.to_re "a") (re.* (str.to_re "z")) (str.to_re "a"))))))
+(check-sat)

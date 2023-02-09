@@ -1,0 +1,5 @@
+(declare-const r9 Real)
+(declare-const r13 Real)
+(push)
+(assert (xor (distinct 0.0 7338.0 (+ r9 7338.0 9592357.0 r13)) true true true))
+(check-sat)

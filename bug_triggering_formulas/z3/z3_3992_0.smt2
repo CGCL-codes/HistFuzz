@@ -1,0 +1,5 @@
+(declare-fun a (Real Real Real) Bool)
+(assert (forall ((b Real) (c Real) (d Real)) (=> (> b 0) (a c d b))))
+(assert (forall ((f Real) (h Real) (i Real) (c Real) (d Real) (b Real)) (=> (a f h i) (a c d b))))
+(assert (forall ((f Real) (h Real)) (not (a f h 0))))
+(check-sat)

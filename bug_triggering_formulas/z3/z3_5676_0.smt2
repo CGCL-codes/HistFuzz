@@ -1,0 +1,5 @@
+(declare-fun a () String)
+(assert (>= (str.indexof "\u{b}" (str.at a (- (str.len a) 1)) 0) (ite (= (str.at (str.substr (str.substr a 0 (- 1 (str.len a))) 0 (- 1 (str.len (str.substr a 0 (- (str.len a) 1))))) 0) "\u") 1 0)))
+(assert (>= (str.len a) 1))
+(assert (= (str.indexof a "=" 0) (ite (= (str.at (str.substr (str.substr a 0 (- (str.len a) 1)) 0 (- (* (ite (= (str.at (str.substr (str.substr a 0 (- (str.len a) 1)) 0 (- (str.len (str.substr a 0 (* (ite (= (str.at (str.substr a 0 (str.len a)) 0) "") 1 0) (ite (= (str.at (str.substr a 0 (- 1 (str.len a))) 0) "\u9") 1 0)))) 1)) 0) "\u;") 1 0) (ite (= (str.len (str.substr a 0 (str.len a))) 0) 1 0)))) (- (str.len (str.substr (str.substr a 0 (str.len a)) 0 (- (str.len (str.substr a 0 (str.len a))) 1))) 1)) " ") 1 0) (str.len (str.substr (str.substr a 0 (str.len a)) 0 (- (str.len (str.substr a 0 (- (str.len a) 1))) 1)))))
+(check-sat)

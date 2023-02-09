@@ -1,0 +1,5 @@
+(declare-const a Bool)
+(declare-fun b () String)
+(assert (= (< (str.len b) 4) a (or (str.in.re b (re.++ re.allchar re.allchar (re.* re.allchar) re.allchar)) (str.in.re b (re.++ re.allchar re.allchar re.allchar)))))
+(assert (and (= a true)))
+(check-sat)

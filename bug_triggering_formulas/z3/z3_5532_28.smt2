@@ -1,0 +1,5 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(assert (forall ((d Real)) (= (and (xor (= c (+ (mod a 0))) true)) (< d b))))
+(check-sat)

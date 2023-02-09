@@ -1,0 +1,7 @@
+(declare-const r0 Real)
+(declare-const r1 Real)
+(declare-const r4 Real)
+(declare-const r10 Real)
+(declare-const r11 Real)
+(assert (or (< r10 (- 4.0 56488.5) r4 (+ 56488.5 r1)) (= 86585115806.0 r4 (+ 0.4677098 r10 41.0) r11)))
+(check-sat)

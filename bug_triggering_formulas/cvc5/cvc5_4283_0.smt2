@@ -1,0 +1,6 @@
+(declare-fun a () (Set Int))
+(declare-fun b () Int)
+(assert (member (* 2 b) a))
+(assert (or (member 3 a)))
+(assert (distinct b 4))
+(check-sat)

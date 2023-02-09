@@ -1,0 +1,6 @@
+(declare-fun r0 () Real)
+(declare-fun r1 () Real)
+(declare-fun r6 () Real)
+(declare-fun r9 () Real)
+(assert (and (> 1.0 r9) (> (/ 1.0 0.0) (- (* r0 13972633 r1 13972633 r0 13972633 r6 (+ r0 r1 r1 r0 r0) (+ r0 r1 r1 r0 r0)))) (> (- (* r0 218322 r6 r0 6986316 22 r1 55890533 (+ r0 r1 r1 r0 r0) (+ r0 r1 r1 r0 r0))) 1)))
+(check-sat)

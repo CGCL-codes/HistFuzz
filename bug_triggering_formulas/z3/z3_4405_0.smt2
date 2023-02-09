@@ -1,0 +1,6 @@
+(declare-const i0 Int)
+(declare-const Str3 String)
+(declare-const Str5 String)
+(declare-const Str6 String)
+(assert (= Str6 (str.++ Str5 Str3) (str.++ "" Str3 (str.++ Str6 (int.to.str i0)) Str5)))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-fun y () Int)
+(declare-fun c () (Seq Int))
+(declare-fun b () (Seq Int))
+(assert (and (> y 0) (not (= (seq.nth b 1) (seq.nth c y)))))
+(check-sat)

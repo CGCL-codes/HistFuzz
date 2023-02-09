@@ -1,0 +1,7 @@
+(declare-fun a () String)
+(assert (not (str.in_re (str.++ a "AA") (re.* (re.++ re.all (str.to_re "A") (str.to_re (str.from_int (str.len a))))))))
+(assert (<= (str.len a) 0))
+(check-sat)
+(assert (not (str.in_re (str.++ a "AA") (re.* (re.++ re.all (str.to_re "A") (str.to_re (str.from_int (str.len a))))))))
+(assert (<= (str.len a) 0))
+(check-sat)

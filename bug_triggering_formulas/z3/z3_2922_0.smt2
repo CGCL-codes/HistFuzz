@@ -1,0 +1,6 @@
+(declare-fun e () a)
+(declare-fun f () a)
+(assert (= f e))
+(assert (not (is (c (a a)) f)))
+(assert (or (is (c (a a)) e)))
+(check-sat)

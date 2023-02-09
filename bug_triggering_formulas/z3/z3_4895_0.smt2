@@ -1,0 +1,5 @@
+(declare-fun b () Real)
+(declare-fun d () Real)
+(assert (forall ((c Real)) (= (div (to_int c) 0) 2.0)))
+(assert (< (mod 2 0) (div (to_int b) (to_int d))))
+(check-sat)

@@ -1,0 +1,8 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(assert (= a 0))
+(push)
+(assert (= a 1 (+ b (* 5 a))))
+(push)
+(assert (= (+ b a a) 0))
+(check-sat)

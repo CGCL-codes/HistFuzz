@@ -1,0 +1,2 @@
+(assert (forall ((value2 String)) (forall ((key2 String)) (let (($x138 (and (not (= (ite (= key2 "a") 1 0) 0)) (or (and (and (= (ite (= 0 (str.len value2)) 1 0) 0) true) true) (not (= (ite (str.prefixof value2 "") 1 0) 0)))))) (and (and (not (= (ite (= key2 "a") 1 0) 0)) (or (and (and (= (ite (= 0 (str.len value2)) 1 0) 0) true) true) (not (= (ite (str.prefixof value2 "") 1 0) 0)))) (not (= (ite (distinct key2 "a") 1 0) 0)))))))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-const a (_ BitVec 8))
+(declare-const b (_ BitVec 8))
+(declare-const c (_ BitVec 8))
+(assert (= (bvxnor a b c) (bvxnor (bvxnor a b) c)))
+(check-sat)

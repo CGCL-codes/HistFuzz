@@ -1,0 +1,5 @@
+(declare-fun a (Bool Bool Bool Bool Bool Bool Int Int) Bool)
+(assert (forall ((b Bool) (c Bool) (d Bool) (g Bool) (e Bool) (f Bool) (cd Int) (cg Int)) (a b c d g e f cd cg)))
+(assert (forall ((b Bool) (c Bool) (d Bool) (g Bool) (e Bool) (f Bool) (cd Int) (cg Int) (h Int)) (let ((i (and (a b c d g e f cd cg)))) (=> i (a b c d g e f h cg)))))
+(assert (forall ((b Bool) (c Bool) (d Bool) (g Bool) (e Bool) (f Bool) (cd Int) (cg Int)) (not (a b c d g e f cd cg))))
+(check-sat)

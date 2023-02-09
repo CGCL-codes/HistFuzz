@@ -1,0 +1,6 @@
+(declare-fun uf3_2 (Bool Bool Bool) Bool)
+(declare-fun v3 () Bool)
+(declare-fun v8 () Bool)
+(declare-fun v15 () Bool)
+(declare-fun v17 () Bool)
+(check-sat)

@@ -1,0 +1,8 @@
+(declare-fun a () String)
+(declare-fun b () Int)
+(assert (= (str.replace "" (int.to.str b) a) (str.++ (str.replace (str.substr a b 1) (str.substr a b 7) "") (str.substr a (+ b 1) (str.len a)))))
+(check-sat)
+(declare-fun a () String)
+(declare-fun b () Int)
+(assert (= (str.replace "" (int.to.str b) a) (str.++ (str.replace (str.substr a b 1) (str.substr a b 1) "") (str.substr a (+ b 1) (str.len a)))))
+(check-sat)

@@ -1,0 +1,12 @@
+(define-sort FPN () Float64)
+
+(declare-fun x () FPN)
+(declare-fun y () FPN)
+(declare-fun z () FPN)
+(declare-fun r () FPN)
+(assert (distinct x (fp (_ bv0 1) (_ bv2047 11) (_ bv0 52))))
+(assert (= y (fp (_ bv0 1) #b01010010001 #b1010111011010001110100101000010000001011000111001010)))
+(assert (distinct z (fp (_ bv0 1) (_ bv0 11) (_ bv0 52))))
+(assert (= r (fp (_ bv1 1) #b00100110101 #b0010001100110100100011010111110110100000110010000100)))
+(assert (= (fp.fma roundNearestTiesToEven x y z) r))
+(check-sat)

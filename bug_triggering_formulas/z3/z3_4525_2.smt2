@@ -1,0 +1,7 @@
+(declare-const arr-3301600726807452095_3301600726807452095-0 (Array (Array Int Int) (Array Int Int)))
+(declare-const arr-525930757296696326_-1315234738400079307-0 (Array Bool (Array (Array Int Int) (Array Int Int))))
+(declare-const arr-2119198754882234686_-2443551786470090660-0 (Array (Array Bool (Array (Array Int Int) (Array Int Int))) Int))
+(assert (exists ((q71 (Array Int Bool)) (q72 (Array (Array (Array Bool (Array (Array Int Int) (Array Int Int))) Int) (Array (Array Bool (Array (Array Int Int) (Array Int Int))) Int))) (q73 (Array Int (Array (Array Int Int) (Array Int Int)))) (q74 Int) (q75 (Array Int Bool))) (= 0 q74)))
+(push)
+(assert (<= (mod (select arr-2119198754882234686_-2443551786470090660-0 (store arr-525930757296696326_-1315234738400079307-0 false arr-3301600726807452095_3301600726807452095-0)) 41) 0))
+(check-sat)

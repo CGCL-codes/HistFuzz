@@ -1,0 +1,8 @@
+(declare-const a String)
+(declare-const e Int)
+(declare-fun b () String)
+(declare-fun c () String)
+(declare-fun d () String)
+(assert (str.contains c (str.replace d (str.substr b e (str.len d)) a)))
+(assert (= b d))
+(check-sat)

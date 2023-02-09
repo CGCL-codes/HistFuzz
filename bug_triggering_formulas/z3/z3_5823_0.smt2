@@ -1,0 +1,5 @@
+(declare-fun s3 () (Array Int Int))
+(declare-fun foo (Int Int) Int)
+(assert (forall ((x Int) (y Int)) (= y (foo x y))))
+(assert (not (= s3 ((_ map foo) s3 s3))))
+(check-sat)

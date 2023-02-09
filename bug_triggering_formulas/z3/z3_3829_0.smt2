@@ -1,0 +1,6 @@
+(declare-fun P (Int) Bool)
+(assert (P 0))
+(check-sat)
+(declare-fun P (Int) Bool)
+(assert (P 0))
+(check-sat)

@@ -1,0 +1,8 @@
+(declare-fun e () a)
+(declare-fun f () a)
+(declare-fun k () b)
+(declare-fun g () b)
+(declare-fun l () c)
+(assert (or (and (distinct k (children (i (cons (car g) k)))) ((_ is d) f)) (not (distinct (i (children (j e))) l))))
+(assert (= (j e) (car k)))
+(check-sat)

@@ -1,0 +1,7 @@
+(declare-const i7 Int)
+(declare-const Str3 String)
+(declare-const Str7 String)
+(declare-const Str14 String)
+(assert (str.in_re Str14 (str.to_re (str.substr Str14 0 (abs i7)))))
+(assert (str.in_re (str.++ Str3 "pprtut" Str7 "") (re.++ (str.to_re (str.substr Str14 0 (abs i7))) (str.to_re "qbtciigmtwadmbzhrwrpusydtnouwhnukkdarqzjmqmwcitojz"))))
+(check-sat)

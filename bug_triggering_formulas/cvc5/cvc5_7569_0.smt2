@@ -1,0 +1,5 @@
+(declare-const X (_ FloatingPoint 8 24))
+(declare-const R Real)
+(assert (= X ((_ to_fp 8 24) RTZ (- R))))
+(assert (= X ((_ to_fp 8 24) RTZ 0)))
+(check-sat)

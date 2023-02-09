@@ -1,0 +1,5 @@
+(declare-const Str9 String)
+(assert (>= (str.len Str9) 363))
+(push)
+(check-sat)
+(check-sat)

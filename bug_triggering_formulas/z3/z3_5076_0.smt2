@@ -1,0 +1,7 @@
+(declare-fun a () Int)
+(declare-fun b () Int)
+(assert (<= a 2))
+(assert (exists ((c Int)) (<= (* 2 a) b)))
+(assert (<= a (* 2 a)))
+(assert (forall ((c Int)) (or (> (* (* 2 a) a) b) (> c 4))))
+(check-sat)

@@ -1,0 +1,8 @@
+(declare-fun i0 () Int)
+(declare-fun i2 () Int)
+(declare-fun i3 () Int)
+(declare-fun i4 () Int)
+(declare-fun i5 () Int)
+(declare-fun i8 () Int)
+(assert (>= i3 (abs 26)))
+(check-sat)

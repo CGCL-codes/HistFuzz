@@ -1,0 +1,5 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(assert (= a 0))
+(assert (= b (cos a)))
+(check-sat)

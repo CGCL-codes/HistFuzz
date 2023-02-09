@@ -1,0 +1,8 @@
+(declare-fun a () Real)
+(declare-fun b () Int)
+(declare-fun c () Real)
+(declare-fun d (Int Int) Int)
+(declare-fun l (Int Int Real) (Array Int (Array Int Real)))
+(assert (forall ((e Int) (f Int) (t Int) (u Int) (g Int) (h Int) (i Real)) (xor (<= u h) (= (select (select (l (d f t) (d g h) i) e) u) i))))
+(assert (not (forall ((j Real) (k Real)) (let ((v (l (d 0 0) (d 0 0) a))) (let ((m (select v 3))(n (> b 0))) (let ((w (store v 3 (store m b c)))) (let ((o (store w 2 (store (select w 2) b c)))) (let ((p (store o 1 (store (select o 1) b c)))) (or (and (and (forall ((q Int)) (= (= q 0) (= 0 c))) (forall ((r Int) (s Int)) (= (= (= r 3) (<= s 0)) (= 0 c)))) (forall ((x Int) (y Int)) (=> (<= y 0) (= (select (select v x) y) c)))) (= n (= n (=> n (= n (= (select (select (store p 0 (store (select p 0) b c)) 0) 0) c))))))))))))))
+(check-sat)

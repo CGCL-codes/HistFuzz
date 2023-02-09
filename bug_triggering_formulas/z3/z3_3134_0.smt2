@@ -1,0 +1,7 @@
+(declare-const v0 Bool)
+(declare-const v4 Bool)
+(declare-const v6 Bool)
+(declare-const v15 Bool)
+(declare-const _4-0 (_ BitVec 4))
+(assert (xor (= (bvurem _4-0 _4-0) (bvurem _4-0 _4-0) (bvurem _4-0 _4-0) _4-0 (bvurem _4-0 _4-0)) v4 v15 v0 (bvult #x243 #x243) v6))
+(check-sat)

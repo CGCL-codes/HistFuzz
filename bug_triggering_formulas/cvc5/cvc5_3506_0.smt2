@@ -1,0 +1,5 @@
+(declare-fun f (Int) Bool)
+(declare-fun g (Int) Bool)
+(assert (= f g))
+(assert (exists ((x Int)) (f x)))
+(check-sat)

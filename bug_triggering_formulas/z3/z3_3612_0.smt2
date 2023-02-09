@@ -1,0 +1,5 @@
+(declare-const i5 Int)
+(declare-const i7 Int)
+(assert (= 79 i5))
+(assert (not (exists ((q3 Int) (q4 Int) (q5 Bool) (q6 Int)) (>= i5 i7))))
+(check-sat)

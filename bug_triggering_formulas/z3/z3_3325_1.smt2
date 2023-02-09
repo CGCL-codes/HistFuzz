@@ -1,0 +1,6 @@
+(declare-const x Real)
+(declare-const y Real)
+(declare-const z Real)
+(assert (not (<= 1.0 x)))
+(assert (not (<= x 0.0)))
+(check-sat)

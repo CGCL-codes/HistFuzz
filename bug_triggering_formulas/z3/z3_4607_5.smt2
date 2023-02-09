@@ -1,0 +1,8 @@
+(declare-fun a () Bool)
+(declare-fun b () String)
+(declare-fun c () Bool)
+(declare-fun d () Int)
+(declare-fun e () String)
+(assert (= d (str.len (str.substr b 0 (str.len e)))))
+(assert (= (distinct a c) (= d 0) a c))
+(check-sat)

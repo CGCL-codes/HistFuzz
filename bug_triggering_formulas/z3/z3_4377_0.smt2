@@ -1,0 +1,8 @@
+(declare-fun a () String)
+(declare-fun b () String)
+(declare-fun c () String)
+(declare-fun d () String)
+(declare-fun e () String)
+(declare-fun f () Bool)
+(assert (ite f (str.in.re e (str.to.re "")) (and (= "" (str.++ (str.substr a (str.len b) (str.len d)) c)) (distinct 0 (str.len (str.substr a (str.len b) (str.len d)))) (not (str.in.re "" (re.inter (str.to.re "") (str.to.re "a")))))))
+(check-sat)

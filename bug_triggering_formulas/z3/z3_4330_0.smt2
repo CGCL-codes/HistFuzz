@@ -1,0 +1,6 @@
+(declare-const v18 Bool)
+(declare-const i0 Int)
+(declare-const i3 Int)
+(declare-const i15 Int)
+(assert (>= 0 (div (- (abs i3)) (abs i3))))
+(check-sat)

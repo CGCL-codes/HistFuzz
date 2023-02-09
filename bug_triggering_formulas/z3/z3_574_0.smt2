@@ -1,0 +1,6 @@
+(declare-const x (_ BitVec 14))
+(declare-const y (_ BitVec 14))
+(assert (bvumul_noovfl x y))
+(assert (bvsmul_noovfl x y))
+(assert (bvsmul_noudfl x y))
+(check-sat)

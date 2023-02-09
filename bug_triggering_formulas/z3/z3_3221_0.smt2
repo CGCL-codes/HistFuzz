@@ -1,0 +1,6 @@
+(declare-fun n () Int)
+(assert (= (mod n n) 1))
+(check-sat)
+(declare-fun n () Int)
+(assert (= (mod n n) 1))
+(check-sat)

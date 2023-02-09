@@ -1,0 +1,5 @@
+(declare-fun _substvar_27_ () Real)
+(declare-fun r2 () Real)
+(declare-fun r11 () Real)
+(assert (= r2 (* 2.0 r11 r11 2.0) 9204309859.0 _substvar_27_ (/ 0.0 0.0)))
+(check-sat)

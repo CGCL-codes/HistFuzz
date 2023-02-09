@@ -1,0 +1,5 @@
+(declare-fun f (Bool Bool) Bool)
+(assert (exists ((x Bool) (y Bool)) (distinct (f x y) false)))
+(assert (exists ((x Bool) (y Bool)) (distinct (f x y) true)))
+(assert (exists ((x Bool) (y Bool)) (distinct (f x y) (and x (not y)))))
+(check-sat)

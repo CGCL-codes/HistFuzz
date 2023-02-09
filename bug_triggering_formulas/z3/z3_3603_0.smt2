@@ -1,0 +1,8 @@
+(declare-const v2 Bool)
+(declare-const v4 Bool)
+(declare-const i3 Int)
+(declare-const r5 Real)
+(declare-const r12 Real)
+(declare-const r14 Real)
+(assert (= v2 v4 (is_int r14) (<= 0.92528554 r5 r12) (distinct i3 41)))
+(check-sat)

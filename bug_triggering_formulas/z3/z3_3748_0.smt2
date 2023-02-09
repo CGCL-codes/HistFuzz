@@ -1,0 +1,15 @@
+(declare-sort a)
+
+(declare-sort b)
+
+(declare-fun c () a)
+(declare-fun d () b)
+(declare-fun g (b) a)
+(declare-fun e (b) a)
+(declare-fun h () b)
+(declare-fun f (b) b)
+(assert (= (g d) (e h)))
+(assert (= d (f h)))
+(assert (forall ((i b)) (=> (= (g i) c) (= (f i) i))))
+(assert (forall ((j b)) (= (g (f j)) c)))
+(check-sat)

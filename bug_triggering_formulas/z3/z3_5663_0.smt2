@@ -1,0 +1,5 @@
+(declare-fun local_parts () Bool)
+(declare-fun nbparts () Int)
+(declare-fun objective () Int)
+(assert (and (< 1 nbparts) (= objective (+ (* (- nbparts) nbparts) nbparts (ite local_parts 9 0)))))
+(check-sat)

@@ -1,0 +1,7 @@
+(declare-fun _substvar_52_ () Bool)
+(declare-const r1 Real)
+(assert (or (xor true true true true true (>= 0.0 r1 0.0 0.0) true true) _substvar_52_))
+(check-sat)
+(check-sat)
+(check-sat)
+(check-sat)

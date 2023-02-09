@@ -1,0 +1,5 @@
+(declare-fun v () (Array Bool Bool))
+(declare-fun va () (Array (Array Bool Bool) Bool))
+(declare-fun a () (Array Bool Bool))
+(assert (not (xor false false false false false false false false false false false (and false (= true (select (store (store va a (select v true)) v true) (store v false false)))))))
+(check-sat)

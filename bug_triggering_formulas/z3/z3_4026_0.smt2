@@ -1,0 +1,5 @@
+(declare-fun a () Int)
+(declare-fun b () String)
+(declare-fun c () String)
+(assert (str.<= "ABCD" (str.++ b (int.to.str a) c)))
+(check-sat)

@@ -1,0 +1,6 @@
+(assert (forall ((q12 (_ BitVec 10)) (q13 (_ BitVec 10)) (q14 (_ BitVec 11))) (=> (distinct (_ bv0 10) q12) false)))
+(assert (forall ((q15 (_ BitVec 10)) (q16 (_ BitVec 10)) (q17 (_ BitVec 10)) (q18 (_ BitVec 2))) false))
+(assert (forall ((q23 (_ BitVec 10)) (q24 (_ BitVec 2))) (=> (bvult (_ bv0 10) q23) (bvsge (bvmul q24 q24) (_ bv0 2)))))
+(assert (forall ((q30 (_ BitVec 10)) (q31 (_ BitVec 10)) (q32 (_ BitVec 1))) (= (_ bv0 1) q32)))
+(assert (forall ((q33 (_ BitVec 10)) (q34 (_ BitVec 10)) (q35 (_ BitVec 10)) (q36 (_ BitVec 13))) (distinct (bvmul q36 q36) q36)))
+(check-sat)

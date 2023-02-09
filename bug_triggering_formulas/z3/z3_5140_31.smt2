@@ -1,0 +1,5 @@
+(declare-fun a () String)
+(assert (str.in_re a (re.* (str.to_re "a"))))
+(assert (str.in_re a (re.* (str.to_re "b"))))
+(assert (ite (str.in_re a (re.* (re.comp (str.to_re "")))) (= a "") (str.in_re (str.++ "aaab" a) (re.* (re.++ (re.comp (re.* (str.to_re "b"))) (str.to_re (str.from_int (str.len a))))))))
+(check-sat)

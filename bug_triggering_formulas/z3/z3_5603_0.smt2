@@ -1,0 +1,7 @@
+(declare-fun a () String)
+(assert (str.in_re a (re.* (re.range "B" "A"))))
+(assert (not (str.in_re (str.++ a "u") (re.++ (re.* (re.comp (re.* (re.union re.allchar (str.to_re "A"))))) (re.* (str.to_re (ite (= a "") "A" "B")))))))
+(check-sat)
+(assert (str.in_re a (re.* (re.range "B" "A"))))
+(assert (not (str.in_re (str.++ a "u") (re.++ (re.* (re.comp (re.* (re.union re.allchar (str.to_re "A"))))) (re.* (str.to_re (ite (= a "") "A" "B")))))))
+(check-sat)

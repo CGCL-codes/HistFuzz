@@ -1,0 +1,5 @@
+(declare-const v0 Bool)
+(declare-const v4 Bool)
+(assert (or v0 v4))
+(check-sat)
+(check-sat)

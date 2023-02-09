@@ -1,0 +1,6 @@
+(declare-fun d (k k) k)
+(declare-fun count (k Lst) k)
+(assert (exists ((n k) (e k)) (distinct (d (h n) e) (h e))))
+(assert (forall ((f k) (l k) (j Lst)) (= (count f (cons l j)) (ite (distinct f l) (h (count f j)) (count f j)))))
+(assert (forall ((n k) (f k) (g Lst)) (distinct (d (h b) (count n g)) (count n (cons f g)))))
+(check-sat)

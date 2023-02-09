@@ -1,0 +1,5 @@
+(declare-fun a (Int Int) Bool)
+(assert (a 142 14))
+(assert (forall ((b Int) (c Int) (d Int) (e Int)) (or (a b c) (distinct d (div b 241)) (distinct e c) (a d e))))
+(assert (a 7 150))
+(check-sat)

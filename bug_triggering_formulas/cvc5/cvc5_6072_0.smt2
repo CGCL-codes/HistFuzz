@@ -1,0 +1,7 @@
+(declare-fun i4 () Int)
+(declare-fun str5 () String)
+(assert (= (str.++ str5 (str.from_int i4)) (str.++ (str.from_int 15) (str.++ str5 (str.from_int 1)))))
+(push)
+(check-sat)
+(pop)
+(check-sat)

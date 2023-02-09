@@ -1,0 +1,2 @@
+(assert =)
+(check-sat)

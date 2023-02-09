@@ -1,0 +1,5 @@
+(declare-fun abs_real (Real) Real)
+(assert (forall ((?xu103_67 Real)) (=> (<= ?xu103_67 0.0) (= (abs_real ?xu103_67) 0.0))))
+(declare-fun log (Real) Real)
+(assert (forall ((?xu104_68 Real)) (= (log (exp ?xu104_68)) ?xu104_68)))
+(check-sat)

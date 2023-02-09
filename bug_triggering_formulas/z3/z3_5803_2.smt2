@@ -1,0 +1,5 @@
+(declare-const x (Array (_ BitVec 1) (_ BitVec 1)))
+(declare-const y (Array (_ BitVec 1) (_ BitVec 1)))
+(check-sat)
+(assert (= x (store (store (store y (_ bv0 1) (_ bv0 1)) (_ bv1 1) (_ bv0 1)) (_ bv0 1) (_ bv1 1))))
+(check-sat)

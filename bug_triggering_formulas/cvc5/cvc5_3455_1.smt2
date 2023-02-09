@@ -1,0 +1,8 @@
+(declare-fun x1 () Real)
+(declare-fun x2 () Real)
+(assert (= 0 x2))
+(assert (or (= 1 x1) (= x2 1)))
+(check-sat)
+(push)
+(assert (= 0 x1))
+(check-sat)

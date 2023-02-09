@@ -1,0 +1,8 @@
+(assert (let (($x17 (not (fp.eq (fp (_ bv0 1) (_ bv1 11) (_ bv0 52)) (fp (_ bv0 1) (_ bv0 11) (_ bv0 52)))))) $x17))
+(check-sat)
+(declare-fun t () (_ BitVec 5))
+(declare-fun s () (_ BitVec 5))
+(declare-fun l1 () Bool)
+(assert (let ((?x16 t)) (let ((?x22 t)) (let ((?x6 ((_ extract 4 4) s))) (let (($x20 l1)) (let (($x25 l1)) (let ((?x32 (ite (or false true) (ite (= (bvurem (ite (= ?x6 (_ bv1 1)) (bvneg s) s) (ite (= ((_ extract 4 4) t) (_ bv1 1)) (bvneg t) t)) (_ bv0 5)) (_ bv0 5) (bvadd (bvneg (bvurem (ite (= ?x6 (_ bv1 1)) (bvneg s) s) t)) t)) (ite true (ite (= t (_ bv0 5)) (_ bv0 5) (bvadd (bvurem (ite (= ?x6 (_ bv1 1)) (bvneg s) s) t) (_ bv0 5))) (_ bv0 5))))) (let (($x24 l1)) (let ((?x23 t)) (not (= (bvsmod s t) (ite (and (= ?x6 (_ bv0 1)) true) (bvurem (ite (= ?x6 (_ bv1 1)) (bvneg s) s) (ite (= ((_ extract 4 4) t) (_ bv1 1)) (bvneg t) t)) ?x32))))))))))))
+(assert (let ((?x111 (bvurem_i (ite l1 t t) t))) (let ((?x113 t)) (let ((?x51 t)) (let ((?x119 (bvsmod_i t t))) (let (($x47 l1)) (= l1 (= (bvsmod_i s t) (ite false (bvurem_i (ite (= ((_ extract 4 4) s) (_ bv1 1)) (bvmul (_ bv31 5) s) s) (ite (= ((_ extract 4 4) t) (_ bv1 1)) (bvmul (_ bv31 5) t) t)) (ite false (ite (= (bvurem_i (ite (= ((_ extract 4 4) s) (_ bv1 1)) (bvmul (_ bv31 5) s) s) (ite (= ((_ extract 4 4) t) (_ bv1 1)) (bvmul (_ bv31 5) t) t)) (_ bv0 5)) (_ bv0 5) (bvadd (bvmul (_ bv31 5) (bvurem_i (ite (= ((_ extract 4 4) s) (_ bv1 1)) (bvmul (_ bv31 5) s) s) (ite (= ((_ extract 4 4) t) (_ bv1 1)) (bvmul (_ bv31 5) t) t))) t)) (_ bv0 5)))))))))))
+(check-sat)

@@ -1,0 +1,6 @@
+(declare-fun s0 () Int)
+(declare-fun s1 () Int)
+(declare-fun s2 () (Seq Int))
+(assert s39)
+(assert (not s132))
+(check-sat)

@@ -1,0 +1,6 @@
+(declare-const r0 Real)
+(declare-const r3 Real)
+(declare-const r4 Real)
+(push)
+(assert (or (= r3 (* r0 r4 r3 r3) 0.0 0.0) (< 0.0 r0 r3 0.0 r3)))
+(check-sat)

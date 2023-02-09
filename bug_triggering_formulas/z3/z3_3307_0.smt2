@@ -1,0 +1,5 @@
+(declare-const v12 Bool)
+(declare-const v15 Bool)
+(assert (or v12 v15))
+(check-sat)
+(check-sat)

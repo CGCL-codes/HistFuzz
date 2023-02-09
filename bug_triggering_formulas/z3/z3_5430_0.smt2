@@ -1,0 +1,5 @@
+(declare-const a Int)
+(declare-const b Int)
+(assert (<= 0 a 3))
+(assert (= a (mod a 3)))
+(check-sat)

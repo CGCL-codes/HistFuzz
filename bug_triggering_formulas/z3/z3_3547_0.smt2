@@ -1,0 +1,8 @@
+(declare-fun a () Int)
+(declare-fun b () Int)
+(declare-fun c () Int)
+(declare-fun d () Int)
+(declare-fun e () String)
+(assert (xor (< a 8 (* a b)) true (< (/ c d) (str.len e) a b)))
+(assert (= "bef" (str.substr e c d)))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-fun p () Bool)
+(declare-fun q () Bool)
+(assert (not (= p (not q))))
+(assert p)
+(check-sat)

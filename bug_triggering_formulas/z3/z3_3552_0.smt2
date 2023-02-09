@@ -1,0 +1,5 @@
+(declare-fun a (Int) Int)
+(assert (distinct 0 (a 0)))
+(declare-fun a (Int) Int)
+(assert (distinct 0 (a 0)))
+(check-sat)

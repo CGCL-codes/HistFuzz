@@ -1,0 +1,7 @@
+(declare-fun _substvar_20_ () Bool)
+(declare-const arr-8726167125785029877_-3498738938363722911-0 (Array (Array Int Bool) Bool))
+(declare-const v8 Bool)
+(declare-const arr-8726167125785029877_-3498738938363722911-1 (Array (Array Int Bool) Bool))
+(declare-const arr-8726167125785029877_-3498738938363722911-2 (Array (Array Int Bool) Bool))
+(assert (or (distinct arr-8726167125785029877_-3498738938363722911-2 arr-8726167125785029877_-3498738938363722911-0 arr-8726167125785029877_-3498738938363722911-1) _substvar_20_ v8))
+(check-sat)

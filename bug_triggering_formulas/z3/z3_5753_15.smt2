@@ -1,0 +1,5 @@
+(declare-const x Bool)
+(declare-fun a () Real)
+(assert (or x (< 0 (- (/ a)))))
+(assert (forall ((V Real)) (exists ((V Real)) false)))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-const v2 Bool)
+(assert v2)
+(declare-const _25-0 (_ BitVec 25))
+(assert (bvult _25-0 (bvsmod _25-0 _25-0)))
+(check-sat)

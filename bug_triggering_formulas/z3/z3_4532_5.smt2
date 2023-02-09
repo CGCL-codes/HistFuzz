@@ -1,0 +1,5 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(assert (>= (* a (+ (mod (to_int c) 16) (* a (div (to_int b) (to_int (- 0.5)))))) (/ b 3200)))
+(check-sat)

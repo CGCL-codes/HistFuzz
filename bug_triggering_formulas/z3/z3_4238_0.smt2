@@ -1,0 +1,5 @@
+(declare-fun _substvar_4_ () Bool)
+(declare-const v25 Bool)
+(declare-const i10 Int)
+(assert (or v25 v25 _substvar_4_))
+(check-sat)

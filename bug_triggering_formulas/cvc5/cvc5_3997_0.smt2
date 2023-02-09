@@ -1,0 +1,7 @@
+(declare-const v0 Bool)
+(declare-const v3 Bool)
+(declare-const v5 Bool)
+(declare-const v8 Bool)
+(declare-const v9 Bool)
+(assert (= true true true true v0 true true (and v8 v8 (distinct v5 false v8 true (or v5 v0 v5 v3 v0) v3) v9) (distinct v5 false v8 true (or v5 v0 v5 v3 v0) v3)))
+(check-sat)

@@ -1,0 +1,6 @@
+(declare-fun s () String)
+(assert (not (str.contains (str.substr s 2 (str.len s)) "c")))
+(assert (str.contains s "b"))
+(assert (str.prefixof "aa" s))
+(assert (str.contains s "c"))
+(check-sat)

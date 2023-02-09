@@ -1,0 +1,6 @@
+(declare-fun a () Bool)
+(declare-fun b () Bool)
+(declare-fun c () Real)
+(assert (= c 1.0))
+(assert (<= (+ (* (ite b 1.0 0.0)) (* (ite a 1.0 0.0) (/ 1.0 2.0))) c))
+(check-sat)

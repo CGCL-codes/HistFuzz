@@ -1,0 +1,6 @@
+(declare-fun count!263 (Nat!1878 Lst!1882) Nat!1878)
+(declare-fun error_value!1888 () Nat!1878)
+(declare-fun l3 () Bool)
+(assert (forall ((n!261 Nat!1878) (l!262 Lst!1882)) (= (count!263 n!261 l!262) (ite ((_ is cons!1883) l!262) (ite (= n!261 (head!1884 l!262)) (succ!1879 (count!263 n!261 (tail!1885 l!262))) (count!263 n!261 (tail!1885 l!262))) error_value!1888))))
+(assert (= l3 (forall ((x!319 Nat!1878) (l!320 Lst!1882)) (= (count!263 x!319 l!320) (count!263 x!319 (cons!1883 x!319 l!320))))))
+(check-sat)

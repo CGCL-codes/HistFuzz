@@ -1,0 +1,5 @@
+(declare-fun r14 () Real)
+(check-sat)
+(assert (exists ((q7 Real)) (exists ((q8 Real)) (exists ((q9 Bool)) (forall ((q10 Bool)) (forall ((q11 Real)) (exists ((q12 Real)) (exists ((q13 Bool)) (distinct 0.0 q7 0.993552 q8 q11)))))))))
+(assert (not (distinct (* r14 r14) 0.896418109)))
+(check-sat)

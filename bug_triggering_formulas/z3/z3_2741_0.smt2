@@ -1,0 +1,5 @@
+(declare-fun x () Int)
+(assert (not (= (div 1 x) (div (div 1 x) x))))
+(assert (>= x 0))
+(assert (<= x 7))
+(check-sat)

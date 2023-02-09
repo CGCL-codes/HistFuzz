@@ -1,0 +1,6 @@
+(declare-const v (_ BitVec 3))
+(declare-fun va () (_ BitVec 8))
+(declare-fun a () (_ BitVec 7))
+(push)
+(assert (distinct (bvsmul_noovfl a ((_ zero_extend 4) v)) (bvsmul_noovfl va va)))
+(check-sat)

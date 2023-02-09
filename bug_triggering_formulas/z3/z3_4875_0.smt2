@@ -1,0 +1,5 @@
+(declare-const a String)
+(assert (distinct (str.replace (str.replace a "B" a) a "AB") (str.replace (str.replace a "B" "AB") a "AB")))
+(check-sat)
+(assert (distinct (str.replace (str.replace a "B" a) a "AB") (str.replace (str.replace a "B" "AB") a "AB")))
+(check-sat)

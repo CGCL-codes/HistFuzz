@@ -1,0 +1,6 @@
+(declare-fun a () String)
+(assert (str.contains (str.substr a (+ (str.indexof a "C" 0) 1) (- (str.len a) (+ (str.indexof a "C" 0) 1))) "C"))
+(assert (= (ite (= (str.at a (- (str.len a) 1)) "A") 1 0) (+ (str.indexof a "C" 0) 1)))
+(assert (not (str.contains (str.substr a (div 1 (ite (= (str.at a 0) "A") 1 0)) (- (+ (str.indexof a "C" 0) 1) (- (str.len a) 1 (ite (= (str.at a 0) "AA") 1 0) (ite (= (str.at a 0) "A") 1 0)))) "B")))
+(assert (>= (str.indexof a "C" 0) (ite (= (str.at a 0) "B") 1 0)))
+(check-sat)

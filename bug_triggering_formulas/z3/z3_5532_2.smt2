@@ -1,0 +1,5 @@
+(declare-fun f ((_ BitVec 3)) Int)
+(declare-fun y () (_ BitVec 3))
+(declare-fun A () (Array Int Int))
+(assert (forall ((x (_ BitVec 3))) (not (= (select A (f (bvshl x y))) (select A (f (bvsdiv x (_ bv0 3))))))))
+(check-sat)

@@ -1,0 +1,6 @@
+(declare-const r2 Real)
+(assert (= (exp 0.5) 571927469.0 571927469.0 571927469.0 r2))
+(push)
+(check-sat)
+(pop)
+(check-sat)

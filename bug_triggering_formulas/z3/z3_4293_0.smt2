@@ -1,0 +1,6 @@
+(declare-const v4 Bool)
+(declare-const Str6 String)
+(declare-const Str12 String)
+(declare-const Str18 String)
+(assert (or v4 (str.contains (str.++ Str18 "" Str6) (str.++ Str12 Str6))))
+(check-sat)

@@ -1,0 +1,6 @@
+(declare-fun i9 () Int)
+(declare-fun i12 () Int)
+(declare-fun str6 () String)
+(declare-fun i16 () Int)
+(assert (> i9 (str.len str6) 39 i12 19))
+(check-sat)

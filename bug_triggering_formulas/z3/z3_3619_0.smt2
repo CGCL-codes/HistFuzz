@@ -1,0 +1,8 @@
+(declare-const v9 Bool)
+(declare-const i0 Int)
+(declare-const i1 Int)
+(declare-const i2 Int)
+(declare-const i3 Int)
+(declare-const i5 Int)
+(assert (or (forall ((q19 Bool) (q20 Int) (q21 Bool)) (=> (<= q20 (mod i1 620)) (=> q19 (= (abs (+ 620 i0 (* 79 i2 i5 i5) 79 (* 79 i2 i5 i5))) i3)))) (exists ((q19 Bool) (q20 Int) (q21 Bool)) v9)))
+(check-sat)

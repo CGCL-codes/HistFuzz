@@ -1,0 +1,8 @@
+(declare-const v0 Bool)
+(declare-const v1 Bool)
+(declare-const v2 Bool)
+(declare-const v3 Bool)
+(declare-const v4 Bool)
+(assert (forall ((q0 Bool) (q1 Bool) (q2 Bool) (q3 Bool)) (not (= v1 v1 q3 q1 v4 v0 v3 q2))))
+(assert v4)
+(check-sat)

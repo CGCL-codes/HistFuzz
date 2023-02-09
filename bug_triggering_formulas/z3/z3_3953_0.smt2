@@ -1,0 +1,5 @@
+(declare-const v4 Bool)
+(declare-const v5 Bool)
+(declare-const i5 Int)
+(assert (or (xor false false true true true false true true false v5 false) (xor v4 false true true true false true true (> (mod i5 775) 26) v5 true)))
+(check-sat)

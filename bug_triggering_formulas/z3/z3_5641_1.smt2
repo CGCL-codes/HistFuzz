@@ -1,0 +1,7 @@
+(declare-const a Bool)
+(declare-const b Bool)
+(declare-const c Int)
+(declare-const d Int)
+(declare-const e Int)
+(assert (= (and a (> (div (* d e) d) (div (* d e) d))) (and a b) (forall ((d Int)) (forall ((e Int)) (and (=> (or (forall ((e Int)) (and (forall ((c Int)) (= 0 c)) (<= 0 e) (= (* (- (* d e)) e) d c))) (= 0 (* d) c)) a (= (= (< d e) (forall ((e Int)) (and a (> c d) (= 0 c))) (and a b)) (forall ((d Int)) (forall ((e Int)) (> e c))))) a (=> (forall ((d Int)) (forall ((e Int)) (and b (= 0 c)))) a (> c d)))))))
+(check-sat)

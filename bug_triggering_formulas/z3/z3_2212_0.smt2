@@ -1,0 +1,6 @@
+(declare-const A (_ BitVec 64))
+(declare-const B (_ BitVec 64))
+(push)
+(assert (>= (+ (bv2int A) (bv2int B)) (^ 2 32)))
+(check-sat)
+(pop)

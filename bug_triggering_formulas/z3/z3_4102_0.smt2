@@ -1,0 +1,5 @@
+(declare-fun b ((Array Int (Array Int Int))) Bool)
+(declare-fun d () (Array Int (Array Int Int)))
+(assert (forall ((a (Array Int (Array Int Int)))) (b a)))
+(assert (not (b d)))
+(check-sat)

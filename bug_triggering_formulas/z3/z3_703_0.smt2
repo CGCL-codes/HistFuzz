@@ -1,0 +1,8 @@
+(declare-fun c0 () String)
+(declare-fun c1 () String)
+(assert (not (= "" e2)))
+(check-sat)
+(declare-fun c0 () String)
+(declare-fun c1 () String)
+(assert (not (= "a" e2)))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-const i2 Int)
+(declare-const i5 Int)
+(declare-const arr (Array Int Int))
+(assert (= arr (store arr 14 i5) arr (store arr 14 i2) arr))
+(check-sat)

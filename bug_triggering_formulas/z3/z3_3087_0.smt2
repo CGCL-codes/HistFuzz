@@ -1,0 +1,6 @@
+(declare-fun a () String)
+(declare-fun b () Int)
+(declare-fun c () Int)
+(assert (< (/ b c) 0))
+(assert (distinct "foo" (str.substr a b c)))
+(check-sat)

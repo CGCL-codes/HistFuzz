@@ -1,0 +1,7 @@
+(declare-fun r1 () Real)
+(declare-fun r3 () Real)
+(declare-fun r4 () Real)
+(assert (not (= r1 r4)))
+(assert (< 0.0 r3))
+(assert (or (not (= 0.0 (/ 1 r3))) (= (* r4 r4) (/ 1 r1))))
+(check-sat)

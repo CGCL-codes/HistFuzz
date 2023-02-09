@@ -1,0 +1,5 @@
+(declare-fun a () String)
+(declare-fun b () String)
+(assert (= (str.++ (str.substr "1" 0 (str.len a)) "0") b))
+(assert (< (str.to.int b) 0))
+(check-sat)

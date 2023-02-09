@@ -1,0 +1,5 @@
+(declare-const r4 Real)
+(declare-const r10 Real)
+(push)
+(assert (<= 992649700.0 r10 r10 (* r4 r4)))
+(check-sat)

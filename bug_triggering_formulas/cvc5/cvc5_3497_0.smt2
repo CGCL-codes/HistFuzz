@@ -1,0 +1,5 @@
+(declare-fun x () String)
+(declare-fun y () String)
+(assert (= (str.indexof x y 1) (str.len x)))
+(assert (str.contains x y))
+(check-sat)

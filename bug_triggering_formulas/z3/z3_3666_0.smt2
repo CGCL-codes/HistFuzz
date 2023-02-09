@@ -1,0 +1,8 @@
+(declare-const v0 Bool)
+(declare-const v1 Bool)
+(declare-const v8 Bool)
+(declare-const v10 Bool)
+(declare-const _16-0 (_ BitVec 16))
+(assert (xor (= _16-0 _16-0 _16-0 _16-0 _16-0) v1 v10 v8))
+(push)
+(check-sat)

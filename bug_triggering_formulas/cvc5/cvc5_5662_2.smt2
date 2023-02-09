@@ -1,0 +1,7 @@
+(declare-fun a () Real)
+(declare-fun j () Real)
+(declare-fun k () Real)
+(declare-fun h () Real)
+(assert (not (= (> 0 k) (and (= 1 (* k j)) (or (= h 0) (= 0.0 (* a k)))))))
+(assert (not (= a h)))
+(check-sat)

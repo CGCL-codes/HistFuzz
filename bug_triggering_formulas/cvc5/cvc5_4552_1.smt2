@@ -1,0 +1,8 @@
+(push)
+(assert a)
+(check-sat)
+(pop)
+(push)
+(assert (not a))
+(check-sat)
+(pop)

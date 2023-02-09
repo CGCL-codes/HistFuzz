@@ -1,0 +1,6 @@
+(declare-fun c () (Seq (Seq Int)))
+(declare-fun a () (Seq (Seq Int)))
+(declare-fun d () (Seq (Seq Int)))
+(declare-fun e () (Seq Int))
+(assert (forall ((f (Seq Int))) (exists ((b (Seq (Seq Int)))) (and (= a (seq.++ b (seq.unit e))) (distinct a c (seq.++ (seq.unit f) d))))))
+(check-sat)

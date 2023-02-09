@@ -1,0 +1,6 @@
+(assert (forall ((q7 Int) (q8 Int) (q9 Int) (q10 Bool)) (distinct q8 (+ 2 485 q7 485))))
+(assert (forall ((q19 Int) (q20 Int) (q21 Int) (q22 Int) (q23 Bool)) (> 0 q19)))
+(assert (forall ((q43 Int) (q44 Bool)) (=> (distinct 686 (- 686 111 q43)) false)))
+(assert (forall ((q63 Int) (q64 Int) (q65 Bool)) (> (mod q63 (- 292 973)) q64)))
+(assert (forall ((q75 Int) (q76 Int) (q77 Int) (q78 Int) (q79 Int) (q80 Int) (q81 Int) (q82 Int) (q83 Bool)) (= q75 0)))
+(check-sat)

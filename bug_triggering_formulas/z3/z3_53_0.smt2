@@ -1,0 +1,7 @@
+(declare-fun |main::k@2| () Int)
+(declare-fun |main::k@3| () Int)
+(declare-fun |main::n@3| () Int)
+(declare-fun |main::j@2| () Int)
+(declare-fun |main::j@3| () Int)
+(assert (and (<= (* (- 1) |main::k@2|) 0) (<= |main::k@2| 1) (<= (+ (+ (* (- 1) |main::j@2|) (* (- 1) |main::k@2|)) |main::n@3|) 0) (= |main::k@3| (+ (- 1) |main::k@2|)) (= |main::j@3| (+ 1 |main::j@2|))))
+(check-sat)

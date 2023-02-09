@@ -1,0 +1,20 @@
+(declare-sort a 0)
+
+(declare-sort b 0)
+
+(declare-sort c 0)
+
+(declare-fun d () Bool)
+(declare-fun e () a)
+(declare-fun f () c)
+(declare-fun g () c)
+(declare-fun h () a)
+(declare-fun i () b)
+(declare-fun j () Bool)
+(declare-fun k () a)
+(declare-fun m (a b) c)
+(declare-fun n (c c) Bool)
+(assert (= d (distinct e k)))
+(assert (= g (m h i)))
+(assert (= j (n f g)))
+(check-sat)

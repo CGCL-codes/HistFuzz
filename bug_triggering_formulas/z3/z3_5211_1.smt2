@@ -1,0 +1,5 @@
+(declare-fun i1 () Int)
+(declare-fun i3 () Int)
+(declare-fun i5 () Int)
+(declare-fun i14 () Int)
+(check-sat)

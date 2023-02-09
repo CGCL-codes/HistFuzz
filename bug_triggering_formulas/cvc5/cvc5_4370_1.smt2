@@ -1,0 +1,5 @@
+(declare-fun st1 () (Set Int))
+(declare-fun st7 () (Set Int))
+(assert (> 0 (card (intersection st1 (union st7 st1)))))
+(assert (subset st1 st7))
+(check-sat)

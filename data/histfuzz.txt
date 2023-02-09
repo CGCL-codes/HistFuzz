@@ -1,0 +1,206 @@
+Z3
+
+Round 1
+Summary coverage rate:
+  lines......: 33.9% (101902 of 300458 lines)
+  functions..: 35.2% (37497 of 106621 functions)
+
+Round 2
+Summary coverage rate:
+  lines......: 34.0% (102251 of 300458 lines)
+  functions..: 35.3% (37687 of 106621 functions)
+
+Round 3
+Summary coverage rate:
+  lines......: 34.0% (102052 of 300458 lines)
+  functions..: 35.4% (37762 of 106621 functions)
+
+Round 4
+Summary coverage rate:
+  lines......: 33.9% (101888 of 300458 lines)
+  functions..: 35.2% (37556 of 106621 functions)
+
+Round 5
+Summary coverage rate:
+  lines......: 34.2% (102840 of 300458 lines)
+  functions..: 35.5% (37831 of 106621 functions)
+
+Round 6
+Summary coverage rate:
+  lines......: 34.4% (103486 of 300458 lines)
+  functions..: 35.6% (37927 of 106621 functions)
+
+Round 7
+Summary coverage rate:
+  lines......: 33.5% (100635 of 300458 lines)
+  functions..: 35.1% (37404 of 106621 functions)
+
+Round 8
+Summary coverage rate:
+  lines......: 33.8% (101414 of 300458 lines)
+  functions..: 35.2% (37525 of 106621 functions)
+
+Round 9
+Summary coverage rate:
+  lines......: 33.8% (101581 of 300458 lines)
+  functions..: 35.1% (37447 of 106621 functions)
+
+Round 10
+Summary coverage rate:
+  lines......: 34.0% (102076 of 300458 lines)
+  functions..: 35.4% (37739 of 106621 functions)
+
+Round 11
+Summary coverage rate:
+  lines......: 34.2% (102868 of 300458 lines)
+  functions..: 35.4% (37784 of 106621 functions)
+
+Round 12
+Summary coverage rate:
+  lines......: 33.6% (100934 of 300458 lines)
+  functions..: 35.0% (37299 of 106621 functions)
+
+Round 13
+Summary coverage rate:
+  lines......: 33.6% (100967 of 300458 lines)
+  functions..: 35.0% (37333 of 106621 functions)
+
+Round 14
+Summary coverage rate:
+  lines......: 33.9% (101808 of 300458 lines)
+  functions..: 35.2% (37550 of 106621 functions)
+
+Round 15
+Summary coverage rate:
+  lines......: 33.8% (101526 of 300458 lines)
+  functions..: 35.2% (37578 of 106621 functions)
+
+Round 16
+Summary coverage rate:
+  lines......: 33.8% (101570 of 300458 lines)
+  functions..: 35.2% (37502 of 106621 functions)
+
+Round 17
+Summary coverage rate:
+  lines......: 34.2% (102884 of 300458 lines)
+  functions..: 35.7% (38089 of 106621 functions)
+
+Round 18
+Summary coverage rate:
+  lines......: 34.1% (102447 of 300458 lines)
+  functions..: 35.3% (37673 of 106621 functions)
+
+Round 19
+Summary coverage rate:
+  lines......: 33.8% (101602 of 300458 lines)
+  functions..: 35.2% (37547 of 106621 functions)
+
+Round 20
+Summary coverage rate:
+  lines......: 34.3% (103179 of 300458 lines)
+  functions..: 35.6% (37967 of 106621 functions)
+
+
+
+CVC5
+
+Round 1
+Summary coverage rate:
+  lines......: 31.3% (50436 of 161127 lines)
+  functions..: 47.6% (9140 of 19208 functions)
+
+Round 2
+Summary coverage rate:
+  lines......: 31.3% (50399 of 161127 lines)
+  functions..: 47.3% (9094 of 19208 functions)
+
+Round 3
+Summary coverage rate:
+  lines......: 31.5% (50708 of 161127 lines)
+  functions..: 47.6% (9140 of 19208 functions)
+
+Round 4
+Summary coverage rate:
+  lines......: 31.2% (50297 of 161127 lines)
+  functions..: 47.3% (9083 of 19208 functions)
+
+Round 5
+Summary coverage rate:
+  lines......: 31.4% (50520 of 161127 lines)
+  functions..: 47.3% (9089 of 19208 functions)
+
+Round 6
+Summary coverage rate:
+  lines......: 31.3% (50390 of 161127 lines)
+  functions..: 47.3% (9093 of 19208 functions)
+
+Round 7
+Summary coverage rate:
+  lines......: 31.3% (50378 of 161127 lines)
+  functions..: 47.2% (9069 of 19208 functions)
+
+Round 8
+Summary coverage rate:
+  lines......: 31.3% (50498 of 161127 lines)
+  functions..: 47.5% (9128 of 19208 functions)
+
+Round 9
+Summary coverage rate:
+  lines......: 31.1% (50186 of 161127 lines)
+  functions..: 47.2% (9064 of 19208 functions)
+
+Round 10
+Summary coverage rate:
+  lines......: 31.4% (50616 of 161127 lines)
+  functions..: 47.4% (9096 of 19208 functions)
+
+Round 11
+Summary coverage rate:
+  lines......: 31.3% (50431 of 161127 lines)
+  functions..: 47.2% (9071 of 19208 functions)
+
+Round 12
+Summary coverage rate:
+  lines......: 31.6% (50887 of 161127 lines)
+  functions..: 47.7% (9153 of 19208 functions)
+
+Round 13
+Summary coverage rate:
+  lines......: 31.2% (50309 of 161127 lines)
+  functions..: 47.6% (9138 of 19208 functions)
+
+Round 14
+Summary coverage rate:
+  lines......: 31.1% (50056 of 161127 lines)
+  functions..: 47.0% (9026 of 19208 functions)
+
+Round 15
+Summary coverage rate:
+  lines......: 31.3% (50412 of 161127 lines)
+  functions..: 47.0% (9032 of 19208 functions)
+
+Round 16
+Summary coverage rate:
+  lines......: 31.0% (49913 of 161127 lines)
+  functions..: 47.2% (9068 of 19208 functions)
+
+Round 17
+Summary coverage rate:
+  lines......: 31.1% (50041 of 161127 lines)
+  functions..: 46.9% (9009 of 19208 functions)
+
+Round 18
+Summary coverage rate:
+  lines......: 30.7% (49449 of 161127 lines)
+  functions..: 46.8% (8982 of 19208 functions)
+
+Round 19
+Summary coverage rate:
+  lines......: 31.3% (50354 of 161127 lines)
+  functions..: 47.5% (9125 of 19208 functions)
+
+Round 20
+Summary coverage rate:
+  lines......: 30.9% (49751 of 161127 lines)
+  functions..: 47.2% (9062 of 19208 functions)
+

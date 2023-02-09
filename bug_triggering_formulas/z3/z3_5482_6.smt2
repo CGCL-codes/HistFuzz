@@ -1,0 +1,7 @@
+(declare-fun z3name!1 ((_ BitVec 1) (_ BitVec 1) Bool Bool) (_ BitVec 1))
+(declare-fun z3name!2 ((_ BitVec 1) (_ BitVec 1) Bool) (_ BitVec 1))
+(declare-fun l5 () Bool)
+(assert (forall ((g Bool) (d (_ BitVec 1)) (e (_ BitVec 1)) (f (_ BitVec 1))) (not (= f (ite (not (= d (_ bv0 1))) (_ bv0 1) e)))))
+(assert (= l5 (forall ((k!40 Bool) (k!30 Bool) (k!20 (_ BitVec 1)) (k!10 (_ BitVec 1))) (= (_ bv0 1) (z3name!1 k!10 k!20 k!30 k!40)))))
+(assert (= false (forall ((k!20 Bool) (k!10 (_ BitVec 1)) (k!00 (_ BitVec 1))) (= (_ bv0 1) (z3name!2 k!00 k!10 k!20)))))
+(check-sat)

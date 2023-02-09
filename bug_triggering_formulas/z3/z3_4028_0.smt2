@@ -1,0 +1,7 @@
+(declare-const v8 Bool)
+(declare-const v10 Bool)
+(declare-const v15 Bool)
+(declare-const _32-0 (_ BitVec 32))
+(assert (distinct (bvnand _32-0 _32-0) _32-0))
+(assert (xor v10 true true true true true true v8 v15 true))
+(check-sat)

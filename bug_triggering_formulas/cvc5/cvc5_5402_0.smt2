@@ -1,0 +1,8 @@
+(declare-fun i1 () Int)
+(declare-fun st1 () (Set Int))
+(declare-fun st3 () (Set Int))
+(declare-fun st4 () (Set Int))
+(declare-fun st6 () (Set Int))
+(assert (is_singleton (complement (setminus (intersection st6 st1) st6))))
+(assert (> 0 (+ 0 (abs (- (card st4) 16)) (card (setminus st1 st3)) i1)))
+(check-sat)

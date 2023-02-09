@@ -1,0 +1,12 @@
+(declare-sort enum_t 0)
+
+(declare-fun in_range (Int) Bool)
+(assert (forall ((x Int)) (= (in_range x) (and (<= 0 x) (<= x 2)))))
+(declare-fun to_rep (enum_t) Int)
+(declare-fun of_rep (Int) enum_t)
+(assert (forall ((x enum_t)) (= (of_rep (to_rep x)) x)))
+(assert (forall ((x enum_t)) (in_range (to_rep x))))
+(assert (forall ((x Int)) (=> (in_range x) (= (to_rep (of_rep x)) x))))
+(declare-fun id (rec) rec)
+(assert (forall ((r3 rec)) (= (to_rep (spl_f r3)) (to_rep (spl_f (id r3))))))
+(check-sat)

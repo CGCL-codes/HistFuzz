@@ -1,0 +1,8 @@
+(declare-fun s () String)
+(assert (>= (- (str.len s) (str.indexof s "A") 1) 0))
+(assert (>= (str.len (str.substr s (+ (str.indexof s "A") 1) (- (str.len s) (str.indexof s "A") 1))) 1))
+(assert (>= (str.len (str.substr s (+ (str.indexof s "A") 1) (- (str.len s) 1))) 1))
+(assert (>= (+ (str.indexof s "A" 30) 1) 0))
+(assert (>= (str.len (str.substr s (+ (str.indexof s "A" 20) 1) (- (str.len s) (str.indexof s "A") 1))) 1))
+(assert (>= (str.indexof s "A") 0))
+(check-sat)

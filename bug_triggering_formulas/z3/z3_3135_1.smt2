@@ -1,0 +1,8 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(declare-fun d () Real)
+(declare-fun j () Real)
+(assert (forall ((e Real)) (or (= (> e 2) (< (/ (* c e) b) 0)) (> (+ a d) 0))))
+(assert (= (/ b j) (- b)))
+(check-sat)

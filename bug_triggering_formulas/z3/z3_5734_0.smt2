@@ -1,0 +1,6 @@
+(declare-const v (_ BitVec 4))
+(declare-const _v (_ BitVec 4))
+(declare-const x Bool)
+(declare-const x6 Bool)
+(assert (and (forall ((VA (_ BitVec 8)) (VA (_ BitVec 8)) (V (_ BitVec 8)) (V (_ BitVec 8)) (V (_ BitVec 8)) (VA (_ BitVec 8)) (V (_ BitVec 8)) (A (_ BitVec 8)) (V (_ BitVec 8))) (not (ite (distinct false (forall ((A (_ BitVec 8))) false)) false (= (bvlshr V VA) ((_ zero_extend 4) _v))))) (forall ((V (_ BitVec 8))) (or (not (distinct false (forall ((A (_ BitVec 8))) (not (= V (bvlshr A ((_ zero_extend 4) v))))))) (ite x6 (distinct false (forall ((VA (_ BitVec 8))) (not (= (bvlshr V VA) (_ bv0 8))))) (distinct x (distinct (forall ((A (_ BitVec 8))) (= V (bvlshr (_ bv0 8) (_ bv1 8)))) (forall ((V (_ BitVec 8))) (not (= V (bvlshr (_ bv0 8) (_ bv0 8))))))))))))
+(check-sat)

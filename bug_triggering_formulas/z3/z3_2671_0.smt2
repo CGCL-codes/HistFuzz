@@ -1,0 +1,5 @@
+(declare-fun s () String)
+(declare-fun x () Int)
+(assert (> x 6))
+(assert (>= (str.indexof s "good" x) 0))
+(check-sat)

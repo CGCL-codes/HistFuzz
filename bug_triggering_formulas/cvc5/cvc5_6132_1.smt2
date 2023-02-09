@@ -1,0 +1,6 @@
+(declare-fun g () a)
+(declare-fun ee (a) Bool)
+(declare-fun h (a) a)
+(assert (forall ((ff a)) (distinct ff (ite ((_ is b) ff) (b ff ff) (ite ((_ is e) ff) (e ff ff) (ite ((_ is b) ff) (e ff ff) (ite ((_ is e) ff) (b ff (h ff)) (ite (and ((_ is i) ff)) (h (f (f ff))) (ite ((_ is i) ff) ff (ite ((_ is j) ff) ff g))))))))))
+(assert (exists ((m a)) (not (= (and (= (ee m) (ee (h m)))) (= (ee m) (ee m))))))
+(check-sat)

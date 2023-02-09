@@ -1,0 +1,5 @@
+(declare-fun e60 () Type)
+(declare-fun e62 () Type)
+(assert (= (number 1 32) e60))
+(assert (or (= e60 e62) (and ((_ is number) e60) ((_ is number) e62) (<= (sign e60) (sign e62)) (<= (width e60) (width e62)))))
+(check-sat)

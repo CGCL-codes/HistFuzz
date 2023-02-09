@@ -1,0 +1,5 @@
+(declare-fun s3 () (Array Int Int Int))
+(declare-fun s2 () (Array Int Int Int))
+(declare-fun foo (Int Int) Int)
+(assert (and (= 1 (select s2 0 0)) (= 0 (select s3 0 0)) (= s3 ((_ map foo) s3 s2)) (forall ((x Int) (y Int)) (= y (foo x y)))))
+(check-sat)

@@ -1,0 +1,8 @@
+(declare-fun i2 () Int)
+(declare-fun str8 () String)
+(declare-fun str9 () String)
+(declare-fun v25 () Bool)
+(check-sat)
+(declare-fun v130 () Bool)
+(assert (and v25 v130 (= str8 (str.++ str9 (str.substr (str.++ str9 str9) (abs i2) i2)))))
+(check-sat)

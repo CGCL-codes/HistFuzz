@@ -1,0 +1,7 @@
+(declare-fun a () String)
+(assert (not (str.contains (str.substr a 0 (- (str.len (str.substr a 0 (- (str.len a) 10))) 1)) "F")))
+(assert (str.contains (str.substr a 10 (str.len a)) "F"))
+(assert (= (ite (str.contains (str.substr a 0 (- (str.len a) 10)) "C") 1 0) (ite (str.contains (str.substr a 0 (- (str.len a) 0)) "B") 1 0) (ite (str.contains (str.substr a 0 (- (str.len a) 10)) "A") 1 0) 0))
+(assert (str.prefixof "abcdefg00" a))
+(assert (str.contains a "100"))
+(check-sat)

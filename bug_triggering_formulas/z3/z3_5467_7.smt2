@@ -1,0 +1,5 @@
+(declare-fun a () String)
+(declare-fun b () String)
+(assert (= b "A"))
+(assert (not (str.in_re (str.++ a "BA" b) (re.++ (re.* (str.to_re "A")) (str.to_re "B") (str.to_re "A") (str.to_re "A")))))
+(check-sat)

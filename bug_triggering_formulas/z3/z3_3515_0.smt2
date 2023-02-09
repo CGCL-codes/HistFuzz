@@ -1,0 +1,7 @@
+(declare-fun s0 () Int)
+(declare-fun s12 () Int)
+(declare-fun s13 () Int)
+(assert s11)
+(assert (= s0 s12))
+(assert (= s0 s13))
+(check-sat)

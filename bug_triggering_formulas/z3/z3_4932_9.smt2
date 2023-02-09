@@ -1,0 +1,8 @@
+(declare-fun d (Int) Int)
+(declare-fun intand (Int Int Int) Int)
+(declare-fun g () Int)
+(declare-fun s () Int)
+(declare-fun t () Int)
+(assert (r g))
+(assert v)
+(check-sat)

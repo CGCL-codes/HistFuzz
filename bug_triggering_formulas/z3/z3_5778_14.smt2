@@ -1,0 +1,5 @@
+(declare-const a (_ BitVec 1))
+(declare-const b (Array (_ BitVec 32) (_ BitVec 8)))
+(assert (distinct ((_ zero_extend 7) a) (select b (_ bv1 32))))
+(assert (= a (ite (= b (store b (_ bv0 32) (_ bv1 8))) (_ bv1 1) (_ bv0 1))))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(assert (distinct b (^ a 0.0)))
+(assert (= b 1.0))
+(check-sat)

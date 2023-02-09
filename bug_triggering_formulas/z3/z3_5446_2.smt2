@@ -1,0 +1,5 @@
+(declare-fun b () Int)
+(assert (= 1 (div b)))
+(declare-fun s () (_ BitVec 1))
+(assert (= s (_ bv0 1)))
+(check-sat)

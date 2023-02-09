@@ -1,0 +1,11 @@
+(declare-sort T)
+
+(declare-fun subtype (T T) Bool)
+(assert (forall ((x T)) (subtype x x)))
+(assert (forall ((x T) (y T)) (or (= x y) (not (and (subtype x y) (subtype y x))))))
+(assert (forall ((x T) (y T) (z T)) (or (subtype x z) (not (and (subtype x y) (subtype y z))))))
+(assert (forall ((x T) (y T) (z T)) (=> (subtype x z) (or (subtype x y) (subtype y x)))))
+(declare-const obj-type T)
+(declare-const root-type T)
+(assert (subtype obj-type root-type))
+(check-sat)

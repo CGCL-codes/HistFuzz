@@ -1,0 +1,8 @@
+(declare-fun _substvar_6_ () Bool)
+(declare-fun v14 () Bool)
+(declare-fun v17 () Bool)
+(declare-fun v51 () Bool)
+(declare-fun v85 () Bool)
+(assert true)
+(assert _substvar_6_)
+(check-sat)

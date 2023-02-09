@@ -1,0 +1,7 @@
+(declare-fun d (Int Int) Int)
+(declare-fun t ((Array Int (Array Int Real))) (Array Int (Array Int Real)))
+(declare-fun t (Int Real) (Array Int Real))
+(assert (forall ((V Real)) (= V (select (t (d 0 0) V) 0))))
+(assert (exists ((B (Array Int (Array Int Real)))) (= (select (select (t B) 0) 0) (select (select (t B) 0) 1))))
+(assert (forall ((D (Array Int (Array Int Real)))) (= (select (D 0) 0) (select (D 1) 0))))
+(check-sat)

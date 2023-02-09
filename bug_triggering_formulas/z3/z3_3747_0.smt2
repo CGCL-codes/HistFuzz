@@ -1,0 +1,5 @@
+(declare-fun a () Int)
+(declare-fun b () Int)
+(declare-fun c () Int)
+(assert (forall ((d Int)) (= (/ 1 (- 3 d (ite (= d a) b c))) 0)))
+(check-sat)

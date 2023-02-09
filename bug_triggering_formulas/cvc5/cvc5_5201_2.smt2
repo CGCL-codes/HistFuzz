@@ -1,0 +1,8 @@
+(declare-fun b (Int Int) Int)
+(declare-fun d () Int)
+(declare-fun j () Int)
+(declare-fun k () Int)
+(assert (= d (b j 0)))
+(assert (= d (b 0 1)))
+(assert (= j (* k 2)))
+(check-sat)

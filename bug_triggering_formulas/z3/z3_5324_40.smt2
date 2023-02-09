@@ -1,0 +1,5 @@
+(declare-fun g (Int) Int)
+(declare-fun f (Int) Int)
+(declare-fun h (Int) Int)
+(assert (and (forall ((x Int)) (or (= (f x) (h x)) (= (f x) (g x)))) (not (= (f 0) (g 0))) (= (h 1) (g 2))))
+(check-sat)

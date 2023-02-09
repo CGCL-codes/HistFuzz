@@ -1,0 +1,5 @@
+(declare-const i13 Int)
+(declare-const Str7 String)
+(declare-const Str9 String)
+(assert (str.<= Str7 (str.++ Str9 (int.to.str i13) "" "" "")))
+(check-sat)

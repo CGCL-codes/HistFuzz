@@ -1,0 +1,2 @@
+(assert xor)
+(check-sat)

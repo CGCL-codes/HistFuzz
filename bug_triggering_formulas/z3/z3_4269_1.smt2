@@ -1,0 +1,8 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(assert (not (= a 9)))
+(push)
+(pop)
+(assert (>= (+ (* a b) a) 8))
+(assert (or (>= a 0) (> (/ 7 a) 0) (distinct (div 4 (to_int b)) 0)))
+(check-sat)

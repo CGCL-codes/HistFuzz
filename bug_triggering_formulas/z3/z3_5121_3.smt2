@@ -1,0 +1,5 @@
+(declare-fun a () String)
+(declare-fun b () String)
+(assert (str.in_re b (re.union (str.to_re (str.replace b (str.from_int (str.len a)) "")) (str.to_re "z"))))
+(assert (<= (str.len a) 0))
+(check-sat)

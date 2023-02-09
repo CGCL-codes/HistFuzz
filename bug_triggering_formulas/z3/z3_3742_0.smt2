@@ -1,0 +1,5 @@
+(declare-const i4 Int)
+(declare-const i5 Int)
+(push)
+(assert (= (- i4 i5) (+ (- i4 i5) 50)))
+(check-sat)

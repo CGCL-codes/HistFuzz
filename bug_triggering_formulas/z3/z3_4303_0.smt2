@@ -1,0 +1,6 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(assert (= (- b a) 1))
+(assert (= 2 (/ 1 a b)))
+(assert (< b 0))
+(check-sat)

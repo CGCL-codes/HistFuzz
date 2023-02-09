@@ -1,0 +1,6 @@
+(declare-fun x () Int)
+(declare-fun a () (Array Int (Array Int Int)))
+(declare-fun b () (Array Int (Array Int Int)))
+(declare-fun c () (Array Int (Array Int Int)))
+(assert (and (= (store a x (store (select a x) 0 0)) c) (= (store (store c 0 (store (select c 0) 0 0)) 0 (store (select (store c 0 (store (select c 0) 0 0)) 0) 0 (select (select b 0) 0))) b) (not (= 0 x))))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-fun x () Bool)
+(declare-fun y () Bool)
+(assert (and y (= x y)))
+(assert (= x x))
+(check-sat)

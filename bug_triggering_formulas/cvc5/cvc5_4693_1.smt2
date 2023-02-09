@@ -1,0 +1,6 @@
+(declare-fun r () Real)
+(assert (> r (sin 0.1067382) 10.0 0.0))
+(push)
+(check-sat)
+(pop)
+(check-sat)

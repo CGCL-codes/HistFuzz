@@ -1,0 +1,5 @@
+(declare-fun s () (Seq Int))
+(declare-fun t () String)
+(push)
+(assert (or (seq.contains s (seq.unit 0)) (= (str.rev t) (str.substr t 0 (str.to_int t)))))
+(check-sat)

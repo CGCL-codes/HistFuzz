@@ -1,0 +1,6 @@
+(declare-fun str0 () String)
+(declare-fun str1 () String)
+(declare-fun str16 () String)
+(assert (= (str.++ "" "" "" "dXwleAzfaDfRnbIjvRz") str1 str0 (str.replace_all str0 str16 "")))
+(assert (= false false (str.prefixof str16 "") false false false false))
+(check-sat)

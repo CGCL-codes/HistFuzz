@@ -1,0 +1,6 @@
+(declare-fun Q (Int) Bool)
+(declare-fun P (Int) Bool)
+(declare-fun l2 () Bool)
+(assert (and l2 (forall ((x Int)) (Q x))))
+(assert (= l2 (exists ((x Int)) (or (P x) (not (Q x))))))
+(check-sat)

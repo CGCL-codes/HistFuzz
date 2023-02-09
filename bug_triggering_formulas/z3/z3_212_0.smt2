@@ -1,0 +1,5 @@
+(declare-fun x0 () (_ BitVec 1))
+(check-sat)
+(assert (= #b1 (bvudiv #b0 x0)))
+(assert (= #b0 (bvudiv x0 #b0)))
+(check-sat)

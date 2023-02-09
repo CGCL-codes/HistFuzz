@@ -1,0 +1,6 @@
+(assert (= (/ 0.0 0.0) (/ (/ 0.0 0.0) 0.0)))
+(assert (not (= (/ 0.0 0.0) (/ (/ (/ 0.0 0.0) 0.0) 0.0))))
+(check-sat)
+(assert (= (div 0 0) (div (div 0 0) 0)))
+(assert (not (= (div 0 0) (div (div (div 0 0) 0) 0))))
+(check-sat)

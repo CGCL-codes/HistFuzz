@@ -1,0 +1,4 @@
+(declare-fun symbolic_0_double_8874_ackermann!0 () (_ BitVec 64))
+(assert (let (($x13 (and (fp.geq ((_ to_fp 11 53) symbolic_0_double_8874_ackermann!0) ((_ to_fp 11 53) (_ bv13831004815617530266 64))) (fp.leq ((_ to_fp 11 53) symbolic_0_double_8874_ackermann!0) ((_ to_fp 11 53) (_ bv4607632778762754458 64)))))) (let (($x15 (not (not $x13)))) (let (($x16 (not $x15))) (let (($x17 (not $x16))) (let (($x18 (and $x16 $x16))) (let (($x19 (and $x18 $x17))) (let (($x21 (not (and $x19 $x16)))) (let (($x23 (not (and $x16 $x21)))) (let (($x123 (not $x23))) (not $x123)))))))))))
+(assert (let (($x13 (and (fp.geq ((_ to_fp 11 53) symbolic_0_double_8874_ackermann!0) ((_ to_fp 11 53) (_ bv13831004815617530266 64))) (fp.leq ((_ to_fp 11 53) symbolic_0_double_8874_ackermann!0) ((_ to_fp 11 53) (_ bv4607632778762754458 64)))))) (let (($x15 (not (not $x13)))) (let (($x16 (not $x15))) (not $x16)))))
+(check-sat)

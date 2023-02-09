@@ -1,0 +1,4 @@
+(declare-fun s0 () Real)
+(declare-fun s1 () Real)
+(assert (let ((s3 (<= s2 s0))) (let ((s5 (< s0 s4))) (let ((s6 (and s3 s5))) (let ((s7 (<= s2 s1))) (let ((s8 (< s1 s4))) (let ((s9 (and s7 s8))) (let ((s11 (= s1 s10))) (let ((s12 (/ s0 s1))) (let ((s13 (ite s11 s10 s12))) (let ((s16 (/ s2 s1))) (let ((s17 (ite s11 s10 s16))) (let ((s18 (* s15 s17))) (let ((s20 (+ s18 s19))) (let ((s21 (to_int s20))) (let ((s22 (to_real s21))) (let ((s23 (/ s22 s15))) (let ((s24 (* s14 s23))) (let ((s25 (/ s0 s4))) (let ((s26 (* s24 s25))) (let ((s27 (+ s19 s26))) (let ((s28 (to_int s27))) (let ((s29 (to_real s28))) (let ((s30 (to_int s29))) (let ((s31 (to_real s30))) (let ((s32 (/ s31 s14))) (let ((s33 (* s4 s32))) (let ((s34 (- s13 s33))) (let ((s35 (ite (< s34 0.0) (- s34) s34))) (let ((s37 (< s35 s36))) (and s6 s9 (not s37))))))))))))))))))))))))))))))))
+(check-sat)

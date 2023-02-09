@@ -1,0 +1,6 @@
+(declare-fun a () Int)
+(declare-fun b () Int)
+(declare-fun c () Int)
+(assert (and (= a (- 7 (* a a))) (>= (* 9 b) 7) (>= (* a b) 45)))
+(assert (= b (* (div 7 c) (- 96 (div 45 b)))))
+(check-sat)

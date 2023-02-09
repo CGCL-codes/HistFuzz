@@ -1,0 +1,10 @@
+(declare-sort T)
+
+(declare-const x7 Bool)
+(declare-fun s (T T) Bool)
+(declare-fun r () T)
+(declare-fun t () T)
+(assert (and (s t t) (not (s t r)) (forall ((x T)) (s x x)) (forall ((x T) (y T) (z T)) (or x7 (s x z) (not (s y z))))))
+(check-sat)
+(assert (not (fp.lt (fp (_ bv0 1) (_ bv0 11) (_ bv0 52)) (fp (_ bv0 1) (_ bv0 11) (_ bv0 52)))))
+(check-sat)

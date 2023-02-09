@@ -1,0 +1,7 @@
+(declare-const Str0 String)
+(declare-const Str3 String)
+(declare-const Str11 String)
+(assert (str.in_re (str.replace_all Str3 "" "dgthra") (str.to_re "")))
+(push)
+(assert (= Str3 "ckerad" Str0 Str11))
+(check-sat)

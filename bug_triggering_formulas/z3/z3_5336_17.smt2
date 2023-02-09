@@ -1,0 +1,5 @@
+(declare-fun _substvar_18_ () Int)
+(declare-fun i10 () Int)
+(declare-fun i11 () Int)
+(assert (<= 0 (- (- 0 0))))
+(check-sat)

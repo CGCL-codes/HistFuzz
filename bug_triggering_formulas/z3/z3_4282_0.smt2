@@ -1,0 +1,6 @@
+(declare-fun _substvar_131_ () Bool)
+(declare-const r0 Real)
+(push)
+(assert _substvar_131_)
+(assert (distinct 9358.0 0.0 84829223596.0 70.672 (* 5265763793.0 r0 r0 5265763793.0 r0)))
+(check-sat)

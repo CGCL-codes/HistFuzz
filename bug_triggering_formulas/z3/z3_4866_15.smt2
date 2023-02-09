@@ -1,0 +1,5 @@
+(declare-fun i5 () Int)
+(declare-fun seq0 () (Seq Int))
+(declare-fun seq1 () (Seq Int))
+(assert (seq.contains (seq.++ (seq.extract seq1 1 (- (- (seq.len seq0) i5 1))) (seq.extract seq1 1 (- (- (seq.len seq0) i5)))) (seq.unit (seq.len (seq.unit 0)))))
+(check-sat)

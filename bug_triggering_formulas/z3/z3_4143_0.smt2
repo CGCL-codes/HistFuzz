@@ -1,0 +1,8 @@
+(declare-const r1 Real)
+(declare-const r2 Real)
+(declare-const arr1 (Array Real Real))
+(assert (< 1560.0 6585646.0 r1 0.0 r1))
+(declare-const arr2 (Array (Array Real Real) Real))
+(push)
+(assert (<= 52433.4563 52433.4563 r2 (select (store arr2 (store arr1 387.0463851 86061.0) 0) arr1) 0.0))
+(check-sat)

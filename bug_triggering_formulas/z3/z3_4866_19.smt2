@@ -1,0 +1,8 @@
+(declare-fun i11 () Int)
+(declare-fun seq1 () (Seq Int))
+(declare-fun seq3 () (Seq Int))
+(declare-fun str4 () String)
+(declare-fun str6 () String)
+(assert (= str6 (str.substr str6 0 (- (* (str.len str4) 3 i11) 1))))
+(assert (seq.contains (seq.extract seq1 1 (* 3 i11 (str.len str4))) seq3))
+(check-sat)

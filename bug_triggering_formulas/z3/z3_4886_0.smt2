@@ -1,0 +1,5 @@
+(declare-fun v4 () Bool)
+(declare-fun v90 () Bool)
+(assert (or v90 v4))
+(assert (forall ((q418 (_ BitVec 4)) (q420 (_ BitVec 1)) (q422 (_ BitVec 1)) (q423 (_ BitVec 12)) (q425 (_ BitVec 1))) (or v4 (= q420 (_ bv0 1)) (bvsge q418 (_ bv1 4)) (bvult q423 ((_ sign_extend 4) (_ bv1 8))))))
+(check-sat)

@@ -1,0 +1,7 @@
+(declare-fun a () (_ BitVec 32))
+(declare-fun b () Bool)
+(assert (= b (bvslt a (_ bv1 32))))
+(assert (not b))
+(check-sat)
+(assert (= (bvadd a a (bvsrem (_ bv10 32) a) (_ bv22 32)) (_ bv1234 32)))
+(check-sat)

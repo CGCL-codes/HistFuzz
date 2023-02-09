@@ -1,0 +1,5 @@
+(declare-fun b () Real)
+(declare-fun c () Real)
+(assert (forall ((d Real)) (exists ((e Real)) (or (not (= (+ e (/ c c)) 0)) (not (= d 0))))))
+(assert (or (forall ((e Real)) (exists ((f Real)) (forall ((h Real)) (or (exists ((i Real)) (forall ((g Real)) (= 0 (+ g i)))) (forall ((i Real)) (exists ((g Real)) (or (< e 0) (< 0 h) (< 0 f) (< e 1) (exists ((g Real)) (or (= 0 b) (not (= e 0))))))))))) (forall ((d Real)) (exists ((f Real)) (and (exists ((h Real)) (not (= f 0))) (exists ((h Real)) (or (< 0 d) (exists ((g Real)) (and (< 0 (* (- 1) h)) (= h (+ (* 3 h) (* 3 f)) 1) (< 0 (+ g b)))))))))))
+(check-sat)

@@ -1,0 +1,6 @@
+(declare-fun v0 () (_ BitVec 8))
+(declare-fun v1 () (_ BitVec 8))
+(declare-const arr (Array (_ BitVec 8) (_ BitVec 8)))
+(declare-const v16 Bool)
+(assert (or v16 (distinct (bvudiv (select arr #x57) #x57) #x57 (bvadd #x57 (bvudiv (select arr #x57) #x57)) (bvlshr v0 v1))))
+(check-sat)

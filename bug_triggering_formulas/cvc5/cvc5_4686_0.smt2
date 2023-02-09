@@ -1,0 +1,5 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(assert (distinct a 1 (- (exp (* (- a) b)) c)))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-fun m () Int)
+(declare-fun A () Bool)
+(declare-fun r () Int)
+(assert (and (= 0 m) (or A (= r 0)) (or (not A) (= r 1))))
+(check-sat)

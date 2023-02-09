@@ -1,0 +1,6 @@
+(declare-fun P () Bool)
+(declare-fun Q (Int Int Int Int (Array Int Int) (Array Int Int) (Array Int Int) (Array Int Int)) Bool)
+(assert (forall ((A Int) (B Int) (C Int) (D Int) (E Int) (F (Array Int Int)) (G (Array Int Int)) (H (Array Int Int)) (I (Array Int Int))) (=> (>= A 1) (Q D E B C F G H I))))
+(assert (forall ((A Int) (B Int) (C Int) (D Int) (E Int) (F Int) (G (Array Int Int)) (H (Array Int Int)) (I (Array Int Int)) (J (Array Int Int)) (v_10 Int)) (let ((a!1 (or (and (not (<= E 0)) (not (<= 0 D))) (and (>= D 0) (= E D))))) (=> (and (Q B F D v_10 G H I J) (= v_10 D) (= A C) (not (>= A 0)) a!1 (= C E)) P))))
+(assert (forall ((A Bool)) (=> P false)))
+(check-sat)

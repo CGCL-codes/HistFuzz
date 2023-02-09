@@ -1,0 +1,6 @@
+(declare-const i1 Int)
+(declare-fun ufrb3 (Real Real Real) Bool)
+(assert (not (>= i1 (mod i1 30))))
+(push)
+(assert (ufrb3 88.0 5616379.0 0.0))
+(check-sat)

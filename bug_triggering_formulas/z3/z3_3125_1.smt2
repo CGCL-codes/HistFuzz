@@ -1,0 +1,8 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(declare-fun d () Real)
+(declare-fun e () Real)
+(declare-fun f () Real)
+(assert (exists ((g Real)) (= (or (= 7.0 (/ 0.0 (+ d f))) (< 0.0 (* a (/ 60 b e))) (= c (* d f))) (or (>= 0.0 (/ 31 (* (- (+ 2 (* b e))) g))) (>= 0.0 (* c (/ d f)))))))
+(check-sat)

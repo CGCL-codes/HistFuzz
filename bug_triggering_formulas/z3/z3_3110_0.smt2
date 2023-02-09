@@ -1,0 +1,5 @@
+(declare-fun a () Int)
+(declare-fun b () Int)
+(declare-fun c () Int)
+(assert (let ((d 0)) (and (or (= (< c a) (distinct (distinct (xor (<= (/ 57 c c) 2) (distinct (distinct c b) (< (/ a c) 5))) (distinct c b)) (xor (<= b a) (>= (- a) 4)))) (>= (* c a) 51)) (> a c))))
+(check-sat)

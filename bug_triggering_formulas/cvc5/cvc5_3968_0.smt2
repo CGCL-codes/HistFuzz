@@ -1,0 +1,6 @@
+(declare-const v2 Bool)
+(declare-const v5 Bool)
+(declare-const i2 Int)
+(declare-const v6 Bool)
+(assert (=> (and v6 (distinct 994 68) (distinct i2 (* 733 (- 82))) (<= (abs (- i2 i2 i2 i2 68)) (- i2 i2 i2 i2 68))) (= (< (- 82) (- (- i2 i2 i2 i2 68))) v5 v2)))
+(check-sat)

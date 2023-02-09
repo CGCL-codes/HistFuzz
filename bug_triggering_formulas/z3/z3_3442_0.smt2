@@ -1,0 +1,5 @@
+(declare-fun a () Real)
+(assert (= (div 52 a a) 10))
+(declare-fun a () Real)
+(assert (= (div 52 a a) 10))
+(check-sat)

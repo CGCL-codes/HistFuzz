@@ -1,0 +1,7 @@
+(declare-fun _substvar_28_ () Bool)
+(declare-const r3 Real)
+(declare-const r11 Real)
+(push)
+(assert (>= 73829727737.0 r3 0.82 (/ r11 r11)))
+(assert _substvar_28_)
+(check-sat)

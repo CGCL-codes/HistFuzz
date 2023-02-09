@@ -1,0 +1,6 @@
+(declare-const v4 Bool)
+(assert (forall ((q0 Bool) (q1 Bool)) (xor true true q1 v4 q1 true true true true true true)))
+(push)
+(check-sat)
+(pop)
+(check-sat)

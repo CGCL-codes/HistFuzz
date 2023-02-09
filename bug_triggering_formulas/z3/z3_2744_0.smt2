@@ -1,0 +1,5 @@
+(declare-fun s () String)
+(declare-fun x () Int)
+(assert (>= x 66))
+(assert (>= (str.indexof s "goodbye" x) 155))
+(check-sat)

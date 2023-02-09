@@ -1,0 +1,7 @@
+(declare-const v1 Bool)
+(declare-const i0 Int)
+(declare-const v15 Bool)
+(declare-const i2 Int)
+(assert (or (< (div (- (- (+ i0 i0)) (- (+ i0 i0)) (- (+ i0 i0)) (+ i0 i0) (- (+ i0 i0))) (abs (- (- (+ i0 i0)) (- (+ i0 i0)) (- (+ i0 i0)) (+ i0 i0) (- (+ i0 i0))))) 829) (=> v15 (xor v1 (> i0 (- (+ i0 i0)))))))
+(assert (or (> (abs (- (- (+ i0 i0)) (- (+ i0 i0)) (- (+ i0 i0)) (+ i0 i0) (- (+ i0 i0)))) i0)))
+(check-sat)

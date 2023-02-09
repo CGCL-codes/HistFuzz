@@ -1,0 +1,7 @@
+(declare-fun _substvar_97_ () Bool)
+(declare-fun _substvar_108_ () Real)
+(declare-const r1 Real)
+(declare-const v27 Bool)
+(push)
+(assert (or _substvar_97_ v27 (< r1 _substvar_108_ 0.0 (- (+ 10220578070.0 0.17387101 (/ r1 (+ 0.0 822554802.0 (/ 588034462.2 r1))) r1 0.0)))))
+(check-sat)

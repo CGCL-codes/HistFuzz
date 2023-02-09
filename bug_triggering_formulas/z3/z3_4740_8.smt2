@@ -1,0 +1,8 @@
+(declare-fun str0 () String)
+(declare-fun str4 () String)
+(declare-fun str5 () String)
+(declare-fun str12 () String)
+(declare-fun str16 () String)
+(assert (and (= "" "" str4) (= str12 (str.++ str16 str4 "ENKBT" str16 "nnUBOZpXgviYWaywWSf") str0 str5)))
+(push)
+(check-sat)

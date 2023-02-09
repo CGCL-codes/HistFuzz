@@ -1,0 +1,6 @@
+(declare-fun a () (_ BitVec 1))
+(assert (bvsgt (bvsmod a a) #b0))
+(check-sat)
+(declare-fun a () (_ BitVec 1))
+(assert (bvsgt (bvsmod a a) #b0))
+(check-sat)

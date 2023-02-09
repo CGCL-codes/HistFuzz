@@ -1,0 +1,8 @@
+(declare-fun seq8 () (Seq Int))
+(declare-fun seq9 () (Seq Int))
+(declare-fun seq11 () (Seq Int))
+(declare-fun seq14 () (Seq Int))
+(declare-fun seq17 () (Seq Int))
+(declare-fun seq19 () (Seq Int))
+(assert (or (seq.contains seq14 (seq.++ seq11 seq19)) (seq.contains (seq.++ seq8 seq9) seq17)))
+(check-sat)

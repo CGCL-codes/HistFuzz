@@ -1,0 +1,7 @@
+(declare-fun a () (Array Int Int))
+(declare-fun a12 () (Array Int Int))
+(declare-fun a21 () (Array Int Int))
+(assert (= a12 (store (store a 1 23) 2 42)))
+(assert (= a21 (store (store a 2 42) 1 23)))
+(assert (distinct a12 a21))
+(check-sat)

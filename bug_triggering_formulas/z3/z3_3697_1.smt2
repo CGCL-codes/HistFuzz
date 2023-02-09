@@ -1,0 +1,7 @@
+(declare-const i1 Int)
+(declare-const i3 Int)
+(declare-const i7 Int)
+(declare-const arr-118751669437458744_118751669437458744-0 (Array Bool Bool))
+(assert (select arr-118751669437458744_118751669437458744-0 true))
+(assert (> i7 0))
+(check-sat)

@@ -1,0 +1,5 @@
+(declare-const Str1 String)
+(declare-const Str4 String)
+(assert (= false (= true (xor true false (str.prefixof Str4 "") true false) true) false))
+(assert (str.contains (str.++ "" "" (str.++ Str4 "caextk") Str1) (str.++ "" "yqibocfoiyfnrpbiblttxwzwlhnbefdtuvockczqioukonncjd" "uoezdalyseqzzlisdmgvoazgxlpufypjayotopfcrcdreqequn" Str4 "")))
+(check-sat)

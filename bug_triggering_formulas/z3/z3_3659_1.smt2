@@ -1,0 +1,12 @@
+(declare-sort a)
+
+(declare-fun b (a a) a)
+(declare-fun e4 () a)
+(declare-fun c () a)
+(declare-fun d () a)
+(declare-fun e1 () a)
+(declare-fun e () a)
+(assert (let ((f (b e e4))(aa (b e1 e))(g (b e1 e4))(h (b d c))(i (b c c))(j (b c e4))(k (b e4 d))(ab (b e4 e4))) (let ((m (= f c))(n (= f e4))(o (= aa e))(ac (= g e))(p (= g d))(q (= g c))(r (= g e4))(s (= h e4))(ad (= i c))(ae (= j e))(af (= j e1))(t (= j c))(ag (= j e4))(ah (= k e))(u (= ab e))(v (= ab e1))(w (= ab d))(x (= ab c))(y (= ab e4))) (and o s af ad ah (or ac ae u v) (or p w) (or m q t x) (or y n r ag)))))
+(assert (let ((z (b e1 c))(ai (b c c))) (let ((x (not (= ai e4)))(q (not (= z e4)))) (or q x))))
+(assert (= e1 (b d e4)))
+(check-sat)

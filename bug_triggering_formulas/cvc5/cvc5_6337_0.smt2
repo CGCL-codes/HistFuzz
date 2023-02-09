@@ -1,0 +1,7 @@
+(declare-fun str3 () String)
+(declare-fun str8 () String)
+(declare-fun str12 () String)
+(declare-fun str14 () String)
+(declare-fun str15 () String)
+(assert (distinct str15 (str.++ str14 str3 str8 str14) (str.replace_re_all str12 (re.comp (str.to_re str15)) (str.++ str14 str3 str8 str14)) str12))
+(check-sat)

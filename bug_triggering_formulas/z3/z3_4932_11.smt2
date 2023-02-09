@@ -1,0 +1,8 @@
+(declare-fun a () Real)
+(declare-fun b () Real)
+(declare-fun c () Real)
+(declare-fun d () Real)
+(declare-fun e () Real)
+(declare-fun f () Real)
+(assert (forall ((g Real)) (= (>= (div (- (/ (* e e) (- 2 d))) (/ (mod b b) (- 2 d))) 0) (= g a (mod c g) f g))))
+(check-sat)

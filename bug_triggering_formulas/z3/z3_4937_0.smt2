@@ -1,0 +1,6 @@
+(declare-fun str7 () String)
+(declare-fun str8 () String)
+(declare-fun v8 () Bool)
+(declare-fun i6 () Int)
+(assert (str.prefixof str8 (str.substr (str.substr str8 1 (abs (- (abs i6) (* i6 i6 i6)))) 1 (str.to_int (ite v8 str8 str7)))))
+(check-sat)
