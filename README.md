@@ -72,7 +72,7 @@ Moreover, to run `n` parallel instances of $\mathrm{HistFuzz}$ on `n` cores, use
 
 `/home/histfuzz/bin/histfuzz --solver1=z3 --solver=cvc5 --solver_bin1=/home/z3/build/z3 --solver_bin2=/home/cvc5/build/bin/cvc5 --option=regular --cores=20`
 
-Whenever the tool finds a bug, you can stop the running manually and check it in `/home/histfuzz/temp/bugs`. The results of this evaluation demonstrates $\mathrm{HistFuzz}$ can find real bugs in solvers.
+Whenever the tool finds a bug, you can stop the running manually and check it in `/home/histfuzz/temp/bugs`. The results of this evaluation demonstrate $\mathrm{HistFuzz}$ can find real bugs in solvers.
 
 
 ###  **Task 2: Code coverage evaluation**
@@ -81,7 +81,7 @@ In this evaluation, you can compare the code coverage achieved by $\mathrm{HistF
 
 We implement a Python script and you can run it to reproduce the results of this evaluation. For example, in the docker container, you can use `python3 /home/histfuzz/reproduce/script.py`, and the results will be stored in `/home/histfuzz/reproduce/results` directory.
 
-If you do not use the docker container, You shoul unzip and install the baselines in `/home/histfuzz/baselines` directory.
+If you do not use the docker container, You should unzip and install the baselines in `/home/histfuzz/baselines` directory.
 
 The results of this evaluation will show that $\mathrm{HistFuzz}$ can achieve significantly higher code coverage for the solvers than the baselines.
 
