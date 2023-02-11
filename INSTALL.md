@@ -1,7 +1,7 @@
 # **Option 1: Using Docker Image**
 To get into the container, you need:
 
-* Download the Docker Image ProbDD.tar. You can download the compressed package (about 4G) https://drive.google.com/file/d/1JN8hG8qKGoQMcn8Jnmbw3iqLpWYNhT_q/view?usp=sharing.
+* Download the Docker Image histfuzz.tar. You can download the compressed package (about 4G) from https://doi.org/10.5281/zenodo.7631379 or https://drive.google.com/file/d/1JN8hG8qKGoQMcn8Jnmbw3iqLpWYNhT_q/view?usp=sharing.
 * Generate Image data file histfuzz.tar by using command `unzip histfuzz.tar.zip`.
 * docker import histfuzz.tar
 * docker run -it [image id] /bin/bash
