@@ -68,7 +68,7 @@ If you want to stress-test more important options of solvers, you can add `--opt
 
 `/home/histfuzz/bin/histfuzz --solver1=z3 --solver=cvc5 --solver_bin1=/home/z3/build/z3 --solver_bin2=/home/cvc5/build/bin/cvc5 --option=regular`
 
-Moreover, to run `n` parallel instances of storm on `n` cores, use the `--cores` flag. For example:
+Moreover, to run `n` parallel instances of $\mathrm{HistFuzz}$ on `n` cores, use the `--cores` flag. For example:
 
 `/home/histfuzz/bin/histfuzz --solver1=z3 --solver=cvc5 --solver_bin1=/home/z3/build/z3 --solver_bin2=/home/cvc5/build/bin/cvc5 --option=regular --cores=20`
 
