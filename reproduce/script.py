@@ -108,21 +108,28 @@ def run_seeds_coverage(z3_folder, cvc5_folder):
 
 
 def run_tool_and_record_coverage(fuzzer, z3_folder, cvc5_folder, times=1, cores=1):
+    # Open files to record code coverage
     with open(z3_folder + "/coverage.txt", "a") as f1:
         f1.write("\n{} code coverage:\n".format(fuzzer))
     with open(cvc5_folder + "/coverage.txt", "a") as f2:
         f2.write("\n{} code coverage:\n".format(fuzzer))
+        
+    # Initialize commands for clearing previous coverage data
     z3_clear_data = "lcov -d ./ -z"
     cvc_clear_data = "make coverage-reset"
+
     if fuzzer in ["opfuzz", "typefuzz", "yinyang"]:
+        # Get all SMT files recursively from a specific directory
         files = get_all_smt_files_recursively("/home/histfuzz/seeds")
     for time in range(times):
+        # Clear previous coverage data for Z3 and CVC5
         p1 = subprocess.Popen(z3_clear_data, shell=True, cwd=z3_folder, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
         p2 = subprocess.Popen(cvc_clear_data, shell=True, cwd=cvc5_folder, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
         p1.wait()
         p2.wait()
         if fuzzer in ["opfuzz", "typefuzz", "yinyang"]:
             if fuzzer in ["opfuzz", "typefuzz"]:
+                # Run fuzzing tools in parallel with multiprocessing.Pool
                 pool = multiprocessing.Pool(processes=cores)
                 for file in files:
                     if fuzzer == "opfuzz":
@@ -130,20 +137,26 @@ def run_tool_and_record_coverage(fuzzer, z3_folder, cvc5_folder, times=1, cores=
                     elif fuzzer == "typefuzz":
                         pool.apply_async(run_type, (file,))
             if fuzzer == "yinyang":
+                # Run Yinyang fuzzer 100 times with random SMT files
                 pool = multiprocessing.Pool(processes=cores)
                 for i in range(100):
                     pool.apply_async(run_yinyang, (random.choice(files), random.choice(files)))
+
+            # Wait for all processes to complete
             pool.close()
             pool.join()
         if fuzzer == "storm":
+            # Run Storm fuzzer
             p1 = subprocess.Popen("""/bin/bash -c "source venv/bin/activate; storm --solver=z3 --solverbin={} --benchmark=/home/histfuzz/seeds --theory=LIA" """.format(z3_bin), shell=True, cwd="/home/histfuzz/baselines/storm", stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
             p1.wait()
             p2 = subprocess.Popen("""/bin/bash -c "source venv/bin/activate; storm --solver=cvc4 --solverbin={} --benchmark=/home/histfuzz/seeds --theory=LIA" """.format(cvc5_bin), shell=True, cwd="/home/histfuzz/baselines/storm", stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
             p2.wait()
         if fuzzer == "histfuzz":
+            # Run HistFuzz 
             pro = run_histfuzz()
             pro.wait()
 
+        # Record code coverage using fastcov and lcov
         fastcov = subprocess.Popen("fastcov -l -o cover-run" + str(time) + ".info; lcov -a cover-run" + str(time) + ".info" + " -a coverage-seed100.info -o output.txt >> coverage.txt", shell=True, cwd=z3_folder, stdout=subprocess.DEVNULL)
         coverage = subprocess.Popen("make coverage; lcov -a coverage.info -a coverage-seed100.info -o output.info >> coverage.txt", shell=True, cwd=cvc5_folder, stdout=subprocess.DEVNULL)
         fastcov.wait()
