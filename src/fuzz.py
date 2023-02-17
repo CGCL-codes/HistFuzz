@@ -311,7 +311,7 @@ def variable_translocation(ast, ast_var: dict):
 
 
 
-def construct_scripts(ast, var_list, sort, func, incremental):
+def construct_scripts(ast, var_list, sort, func, incremental, argument):
     """
     Construct scripts for SMT solver.
 
