@@ -178,7 +178,7 @@ def main():
         cores = int(parsedArguments["cores"])
         
         # Run the program with the provided parameters
-        run(skeletons, parsedArguments, solver1, solver2, solver1_bin, solver2_bin, core_num, cores, parsedArguments["mutant"], parsedArguments["option"])
+        run(skeletons, parsedArguments, solver1, solver2, solver1_bin, solver2_bin, core_num, cores, parsedArguments["option"], parsedArguments["mutant"])
 
 if __name__ == "__main__":
     main()
