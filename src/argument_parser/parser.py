@@ -85,7 +85,7 @@ class MainArgumentParser(object):
         self.bugfolder = arguments["bugfolder"]
         self.update = arguments["update"]
         self.token = arguments["token"]
-        self.mutant = arguments["mutant"] if not arguments["mutant"] else None
+        self.mutant = arguments["mutant"]
         self.conf = float(arguments["conf"]) if arguments["conf"] is not None else 0.5
         self.sup = float(arguments["sup"]) if arguments["sup"] is not None else 9
         self.option = arguments["option"] if arguments["option"] is not None else "default"
