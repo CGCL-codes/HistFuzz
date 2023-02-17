@@ -76,59 +76,45 @@ def get_subterms(expr):
     return av_expr, expr_types
 
 
-def get_all_subterms(formula):
-    """
-    Get all expressions within a formula and their types.
-    :returns: av_expr list of expressions
-              expr_types list of types
-              (s.t. expression e = av_expr[i] has type expr_types[i])
-    """
-    av_expr = []
-    expr_type = []
-    for i in range(len(formula.assert_cmd)):
-        exps, typ = get_subterms(formula.assert_cmd[i])
-        av_expr += exps
-        expr_type += typ
-    return av_expr, expr_type
-
-
 def get_basic_subterms(expr, index, rename_flag=False):
     """
     Get all basic subexpression of term object expr.
-    :returns: av_expr list of expressions
-              expr_types list of types
-              (s.t. expression e = av_expr[i] has type expr_types[i])
+    :param expr: a term object representing an SMT formula
+    :param index: an integer representing the number of the assert containing the expression
+    :param rename_flag: a boolean flag indicating whether to rename quantified variables
+    :return: a list of term objects representing basic subexpressions of the input formula, 
+    and a list of types representing the types of the corresponding basic subexpressions
     """
     basic_expr = []
     expr_types = []
     if isinstance(expr, Term):
         if expr.op in [NOT, AND, IMPLIES, OR, XOR, IFF] or expr.quantifier is not None or expr.let_terms is not None:
             if expr.quantifier is not None and rename_flag:
-                # print(expr.quantified_vars)
+                # Rename quantified variables if rename_flag is True
                 for v in range(len(expr.quantified_vars[0])):
                     expr.quantified_vars[0][v] = 'VAR' + str(v)
                 for t in range(len(expr.quantified_vars[1])):
                     expr.quantified_vars[1][t] = 'TYPE' + str(t)
-            # print(expr)
+            # Recursively get basic subexpressions for the subterms of expr
             for s in expr.subterms:
                 new_av, new_type = get_basic_subterms(s, index, rename_flag)
                 basic_expr += new_av
                 expr_types += expr_types
         else:
-            # print(expr)
-            basic_expr.append([expr, index])  # index save the number of assert containing the expression
+            # This is a basic subexpression, so add it to the list
+            basic_expr.append([expr, index])
             expr_types.append(expr.type)
     elif isinstance(expr, str):
         pass
-        # return
-        # print("expr is str")
-        # print(expr)
+        # This is not a term object, so do nothing
     else:
+        # This is a let-binding expression, so get basic subexpressions for its term
         if expr.term:
             new_av, new_type = get_basic_subterms(expr.term, index, rename_flag)
             basic_expr += new_av
             expr_types += new_type
     return basic_expr, expr_types
+
 
 
 def get_all_basic_subformula(formula, rename_flag=False):
@@ -154,13 +140,11 @@ def construct_skeleton(seed, flag=False):
     """
     s, g = process_seed(seed)
     if s is None:
-        # print(str(seed) + " parse failure")
         pass
     else:
         index = [0] * len(s.assert_cmd)
         basic_formula = get_all_basic_subformula(s, flag)
         for i in range(len(basic_formula)):
-            # print(basic_formula[i][1])
             basic_formula[i][0].substitute(basic_formula[i][0],
                                            Expr(op="hole " + str(index[basic_formula[i][1]]), subterms=[]))
             index[basic_formula[i][1]] += 1
@@ -207,20 +191,6 @@ def export_skeleton(formula_path, skeleton_file):
     f1.writelines(skeleton_list)
     f1.close()
     restruct_skeleton(skeleton_file)
-
-
-def simplify_formula(seed):
-    formula = parse_smt2_file(seed)
-    # s_f = simplify(formula)
-    print(formula)
-    ss = Solver()
-    for f in formula:
-        print(f)
-        s_f = simplify(f, algebraic_number_evaluator=False, elim_ite=False, elim_and=True, push_to_real=False)
-        print(s_f)
-        ss.add(s_f)
-    print(ss.to_smt2())
-    # print(s_f)
 
 
 def obtain_hole(skeleton):

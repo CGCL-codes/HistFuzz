@@ -38,39 +38,6 @@ from src.utils.file_operation import get_all_smt2_file, get_txt_files_list
 from src.utils.type import return_type
 
 
-def is_normal_type(type_list):
-    """
-    :param type_list: a list of variable type
-    :return: whether those variables only belong to normal type
-    """
-    for var_type in type_list:
-        if var_type not in TYPES and type(var_type) != FP_TYPE and type(var_type) != BITVECTOR_TYPE and type(
-                var_type) != ARRAY_TYPE:
-            return False
-    return True
-
-
-def is_bv_type(type_list):
-    for var_type in type_list:
-        if type(var_type) == BITVECTOR_TYPE:
-            return True
-    return False
-
-
-def is_fp_type(type_list):
-    for var_type in type_list:
-        if type(var_type) == FP_TYPE:
-            return True
-    return False
-
-
-def is_array_type(type_list):
-    for var_type in type_list:
-        if type(var_type) == ARRAY_TYPE:
-            return True
-    return False
-
-
 def classify_formula(path_list):
     """
     copy the formulas to different directory according to the variable type each formula contain

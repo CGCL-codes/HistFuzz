@@ -94,51 +94,52 @@ def copy_file(srcfile, dstpath):
 
 def record_bug(temp, bug_type, buggy_mutant_path1, buggy_mutant_path2, solver1=None, result1=None, solver2=None,
                result2=None, option=None):
-    # temp_dir = os.path.join(home_directory, "temp")
+    # Set the directory to store temporary files
     temp_dir = temp
+    # Create the directory if it doesn't exist
     if not os.path.exists(temp_dir):
         os.mkdir(temp_dir)
-    # print("seed file path: " + seed_file_path)
-    # print("buggy mutant file path: " + buggy_mutant_path)
-    # check if the soundness folder exists
+
+    # Set the path to store the bug folder
     path_to_bug_folder = os.path.join(temp_dir, bug_type)
     print("Creating a bug folder at: " + path_to_bug_folder)
+
+    # Create the bug folder if it doesn't exist
+    if not os.path.exists(path_to_bug_folder):
+        os.mkdir(path_to_bug_folder)
+
+    # Determine the number of subdirectories within the bug folder
     number_of_directories = 0
     for r, d, f in os.walk(path_to_bug_folder):
         number_of_directories = len(d)
         break
 
-    if not os.path.exists(path_to_bug_folder):
-        os.mkdir(path_to_bug_folder)
-
-    # Create a directory for the bug
+    # Set the path to create a new subdirectory within the bug folder
     path_to_bug_dir = os.path.join(path_to_bug_folder, str(number_of_directories))
+
+    # Create the new subdirectory
     os.mkdir(path_to_bug_dir)
 
-    # copy the orig file and the mutant to the directory for the bug
+    # Copy the original file and the mutant to the bug subdirectory
     shutil.copy2(buggy_mutant_path1, path_to_bug_dir)
     shutil.copy2(buggy_mutant_path2, path_to_bug_dir)
 
+    # Create a string to store information about the bug
     error_logs = "Some info on this bug:\n"
-    # error_logs += "seed to run_octopus() function: " + str(seed) + "\n"
-    # error_logs += "Path to original file: " + seed_file_path + "\n"
-    # error_logs += "This was the [" + str(mutant_number) + "]th mutant\n"
-    # error_logs += "Seed theory: " + seed_theory + "\n"
-    # error_logs += "\nConfiguration: " + "\n"
-    # error_logs += str(fuzzing_parameters)
+    error_logs += bug_type + "\n"
     if isinstance(result1, list):
         result1 = "".join(result1)
     if isinstance(result2, list):
         result2 = "".join(result2)
-    error_logs += bug_type + "\n"
     if solver1 and result1:
         error_logs += solver1 + " return " + result1 + "\n"
-    if solver2 and result2 :
+    if solver2 and result2:
         error_logs += solver2 + " return " + result2 + "\n"
     if option is not None:
         error_logs += "\n" + "The chosen option: " + option + "\n"
     error_logs += "\n"
 
+    # Write the bug information to a file within the bug subdirectory
     create_file(error_logs, os.path.join(path_to_bug_dir, "error_logs.txt"))
 
 

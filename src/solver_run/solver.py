@@ -32,14 +32,17 @@ from src.utils.file_operation import record_bug, get_smt_files_list
 
 def solver_runner(solver1_path, solver2_path, smt_file, timeout, incremental, solver1, solver2,
                   theory, add_option, temp, tactic=None):
+    # Prepare temporary file names
     temp_file_name1 = smt_file
     temp_file_name1 = temp_file_name1.replace(".smt2", "")
     temp_file_name2 = temp_file_name1 + "_output2.txt"
     temp_file_name1 += "_output1.txt"
     temp_file_path1 = temp_file_name1
     temp_file_path2 = temp_file_name2
+    # Prepare SMT file names
     smt_file1 = smt_file
     smt_file2 = smt_file
+    # If tactic is None, randomly add check-sat-using to the test instance for a Z3 solver
     if tactic is None:
         add_check_sat_using_flag = random.choice([False, True])
         if add_check_sat_using_flag and solver1 == "z3":
@@ -49,29 +52,35 @@ def solver_runner(solver1_path, solver2_path, smt_file, timeout, incremental, so
             tactic = z3_tactic(smt_file2)
             smt_file2 = tactic.add_check_sat_using()
     else:
+        # Otherwise, add the specific tactic to the SMT file of the corresponding solver
         if solver1 == "z3":
             smt_file1 = add_specific_tactic(smt_file1, tactic)
         if solver2 == "z3":
             smt_file2 = add_specific_tactic(smt_file2, tactic)
-    # z3_opt_note, cvc5_option_note = "", ""
+    # Prepare solver option notes and commands
     solver1_opt_note, solver2_opt_note = "", ""
     z3_opt, cvc5_option = add_option_to_command(theory, add_option)
+    # Add solver options to the option notes of the corresponding solver
     if z3_opt is not None and solver1 == "z3":
         solver1_opt_note += z3_opt + "\n"
     if cvc5_option is not None and solver1 == "cvc5":
         solver2_option_note += cvc5_option + "\n"
+    # Prepare the command for the first solver
     command1 = command_line(solver1_path, solver1, smt_file1, timeout, incremental, temp_file_path1, z3_option=z3_opt,
                             cvc5_opt=cvc5_option)
     z3_opt, cvc5_option = add_option_to_command(theory, add_option)
+    # Add solver options to the option notes of the corresponding solver
     if z3_opt is not None and solver2 == "z3":
         solver2_opt_note = z3_opt
     if cvc5_option is not None and solver2 == "cvc5":
         solver2_opt_note = cvc5_option
+    # Prepare the command for the second solver
     command2 = command_line(solver2_path, solver2, smt_file2, timeout, incremental, temp_file_path2, z3_option=z3_opt,
                             cvc5_opt=cvc5_option)
-    # print(command1, command2)
+    # Run the solvers and get their outputs
     solver_output1, error_msg1 = creat_process_and_get_result(command1, temp_file_path1, incremental)
     solver_output2, error_msg2 = creat_process_and_get_result(command2, temp_file_path2, incremental)
+    # Check the solvers' outputs
     soundness, invalid_model, crash = check_result(solver_output1, solver_output2, solver1, solver2, smt_file1,
                                                    smt_file2, incremental, temp, error_msg1, error_msg2, solver1_opt_note, solver2_opt_note)
     if soundness or invalid_model or crash:

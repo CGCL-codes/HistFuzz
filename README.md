@@ -75,7 +75,6 @@ Moreover, to run `n` parallel instances of $\mathrm{HistFuzz}$ on `n` cores, use
 Every time the tool detects a bug, you can manually stop the running process and inspect it in the `/home/histfuzz/temp` directory. These bugs can encompass soundness bugs, invalid model bugs, and crashes. The evaluation results prove that $\mathrm{HistFuzz}$ is capable of identifying genuine bugs in solvers.
 
 
-
 ###  **Task 2: Code coverage evaluation**
 
 In this evaluation, you can compare the code coverage achieved by $\mathrm{HistFuzz}$ to the baselines (i.e., storm, yinyang, opfuzz, and typefuzz). 

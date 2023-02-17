@@ -146,19 +146,23 @@ def fuzz(skeleton_path, solver1, solver2, solver1_path, solver2_path, timeout, i
             dynamic_list = deepcopy(initial_skeletons)
 
 
-def exist_association(abstract_set: set, rules: rule, seed_type_formula: dict, buggy_type_formula: dict):
+def exist_association(abstract_set: set, rules: rule, seed_type_formula: dict, buggy_type_formula: dict) -> list or None:
     """
+    Check for the existence of association between abstract_set and candidate list.
 
-    :param abstract_set:
-    :param rules:
-    :param seed_type_formula:
-    :param buggy_type_formula:
-    :return: the atom list meeting the association list
+    :param abstract_set: A set of abstract elements to check for association.
+    :param rules: Association rule object.
+    :param seed_type_formula: A dictionary containing type-formula mappings for seed elements.
+    :param buggy_type_formula: A dictionary containing type-formula mappings for buggy elements.
+    :return: A list of candidate elements meeting the association list, or None if no candidates found.
     """
     candidate_list = []
+
     if len(abstract_set) > 0:
         for keys in rules.rule_dic.keys():
             exist_association_flag = True
+
+            # Split keys by delimiter (", ") to handle multiple elements
             if ", " in keys:
                 k = keys.split(", ")
                 for single in k:
@@ -167,12 +171,16 @@ def exist_association(abstract_set: set, rules: rule, seed_type_formula: dict, b
             else:
                 if keys not in abstract_set:
                     exist_association_flag = False
+
             if exist_association_flag:
                 k = rules.rule_dic[keys]
+
+                # Split k by delimiter (", ") to handle multiple formulas
                 if ", " in k:
                     formula_format = k.split(", ")
                 else:
                     formula_format = [k]
+
                 for single_format in formula_format:
                     candidate = seed_type_formula.get(single_format, None)
                     if candidate is None:
@@ -181,8 +189,10 @@ def exist_association(abstract_set: set, rules: rule, seed_type_formula: dict, b
                             candidate_list += candidate
                     else:
                         candidate_list += candidate
+
         if len(candidate_list) > 0:
             return candidate_list
+
     return None
 
 
@@ -268,13 +278,25 @@ def construct_formula(skeleton, seed_type_expr, seed_expr_type, seed_var, bug_ty
 
 
 def variable_translocation(ast, ast_var: dict):
+    """
+    Randomly replace variables in an SMT formula with other variables of the same type.
+
+    Args:
+        ast (list): List of strings representing the SMT formula.
+        ast_var (dict): Dictionary containing variable names as keys and their types as values.
+
+    Returns:
+        list: List of strings representing the modified SMT formula.
+    """
     if ast_var:
         replace_time = random.randint(1, 10)
         while replace_time > 0:
             replace_type = random.choice(list(ast_var.keys()))
             replace_ast_index = random.randint(0, len(ast) - 1)
             for var in ast_var[replace_type]:
+                # Check if variable exists in the dict
                 if " " + var + " " in ast[replace_ast_index] or " " + var + ")" in ast[replace_ast_index]:
+                    # Replace variable in the dict with another variable of the same type
                     if " " + var + " " in ast[replace_ast_index]:
                         ast[replace_ast_index] = ast[replace_ast_index].replace(" " + var + " ", " " + random.choice(
                             ast_var[replace_type]) + " ", 1)
@@ -287,108 +309,104 @@ def variable_translocation(ast, ast_var: dict):
     return ast
 
 
-def construct_scripts(ast, var_list, sort, func, incremental, argument):
-    formula = list()
-    type_var = {}
+
+
+def construct_scripts(ast, var_list, sort, func, incremental):
+    """
+    Construct scripts for SMT solver.
+
+    :param ast: Assert of an SMT formula.
+    :param var_list: List of variables in the SMT formula.
+    :param sort: List of sort declarations.
+    :param func: List of function declarations.
+    :param incremental: Incremental mode flag.
+    :return: The constructed script as a string.
+    """
+    formula = list()  # Initialize list for formulas
+    type_var = {}  # Initialize dictionary for variable types
+
+    # Add sort and function declarations to the formula list
     for i, s in enumerate(sort):
         sort[i] = s.replace("\n", "")
     formula += list(set(sort))
     for i, f in enumerate(func):
         func[i] = f.replace(";", "")
     formula += list(set(func))
+
+    # Add variable declarations to the formula list
     if len(var_list) > 0:
         for v in var_list:
-            # var_dict[v.name] = v.type
             name = v.split(", ")[0]
             typ = v.split(", ")[1]
             type_var.setdefault(typ, []).append(name)
             formula.append(str(DeclareFun(name, '', typ)))
+
+    # Perform variable translocation
     ast = variable_translocation(ast, type_var)
+
+    # Add push and pop commands for incremental mode
     if incremental == "incremental":
         ast = insert_push_and_pop(ast)
     else:
         ast.append("(check-sat)")
+
+    # Combine all formulas
     formula = formula + ast
-    # s = Script(formula, var_dict).__str__()
+
+    # Construct script as a string
     s = "(set-logic ALL)\n"
     for content in formula:
         s = s + content + "\n"
+
     return s
 
 
 def insert_push_and_pop(ast_list):
+    """
+    Adds "push" and "pop" commands to an SMT instance.
+
+    :param ast_list: a list of SMT instance elements
+    :return: a new list of SMT instance elements with "push" and "pop" commands added
+    """
     ast_stack = 0
     new_ast = []
     left_count = len(ast_list)
     while left_count > 0:
+        # Set the number of "push" commands to add based on how many elements are left in the list
         if left_count > 2:
             push_count = random.randint(1, 3)
         else:
             push_count = left_count
         left_count -= push_count
+        # Add the "push" command with the number of elements to push
         new_ast.append("(push " + str(push_count) + ")")
         ast_stack += push_count
+        # Add the elements to be pushed
         for i in range(push_count):
             new_ast.append(ast_list.pop())
+        # Add the "check-sat" command
         new_ast.append("(check-sat)")
+        # Set the number of "pop" commands to add based on the current stack size
         pop_count = random.randint(1, ast_stack)
         ast_stack -= pop_count
+        # Add the "pop" command with the number of elements to pop
         new_ast.append("(pop " + str(pop_count) + ")")
     return new_ast
 
 
 def collect_sort(file):
+    """
+    Collects the sort definitions in an SMT file.
+
+    :param file: the path of the SMT file.
+    :return: a list of lines that define sorts.
+    """
     sort_list = []
     with open(file, "r") as smt_file:
         content = smt_file.readlines()
         for line in content:
+            # Check if the line declares or defines a sort.
             if "declare-sort" in line or "define-sort" in line:
                 sort_list.append(line)
     return sort_list
 
-
-def check_theory(file):
-    theory = []
-    if "RA" in file or "RD" in file:
-        theory.append("real")
-    if "IA" in file or "ID" in file:
-        theory.append("int")
-    if "S" in file:
-        theory.append("string")
-    if "BV" in file:
-        theory.append("bv")
-    if "FP" in file:
-        theory.append("fp")
-    if "ALIA" in file or "ABV" in file or "ANIA" in file:
-        theory.append("array")
-    if "UF" in file:
-        theory += ["real", "int", "bv", "fp", "array"]
-
-    if theory:
-        return theory
-    else:
-        with open(file, "r") as temp_file:
-            content = temp_file.read()
-        if "Real" in content:
-            theory.append("real")
-        if "BitVec" in content or "_ bv" in content:
-            theory.append("bv")
-        if "Int" in content:
-            theory.append("int")
-        if "String" in content:
-            theory.append("string")
-        if "Array" in content:
-            theory.append("array")
-        if "Float" in content or "fp" in content:
-            theory.append("fp")
-        return theory
-
-
-def select_seed(file_list: list):
-    while True:
-        seed = random.choice(file_list)
-        theory = check_theory(seed)
-        if theory:
-            return file_list, theory, seed
-        else:
-            file_list.remove(seed)
