@@ -62,15 +62,15 @@ The evaluation results of $\mathrm{HistFuzz}$ include two tasks, including **Tas
 
 You can use $\mathrm{HistFuzz}$ to detect real bugs in SMT solvers. For example, this is a basic command for $\mathrm{HistFuzz}$ you can adopt in the docker container.
 
-`/home/histfuzz/bin/histfuzz --solver1=z3 --solver=cvc5 --solver_bin1=/home/z3/build/z3 --solver_bin2=/home/cvc5/build/bin/cvc5`
+`/home/histfuzz/bin/histfuzz --solver1=z3 --solver2=cvc5 --solver_bin1=/home/z3/build/z3 --solver_bin2=/home/cvc5/build/bin/cvc5`
 
 If you want to stress-test more important options of solvers, you can add `--option` flag to the command:
 
-`/home/histfuzz/bin/histfuzz --solver1=z3 --solver=cvc5 --solver_bin1=/home/z3/build/z3 --solver_bin2=/home/cvc5/build/bin/cvc5 --option=regular`
+`/home/histfuzz/bin/histfuzz --solver1=z3 --solver2=cvc5 --solver_bin1=/home/z3/build/z3 --solver_bin2=/home/cvc5/build/bin/cvc5 --option=regular`
 
 Moreover, to run `n` parallel instances of $\mathrm{HistFuzz}$ on `n` cores, use the `--cores` flag. For example:
 
-`/home/histfuzz/bin/histfuzz --solver1=z3 --solver=cvc5 --solver_bin1=/home/z3/build/z3 --solver_bin2=/home/cvc5/build/bin/cvc5 --option=regular --cores=20`
+`/home/histfuzz/bin/histfuzz --solver1=z3 --solver2=cvc5 --solver_bin1=/home/z3/build/z3 --solver_bin2=/home/cvc5/build/bin/cvc5 --option=regular --cores=20`
 
 Every time the tool detects a bug, you can manually stop the running process and inspect it in the `/home/histfuzz/temp` directory. These bugs can encompass soundness bugs, invalid model bugs, and crashes. The evaluation results prove that $\mathrm{HistFuzz}$ is capable of identifying genuine bugs in solvers.
 
