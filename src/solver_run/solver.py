@@ -42,15 +42,17 @@ def solver_runner(solver1_path, solver2_path, smt_file, timeout, incremental, so
     # Prepare SMT file names
     smt_file1 = smt_file
     smt_file2 = smt_file
-    # If tactic is None, randomly add check-sat-using to the test instance for a Z3 solver
-    if tactic is None and add_option != "default":
-        add_check_sat_using_flag = random.choice([False, True])
-        if add_check_sat_using_flag and solver1 == "z3":
-            tactic = z3_tactic(smt_file1)
-            smt_file1 = tactic.add_check_sat_using()
-        if add_check_sat_using_flag and solver2 == "z3":
-            tactic = z3_tactic(smt_file2)
-            smt_file2 = tactic.add_check_sat_using()
+    # If tactic is None, optionally and randomly add check-sat-using for Z3; otherwise, add the provided tactic.
+    if tactic is None:
+        if add_option != "default":
+            add_check_sat_using_flag = random.choice([False, True])
+            if add_check_sat_using_flag and solver1 == "z3":
+                tactic_obj = z3_tactic(smt_file1)
+                smt_file1 = tactic_obj.add_check_sat_using()
+            if add_check_sat_using_flag and solver2 == "z3":
+                tactic_obj = z3_tactic(smt_file2)
+                smt_file2 = tactic_obj.add_check_sat_using()
+        # when tactic is None and add_option == "default", do not modify files
     else:
         # Otherwise, add the specific tactic to the SMT file of the corresponding solver
         if solver1 == "z3":
@@ -64,7 +66,7 @@ def solver_runner(solver1_path, solver2_path, smt_file, timeout, incremental, so
     if z3_opt is not None and solver1 == "z3":
         solver1_opt_note += z3_opt + "\n"
     if cvc5_option is not None and solver1 == "cvc5":
-        solver2_option_note += cvc5_option + "\n"
+        solver1_opt_note += cvc5_option + "\n"
     # Prepare the command for the first solver
     command1 = command_line(solver1_path, solver1, smt_file1, timeout, incremental, temp_file_path1, z3_option=z3_opt,
                             cvc5_opt=cvc5_option)
@@ -301,6 +303,9 @@ class z3_tactic:
 
 
 def add_specific_tactic(file_path, tactics):
+    # If no tactic is provided, return the original file path unmodified
+    if tactics is None or str(tactics).strip() == "":
+        return file_path
     try:
         with open(file_path, 'r') as f:
             lines = f.read().splitlines()
