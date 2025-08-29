@@ -172,25 +172,59 @@ def extract_skeleton(seed, skeleton_dic):
     # print(str(s.assert_cmd[i].term))
 
 
+def _term_has_quantifier(term: Term) -> bool:
+    """Recursively check if a Term tree contains any quantifier."""
+    if isinstance(term, Term):
+        if getattr(term, "quantifier", None) is not None:
+            return True
+        if term.subterms is not None:
+            for s in term.subterms:
+                if _term_has_quantifier(s):
+                    return True
+    return False
+
+
 def export_skeleton(formula_path, skeleton_file):
-    skeleton_dic = dict()
+    """Export skeletons, splitting quantifier-free vs quantified.
+
+    - Writes quantifier-free skeletons to `skeleton_file` (backward compatible).
+    - Writes quantified skeletons to `<stem>_quant.smt2` beside it.
+    """
+    qf_skeletons = dict()
+    q_skeletons = dict()
+
     files = get_smt_files_list(formula_path)
     for file in files:
-        skeleton_dic = extract_skeleton(file, skeleton_dic)
-    # skeleton_order = sorted(skeleton_dic.items(), key=lambda x: x[1])
-    # with open("skeleton_num.txt", "w") as fout:
-    #     for ske in skeleton_order:
-    #         fout.write(str(ske) + "\n")
-    f1 = open(skeleton_file, "w")
-    skeleton_list = list()
-    for key in skeleton_dic.keys():
-        # if key.count("hole") > 10:
-        #     big_skeleton_list.append(key + "\n")
-        # else:
-        skeleton_list.append(key + "\n")
-    f1.writelines(skeleton_list)
-    f1.close()
-    restruct_skeleton(skeleton_file)
+        s = construct_skeleton(file, flag=True)
+        if s is None:
+            continue
+        for i in range(len(s.assert_cmd)):
+            term = s.assert_cmd[i]
+            sk = str(term)
+            if "let " in sk:
+                continue
+            if _term_has_quantifier(term):
+                q_skeletons[sk] = q_skeletons.get(sk, 0) + 1
+            else:
+                qf_skeletons[sk] = qf_skeletons.get(sk, 0) + 1
+
+    # Prepare output paths
+    if skeleton_file.endswith(".smt2"):
+        quant_out = skeleton_file[:-5] + "_quant.smt2"
+        qf_out = skeleton_file
+    else:
+        quant_out = skeleton_file + "_quant"
+        qf_out = skeleton_file + "_qf"
+
+    # Write QF skeletons to the original path for compatibility
+    with open(qf_out, "w") as f_qf:
+        f_qf.writelines([sk + "\n" for sk in qf_skeletons.keys()])
+    restruct_skeleton(qf_out)
+
+    # Write quantified skeletons to the suffixed path
+    with open(quant_out, "w") as f_q:
+        f_q.writelines([sk + "\n" for sk in q_skeletons.keys()])
+    restruct_skeleton(quant_out)
 
 
 def obtain_hole(skeleton):

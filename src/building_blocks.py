@@ -21,14 +21,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-
-
 import os
 import random
 import re
 import shutil
 import string
 from copy import deepcopy
+import glob
 
 from src.parsing.Ast import Var, Assert, Term, Const, Expr
 from src.parsing.TimeoutDecorator import exit_after
@@ -36,6 +35,8 @@ from src.parsing.Types import TYPES, FP_TYPE, BITVECTOR_TYPE, ARRAY_TYPE
 from src.skeleton import get_all_basic_subformula, process_seed, get_subterms
 from src.utils.file_operation import get_all_smt2_file, get_txt_files_list
 from src.utils.type import return_type
+
+# Note: logic detection is intentionally omitted; mapping is loaded from precomputed CSVs.
 
 
 def classify_formula(path_list):
@@ -594,17 +595,98 @@ def simplify(file1):
         f2.writelines(content)
 
 
+LOGIC_BUCKETS = [
+    "AUFLIA", "AUFLIRA", "AUFNIRA", "LIA", "LRA", "ABV", "AUFBV", "AX", "BV", "IDL",
+    "NIA", "NRA", "RDL", "UF", "UFBV", "UFIDL", "UFLIA", "UFLRA", "UFNRA", "UFNIA", "Core",
+]
+
+
+def _load_logic_mapping(bug_root: str) -> dict[str, list[str]]:
+    """Load pre-analyzed logic mapping from CSVs named like results*.csv.
+
+    CSV expected format: header with 'file,logic'. File paths may be relative.
+    We resolve relative paths against (1) CWD, then (2) parent of bug_root.
+    Returns dict: logic -> list of absolute file paths.
+    """
+    search_dirs = [bug_root, os.path.dirname(bug_root) or bug_root, os.getcwd()]
+    csv_files: list[str] = []
+    for d in search_dirs:
+        try:
+            csv_files += glob.glob(os.path.join(d, "results*.csv"))
+        except Exception:
+            pass
+    buckets: dict[str, list[str]] = {k: [] for k in LOGIC_BUCKETS}
+    seen: set[tuple[str, str]] = set()
+    for csv_path in csv_files:
+        try:
+            with open(csv_path, "r", encoding="utf-8", errors="ignore") as f:
+                lines = [ln.strip() for ln in f.readlines() if ln.strip()]
+        except Exception:
+            continue
+        if not lines:
+            continue
+        # Skip header if present
+        start = 1 if "," in lines[0] and lines[0].lower().startswith("file,logic") else 0
+        for ln in lines[start:]:
+            parts = [p.strip() for p in ln.split(",")]
+            if len(parts) < 2:
+                continue
+            file_field, logic = parts[0], parts[1]
+            if logic not in buckets:
+                continue
+            # Resolve path
+            candidates = [
+                file_field if os.path.isabs(file_field) else os.path.abspath(os.path.join(os.getcwd(), file_field)),
+                file_field if os.path.isabs(file_field) else os.path.abspath(os.path.join(os.path.dirname(bug_root), file_field)),
+            ]
+            resolved = next((p for p in candidates if os.path.exists(p)), None)
+            if not resolved:
+                # as last resort, if in bug_root subtree
+                p3 = os.path.join(bug_root, os.path.basename(file_field))
+                if os.path.exists(p3):
+                    resolved = os.path.abspath(p3)
+            if not resolved:
+                continue
+            key = (resolved, logic)
+            if key in seen:
+                continue
+            seen.add(key)
+            buckets[logic].append(resolved)
+    return buckets
+
+
 def export_buggy_seed(file_path, output_path):
     int_list, real_list, string_list, bv_list, fp_list, array_list = classify_formula([file_path])
     if os.path.exists(output_path):
         shutil.rmtree(output_path)
     os.makedirs(output_path)
+
+    # Existing per-type exports (backward compatible)
     export_basic_formula(merge_file_and_rename_variable(bv_list), output_path + "/bv.txt")
     export_basic_formula(merge_file_and_rename_variable(fp_list), output_path + "/fp.txt")
     export_basic_formula(merge_file_and_rename_variable(int_list), output_path + "/int.txt")
     export_basic_formula(merge_file_and_rename_variable(real_list), output_path + "/real.txt")
     export_basic_formula(merge_file_and_rename_variable(string_list), output_path + "/string.txt")
     export_basic_formula(merge_file_and_rename_variable(array_list), output_path + "/array.txt")
+
+    # New: logic-based basic formula exports using pre-analyzed mapping (if available)
+    all_files = [os.path.abspath(p) for p in (int_list + real_list + string_list + bv_list + fp_list + array_list)]
+    logic_map = _load_logic_mapping(file_path)
+    # Filter mapping to only files we collected above
+    if logic_map:
+        for k in list(logic_map.keys()):
+            logic_map[k] = [p for p in logic_map[k] if os.path.abspath(p) in all_files]
+    logic_dir = os.path.join(output_path, "by_logic")
+    os.makedirs(logic_dir, exist_ok=True)
+    if logic_map:
+        for logic_name, files in logic_map.items():
+            if not files:
+                continue
+            bb = merge_file_and_rename_variable(files)
+            out_file = os.path.join(logic_dir, f"{logic_name}.txt")
+            export_basic_formula(bb, out_file)
+
+    # Simplify existing outputs
     simplify(output_path + "/bv.txt")
     simplify(output_path + "/fp.txt")
     simplify(output_path + "/int.txt")
